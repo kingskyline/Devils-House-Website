@@ -37,11 +37,24 @@
         ::-webkit-scrollbar-thumb:hover {
             background: #718096; /* Lighter on hover */
         }
+        /* Aspect ratio utility for responsive embeds */
+        .aspect-video {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+        }
+        .aspect-video iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
     </style>
 </head>
 <body class="antialiased">
 
-    <!-- Header Section (Consistent with Landing Page) -->
+    <!-- Header Section (Consistent with other pages) -->
     <header class="bg-gray-900 shadow-lg py-4">
         <div class="container mx-auto flex justify-between items-center px-6">
             <!-- Team Logo/Name -->
@@ -77,15 +90,12 @@
     <section class="py-20 bg-gray-900">
         <div class="container mx-auto px-6 text-center">
             <h2 class="text-5xl font-bold text-white mb-12">Our Elite Squad</h2>
-            <!-- Flex container to center the grid of cards -->
             <div class="flex justify-center">
-                <!-- Added justify-items-center to center individual items within the grid cells -->
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 max-w-6xl justify-items-center">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-4xl justify-items-center">
 
                     <!-- King Skyline Card -->
-                    <div class="bg-gray-800 p-8 rounded-xl shadow-xl transform transition duration-300 ease-in-out hover:scale-105 border-2 border-red-700">
-                        <!-- Replace 'images/king-logo.png' with King Skyline's actual logo URL -->
-                        <img src="https://placehold.co/150x150/e53e3e/000000?text=King+Logo" alt="King Skyline Logo" class="w-36 h-36 rounded-full mx-auto mb-6 border-4 border-red-500">
+                    <div class="bg-gray-800 p-8 rounded-xl shadow-xl transform transition duration-300 ease-in-out hover:scale-105 border-2 border-red-700 w-full">
+                        <img src="images/king-logo.png" alt="King Skyline Logo" class="w-36 h-36 rounded-full mx-auto mb-6 border-4 border-red-500">
                         <h3 class="text-4xl font-extrabold text-red-500 mb-4">King Skyline</h3>
                         <p class="text-gray-400 text-lg mb-6">Founder, Leader, Streamer</p>
                         <div class="flex justify-center space-x-6">
@@ -98,14 +108,12 @@
                     </div>
 
                     <!-- Queen Skyline Card -->
-                    <div class="bg-gray-800 p-8 rounded-xl shadow-xl transform transition duration-300 ease-in-out hover:scale-105 border-2 border-blue-700">
-                        <!-- Replace 'images/queen-logo.png' with Queen Skyline's actual logo URL -->
-                        <img src="https://placehold.co/150x150/3182ce/000000?text=Queen+Logo" alt="Queen Skyline Logo" class="w-36 h-36 rounded-full mx-auto mb-6 border-4 border-blue-500">
+                    <div class="bg-gray-800 p-8 rounded-xl shadow-xl transform transition duration-300 ease-in-out hover:scale-105 border-2 border-blue-700 w-full">
+                        <img src="images/queen-logo.png" alt="Queen Skyline Logo" class="w-36 h-36 rounded-full mx-auto mb-6 border-4 border-blue-500">
                         <h3 class="text-4xl font-extrabold text-blue-500 mb-4">Queen Skyline</h3>
                         <p class="text-gray-400 text-lg mb-6">Co-Founder, Strategist, Streamer</p>
                         <div class="flex justify-center space-x-6">
                             <a href="https://www.tiktok.com/@emmawhyman" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-blue-500 text-3xl transition duration-300 ease-in-out"><i class="fab fa-tiktok"></i></a>
-                            <!-- Add more social links for Queen Skyline here if available -->
                             <a href="#" class="text-gray-300 hover:text-blue-500 text-3xl transition duration-300 ease-in-out"><i class="fab fa-twitch"></i></a>
                             <a href="#" class="text-gray-300 hover:text-blue-500 text-3xl transition duration-300 ease-in-out"><i class="fab fa-youtube"></i></a>
                         </div>
@@ -115,112 +123,59 @@
             </div>
         </div>
     </section>
-
-    <!-- Team Members Section - Other Members -->
-    <section class="py-20 bg-gray-800">
-        <div class="container mx-auto px-6 text-center">
-            <h2 class="text-5xl font-bold text-white mb-12">Our Valued Members</h2>
-            <!-- Flex container to center the grid of cards -->
-            <div class="flex justify-center">
-                <!-- Added justify-items-center to center individual items within the grid cells -->
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 max-w-6xl justify-items-center">
-
-                    <!-- Auty Card (Moved to Valued Members) -->
-                    <div class="bg-gray-900 p-8 rounded-xl shadow-xl transform transition duration-300 ease-in-out hover:scale-105 border-2 border-gray-700">
-                        <!-- Replace 'images/auty-logo.png' with Auty's actual logo URL -->
-                        <img src="https://placehold.co/150x150/2d3748/e2e8f0?text=Auty+Logo" alt="Auty Logo" class="w-36 h-36 rounded-full mx-auto mb-6 border-4 border-gray-600">
-                        <h3 class="text-4xl font-extrabold text-gray-300 mb-4">Auty</h3>
-                        <p class="text-gray-500 text-lg mb-6">Game Developer, Team Member</p>
-                        <div class="flex justify-center space-x-6">
-                            <!-- Add Auty's social links here -->
-                            <a href="#" class="text-gray-400 hover:text-gray-300 text-3xl transition duration-300 ease-in-out"><i class="fab fa-twitter"></i></a>
-                            <a href="#" class="text-gray-400 hover:text-gray-300 text-3xl transition duration-300 ease-in-out"><i class="fab fa-github"></i></a>
-                        </div>
-                    </div>
-
-                    <!-- Placeholder for a Generic Team Member Card -->
-                    <div class="bg-gray-900 p-8 rounded-xl shadow-xl transform transition duration-300 ease-in-out hover:scale-105 border-2 border-gray-700">
-                        <!-- Replace 'images/member-logo.png' with the member's actual logo URL -->
-                        <img src="https://placehold.co/150x150/2d3748/e2e8f0?text=Member+Logo" alt="Team Member Logo" class="w-36 h-36 rounded-full mx-auto mb-6 border-4 border-gray-600">
-                        <h3 class="text-4xl font-extrabold text-gray-300 mb-4">Team Member Name</h3>
-                        <p class="text-gray-500 text-lg mb-6">Role / Streamer / Community Manager</p>
-                        <div class="flex justify-center space-x-6">
-                            <!-- Add this member's social links here -->
-                            <a href="#" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-gray-300 text-3xl transition duration-300 ease-in-out"><i class="fab fa-twitch"></i></a>
-                            <a href="#" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-gray-300 text-3xl transition duration-300 ease-in-out"><i class="fab fa-youtube"></i></a>
-                            <a href="#" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-gray-300 text-3xl transition duration-300 ease-in-out"><i class="fab fa-twitter"></i></a>
-                        </div>
-                    </div>
-
-                    <!-- Copy the above 'div' block to add more members -->
-                    <!-- Example of another member: -->
-                    <!--
-                    <div class="bg-gray-900 p-8 rounded-xl shadow-xl transform transition duration-300 ease-in-out hover:scale-105 border-2 border-gray-700">
-                        <img src="https://placehold.co/150x150/2d3748/e2e8f0?text=Another+Logo" alt="Another Member Logo" class="w-36 h-36 rounded-full mx-auto mb-6 border-4 border-gray-600">
-                        <h3 class="text-4xl font-extrabold text-gray-300 mb-4">Another Member</h3>
-                        <p class="text-gray-500 text-lg mb-6">Competitive Player</p>
-                        <div class="flex justify-center space-x-6">
-                            <a href="#" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-gray-300 text-3xl transition duration-300 ease-in-out"><i class="fab fa-twitch"></i></a>
-                            <a href="#" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-gray-300 text-3xl transition duration-300 ease-in-out"><i class="fab fa-instagram"></i></a>
-                        </div>
-                    </div>
-                    -->
-
-                </div>
-            </div>
-        </div>
-    </section>
+    
+    <div class="section-separator"></div>
 
     <!-- Live Streams Section -->
-    <section class="py-20 bg-gray-800 text-center">
+    <section class="py-20 bg-gray-900 text-center">
         <div class="container mx-auto px-6">
             <h2 class="text-5xl font-bold text-white mb-12">Catch Us Live!</h2>
-            <p class="text-xl text-gray-300 max-w-3xl mx-auto mb-10">
-                Here's where you can find our latest streams and broadcasts.
-                Check back often for live content from your favorite Devils House Gaming members!
-            </p>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <!-- Placeholder for King Skyline's Stream Embed -->
-                <div class="bg-gray-900 p-6 rounded-xl shadow-lg border-2 border-red-700">
-                    <h3 class="text-3xl font-bold text-red-500 mb-4">King Skyline's Stream</h3>
-                    <!-- Replace this iframe with King Skyline's actual Twitch/Kick/YouTube embed code -->
-                    <!-- Example for Twitch:
-                    <iframe src="https://player.twitch.tv/?channel=kingskyline23&parent=yourdomain.com"
-                            height="300" width="100%" allowfullscreen class="rounded-lg">
-                    </iframe>
-                    Replace 'yourdomain.com' with your actual domain name (e.g., 'devilshousegaming.com')
-                    -->
-                    <div class="w-full h-64 bg-gray-700 flex items-center justify-center rounded-lg text-gray-400 text-lg">
-                        Stream Embed Placeholder (King Skyline)
-                        <br>
-                        (Replace with actual embed code from Twitch/Kick/YouTube)
+            <!-- King Skyline's Stream Embed -->
+            <div class="mb-16">
+                <h3 class="text-4xl font-bold text-red-500 mb-6">King Skyline's Stream</h3>
+                <!-- Responsive Grid for Video and Chat -->
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 max-w-6xl mx-auto">
+                    <!-- Video Player (takes 2/3 width on large screens) -->
+                    <div class="lg:col-span-2 aspect-video rounded-lg overflow-hidden">
+                        <iframe
+                            src="https://player.twitch.tv/?channel=kingskyline23&parent=kingskyline.github.io"
+                            frameborder="0"
+                            allowfullscreen="true"
+                            scrolling="no"
+                            height="100%"
+                            width="100%">
+                        </iframe>
                     </div>
-                    <p class="text-gray-400 mt-4">Currently Live on <span class="text-red-400">Twitch/Kick</span> (if applicable)</p>
-                </div>
-
-                <!-- Placeholder for Queen Skyline's Stream Embed -->
-                <div class="bg-gray-900 p-6 rounded-xl shadow-lg border-2 border-blue-700">
-                    <h3 class="text-3xl font-bold text-blue-500 mb-4">Queen Skyline's Stream</h3>
-                    <!-- Replace this iframe with Queen Skyline's actual Twitch/Kick/YouTube embed code -->
-                    <div class="w-full h-64 bg-gray-700 flex items-center justify-center rounded-lg text-gray-400 text-lg">
-                        Stream Embed Placeholder (Queen Skyline)
-                        <br>
-                        (Replace with actual embed code from Twitch/Kick/YouTube)
+                    <!-- Chat (takes 1/3 width on large screens) -->
+                    <div class="w-full h-[30rem] lg:h-full rounded-lg overflow-hidden">
+                         <iframe
+                            src="https://www.twitch.tv/embed/kingskyline23/chat?parent=kingskyline.github.io&darkpopout"
+                            height="100%"
+                            width="100%">
+                        </iframe>
                     </div>
-                    <p class="text-gray-400 mt-4">Currently Live on <span class="text-blue-400">Twitch/Kick</span> (if applicable)</p>
                 </div>
             </div>
-            <p class="text-gray-400 text-sm mt-8">
-                *Note: Live stream embeds require specific code provided by Twitch, Kick, or YouTube.
-                You will need to replace the placeholder `div` elements with the actual `iframe` embed codes from your streaming platforms.
-                Remember to update the `parent=` attribute in Twitch embeds to your website's domain name (e.g., `parent=devilshousegaming.com`).
-            </p>
+
+            <div class="section-separator"></div>
+
+            <!-- Queen Skyline's Stream Embed -->
+            <div>
+                <h3 class="text-4xl font-bold text-blue-500 mb-6">Queen Skyline's Stream</h3>
+                 <div class="bg-gray-800 p-6 rounded-xl shadow-lg border-2 border-blue-700 max-w-4xl mx-auto">
+                    <div class="w-full h-96 bg-gray-700 flex items-center justify-center rounded-lg text-gray-400 text-lg">
+                        Stream Embed Placeholder (Queen Skyline)
+                        <br>
+                        (Replace with actual embed code)
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- Footer Section (Consistent with Landing Page) -->
-    <footer class="bg-gray-950 py-8 text-center text-gray-400 text-sm">
+    <!-- Footer Section (Consistent with other pages) -->
+    <footer class="bg-gray-950 py-8 text-center text-gray-400 text-sm mt-20">
         <div class="container mx-auto px-6">
             <p>&copy; 2025 Devils House Gaming. All rights reserved.</p>
             <p class="mt-2">Designed by Devils House Gaming Team.</p>
