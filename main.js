@@ -72,7 +72,9 @@ document.addEventListener("DOMContentLoaded", function() {
                     highlightActiveNav();
                 }
             })
+            
             .catch(error => console.error('Error loading component:', error));
+            
     };
 
     /**
