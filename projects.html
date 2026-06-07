@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects | Devils House Gaming</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #1a202c; color: #e2e8f0; }
+        .project-card { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .project-card:hover { transform: translateY(-10px); box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5); }
+    </style>
+</head>
+<body>
+
+    <div id="header-placeholder"></div>
+
+    <main class="container mx-auto px-6 py-16">
+        <div class="text-center mb-16">
+            <h1 class="text-6xl font-black text-white mb-4 tracking-tighter">PROJECT <span class="text-purple-600">HUB</span></h1>
+            <p class="text-xl text-gray-400">The roadmap, history, and future of Devils House Creations.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-10">
+            
+            <div class="project-card bg-gray-800 rounded-2xl overflow-hidden border border-gray-700">
+                <div class="p-8">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="bg-green-900 text-green-400 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest border border-green-500">🟢 Active</span>
+                        <span class="text-gray-500 font-mono text-sm uppercase">Game</span>
+                    </div>
+                    <h3 class="text-3xl font-bold text-white mb-3">Trucks & Automation</h3>
+                    <p class="text-gray-400 mb-6 leading-relaxed">A strategic automation simulator focusing on logistics, fleet management, and industrial scaling.</p>
+                    <a href="projects/trucks-automation.html" class="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-lg transition duration-300">View Project</a>
+                </div>
+            </div>
+
+            <div class="project-card bg-gray-800 rounded-2xl overflow-hidden border border-gray-700">
+                <div class="p-8">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="bg-orange-900 text-orange-400 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest border border-orange-500">🟠 In Development</span>
+                        <span class="text-gray-500 font-mono text-sm uppercase">Game</span>
+                    </div>
+                    <h3 class="text-3xl font-bold text-white mb-3">Paranormal Dispatch</h3>
+                    <p class="text-gray-400 mb-6 leading-relaxed">A spine-chilling horror experience where you manage the calls and field responses for the supernatural.</p>
+                    <a href="projects/paranormal-dispatch.html" class="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-lg transition duration-300">View Project</a>
+                </div>
+            </div>
+
+            <div class="project-card bg-gray-800 rounded-2xl overflow-hidden border border-gray-700">
+                <div class="p-8">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="bg-red-900 text-red-400 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest border border-red-500">🔴 In Progress</span>
+                        <span class="text-gray-500 font-mono text-sm uppercase">Build</span>
+                    </div>
+                    <h3 class="text-3xl font-bold text-white mb-3">Fanhome 1:8 Skyline R34</h3>
+                    <p class="text-gray-400 mb-6 leading-relaxed">Detailed documentation of the massive 1:8 scale die-cast build. Progress logs and part inspections.</p>
+                    <a href="projects/skyline-r34.html" class="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-lg transition duration-300">View Project</a>
+                </div>
+            </div>
+
+            <div class="project-card bg-gray-800 rounded-2xl overflow-hidden border border-gray-700">
+                <div class="p-8">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="bg-gray-700 text-gray-400 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest border border-gray-500">⚫ Planning</span>
+                        <span class="text-gray-500 font-mono text-sm uppercase">Build</span>
+                    </div>
+                    <h3 class="text-3xl font-bold text-white mb-3">Fanhome 1:8 Supra Mk4</h3>
+                    <p class="text-gray-400 mb-6 leading-relaxed">Preparation for the legendary Toyota Supra Mk4 1:8 build. Parts list and upcoming timeline.</p>
+                    <a href="projects/supra-mk4.html" class="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-lg transition duration-300">View Project</a>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="main.js"></script>
+</body>
+</html>

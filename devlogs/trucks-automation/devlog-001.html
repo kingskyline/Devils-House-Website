@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Devlog Alpha v0.0001 - Trucks & Automation | Devils House Creations</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #1a202c; color: #e2e8f0; }
+    </style>
+</head>
+<body>
+
+    <div id="header-placeholder"></div>
+
+    <main class="container mx-auto px-6 py-16 max-w-4xl min-h-[70vh]">
+        
+        <a href="../../projects/trucks-automation.html" class="inline-flex items-center text-purple-500 hover:text-purple-400 font-bold mb-8 transition-colors">
+            ← Back to Project Hub
+        </a>
+
+        <header class="mb-12 border-b border-gray-700 pb-8">
+            <div class="flex justify-between items-end mb-4">
+                <span class="text-gray-500 font-mono text-sm uppercase tracking-widest">Alpha v0.0001</span>
+                <span class="text-gray-500 font-mono text-sm">06/04/2026 - 09:42 AM</span>
+            </div>
+            <h1 class="text-5xl font-black text-white leading-tight mb-2">Automation & Efficiency</h1>
+            <p class="text-xl text-purple-400 font-semibold">King Skyline [DHG]</p>
+        </header>
+
+        <article class="prose prose-invert prose-lg max-w-none text-gray-300">
+            
+            <div class="bg-gray-800 p-8 rounded-2xl border border-gray-700 mb-12 shadow-lg">
+                <h2 class="text-3xl font-black text-white mb-6 border-b border-gray-600 pb-2">🎮 Player Update</h2>
+                
+                <h3 class="text-xl font-bold text-green-400 mt-6 mb-2">⸻ The Woodcutter Sawmill is Live!</h3>
+                <p class="mb-4">Our first complex building is here! Build production directly into your logistics routes.</p>
+                <ul class="list-disc list-inside mb-6 space-y-1 text-gray-400">
+                    <li>2x1 structure</li>
+                    <li>Includes its own built-in road</li>
+                    <li>Can be placed directly into your road network</li>
+                </ul>
+
+                <h3 class="text-xl font-bold text-green-400 mt-6 mb-2">⸻ Smart Logistics & Auto Loading</h3>
+                <p class="mb-4">Trucks are now much smarter. Fully automated pickup system!</p>
+                <ul class="list-disc list-inside mb-6 space-y-1 text-gray-400">
+                    <li>Stop automatically when resources are ready</li>
+                    <li>Wait while loading</li>
+                    <li>Leave when full OR when the building is empty</li>
+                </ul>
+
+                <h3 class="text-xl font-bold text-green-400 mt-6 mb-2">⸻ Universal Resource System</h3>
+                <p class="mb-4">Faster development + better performance.</p>
+                <ul class="list-disc list-inside mb-6 space-y-1 text-gray-400">
+                    <li>Resources completely reworked to use a modular "Data Card" system</li>
+                    <li>Easy to add new resources (Iron, Stone, Gold, etc.)</li>
+                    <li>All buildings use the same backend logic</li>
+                </ul>
+
+                <h3 class="text-xl font-bold text-green-400 mt-6 mb-2">⸻ Precision Site Clearing</h3>
+                <p class="mb-4">Clean land every time.</p>
+                <ul class="list-disc list-inside mb-6 space-y-1 text-gray-400">
+                    <li>Bulldozing is now clean and reliable</li>
+                    <li>Multi-tile buildings are fully removed in one click</li>
+                    <li>No leftover tiles, no blocked paths</li>
+                </ul>
+
+                <h3 class="text-xl font-bold text-green-400 mt-6 mb-2">⸻ Growth & Levels</h3>
+                <p class="mb-4">Bigger factories, better efficiency. Your industry now scales with you.</p>
+                <ul class="list-disc list-inside mb-6 space-y-1 text-gray-400">
+                    <li>Buildings can level up: Faster production, more storage</li>
+                    <li>Trucks can be upgraded: Higher capacity, more efficient hauling</li>
+                </ul>
+            </div>
+
+            <div class="bg-gray-900 p-8 rounded-2xl border border-gray-800 mb-8">
+                <h2 class="text-3xl font-black text-white mb-2">⚙️ Technical Dev Log: The Logistics Engine</h2>
+                <div class="flex space-x-4 mb-6 border-b border-gray-700 pb-4">
+                    <span class="text-sm font-mono text-purple-400">Status: Phase 1 (Automation Core)</span>
+                    <span class="text-sm font-mono text-blue-400">Architecture: Modular / Data-Driven</span>
+                </div>
+                
+                <h3 class="text-xl font-bold text-white mt-6 mb-3">⸻ Multidimensional Grid Architecture</h3>
+                <ul class="list-none mb-6 space-y-3 text-gray-400">
+                    <li><strong>Compound Footprints:</strong> Added support for non-square buildings (Woodcutter = 2x1 footprint). 1 tile = Road (Infrastructure), 1 tile = Production (Building).</li>
+                    <li><strong>Rotation System:</strong> Offset based on Facing enum so buildings rotate correctly around the road pivot. <em>Facing Offsets: Up → (1, 0), Right → (0, -1)</em></li>
+                    <li><strong>Multi-Tile Occupancy:</strong> <code>GridManager</code> now supports buildings using multiple Vector2Int positions. Demolition uses a reference scan to remove ALL tiles linked to a building ensuring clean removal (no ghost tiles).</li>
+                </ul>
+
+                <h3 class="text-xl font-bold text-white mt-8 mb-3">⸻ Modular Resource Framework</h3>
+                <ul class="list-none mb-6 space-y-3 text-gray-400">
+                    <li><strong>ScriptableObject System:</strong> <code>ResourceData</code> defines Name, Icon, and Value. <code>ResourceProducer</code> now acts as a universal system (no hardcoding).</li>
+                    <li><strong>Production Scaling:</strong> Level-based scaling added where speed and storage increase per level.</li>
+                </ul>
+
+                <h3 class="text-xl font-bold text-white mt-8 mb-3">⸻ Automated Logistics Controller</h3>
+                <ul class="list-none mb-6 space-y-3 text-gray-400">
+                    <li><strong>State-Based Movement:</strong> Added <code>isLoading</code> state to trucks, acting like a "handbrake" when inside production zones.</li>
+                    <li><strong>Gradual Resource Transfer:</strong> Switched from instant transfer (<code>OnTriggerEnter</code>) to timed transfer (<code>OnTriggerStay</code>). Uses transfer rate system (1 / Rate) to move items one-by-one using <code>Time.deltaTime</code>. Creates smoother, more realistic loading behaviour.</li>
+                </ul>
+            </div>
+
+        </article>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="../../main.js"></script>
+</body>
+</html>

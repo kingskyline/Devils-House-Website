@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Name | Devils House Creations</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #1a202c; color: #e2e8f0; }
+        /* Tab System CSS */
+        .tab-content { display: none; }
+        .tab-content.active { display: block; animation: fadeIn 0.3s ease-in-out; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
+    </style>
+</head>
+<body>
+
+    <div id="header-placeholder"></div>
+
+    <section class="relative bg-gray-900 py-20 border-b border-gray-800">
+        <div class="container mx-auto px-6 text-center">
+            <span class="inline-block bg-gray-700 text-gray-300 text-sm font-bold px-4 py-1 rounded-full uppercase tracking-widest border border-gray-500 mb-6">Status Placeholder</span>
+            <h1 class="text-6xl font-black text-white mb-4 tracking-tight">Project <span class="text-purple-500">Title</span></h1>
+            <p class="text-2xl text-gray-400 max-w-2xl mx-auto">Your short, punchy tagline goes right here.</p>
+        </div>
+    </section>
+
+    <nav class="bg-gray-900 sticky top-0 z-10 border-b border-gray-700 shadow-md">
+        <div class="container mx-auto px-6">
+            <div class="flex justify-center space-x-2 sm:space-x-8 overflow-x-auto">
+                <button class="tab-btn text-purple-500 border-purple-500 hover:text-white font-bold py-4 px-4 border-b-4 transition-colors whitespace-nowrap" onclick="openTab(event, 'overview')">Overview</button>
+                <button class="tab-btn text-gray-400 border-transparent hover:text-white font-bold py-4 px-4 border-b-4 transition-colors whitespace-nowrap" onclick="openTab(event, 'devlogs')">Devlogs</button>
+                <button class="tab-btn text-gray-400 border-transparent hover:text-white font-bold py-4 px-4 border-b-4 transition-colors whitespace-nowrap" onclick="openTab(event, 'media')">Media</button>
+                <button class="tab-btn text-gray-400 border-transparent hover:text-white font-bold py-4 px-4 border-b-4 transition-colors whitespace-nowrap" onclick="openTab(event, 'roadmap')">Roadmap</button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container mx-auto px-6 py-12 min-h-[50vh]">
+        
+        <div id="overview" class="tab-content active max-w-4xl mx-auto">
+            <h2 class="text-3xl font-bold text-white mb-6 border-b border-gray-700 pb-2">Overview</h2>
+            <p class="text-gray-300 mb-6 leading-relaxed">Full description of the game or model build goes here. Detail the mechanics, the scale, the tools used, and the ultimate vision.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
+                <div class="bg-gray-800 p-6 rounded-xl border border-gray-700">
+                    <h3 class="text-xl font-bold text-purple-400 mb-2">Primary Goals</h3>
+                    <ul class="list-disc list-inside text-gray-400 space-y-2">
+                        <li>Goal requirement one</li>
+                        <li>Goal requirement two</li>
+                    </ul>
+                </div>
+                <div class="bg-gray-800 p-6 rounded-xl border border-gray-700">
+                    <h3 class="text-xl font-bold text-blue-400 mb-2">Current Progress</h3>
+                    <p class="text-gray-400">A quick sentence about exactly where you are in the build or development cycle right now.</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="devlogs" class="tab-content max-w-4xl mx-auto">
+            <h2 class="text-3xl font-bold text-white mb-6 border-b border-gray-700 pb-2">Development History</h2>
+            <p class="text-gray-400 mb-8">Follow the journey from day one.</p>
+            <div class="space-y-4">
+                <a href="#" class="block bg-gray-800 p-6 rounded-xl border border-gray-700 hover:border-purple-500 transition-colors">
+                    <div class="flex justify-between items-center mb-2">
+                        <h3 class="text-xl font-bold text-white">Log #001: Project Initialization</h3>
+                        <span class="text-gray-500 text-sm font-mono">DD/MM/YYYY</span>
+                    </div>
+                    <p class="text-gray-400 text-sm">Click to read the full update and view changes...</p>
+                </a>
+            </div>
+        </div>
+
+        <div id="media" class="tab-content max-w-4xl mx-auto">
+            <h2 class="text-3xl font-bold text-white mb-6 border-b border-gray-700 pb-2">Gallery</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div class="bg-gray-800 aspect-video rounded-xl border border-gray-700 flex items-center justify-center text-gray-500 shadow-inner">Image/Clip Placeholder</div>
+                <div class="bg-gray-800 aspect-video rounded-xl border border-gray-700 flex items-center justify-center text-gray-500 shadow-inner">Image/Clip Placeholder</div>
+            </div>
+        </div>
+
+        <div id="roadmap" class="tab-content max-w-4xl mx-auto">
+            <h2 class="text-3xl font-bold text-white mb-6 border-b border-gray-700 pb-2">Project Roadmap</h2>
+            <ul class="space-y-4 text-gray-300 font-medium">
+                <li class="flex items-center"><span class="mr-3 text-green-500 text-xl">✓</span> Phase 1 Completed</li>
+                <li class="flex items-center"><span class="mr-3 text-purple-500 text-xl">→</span> Phase 2 In Progress</li>
+                <li class="flex items-center"><span class="mr-3 text-gray-600 text-xl">○</span> Phase 3 Planned</li>
+            </ul>
+        </div>
+
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="../main.js"></script>
+    <script>
+        // Tab Switching Logic
+        function openTab(evt, tabName) {
+            let i, tabcontent, tabbtns;
+            
+            // Hide all tab content
+            tabcontent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].classList.remove("active");
+            }
+            
+            // Reset all buttons to inactive gray
+            tabbtns = document.getElementsByClassName("tab-btn");
+            for (i = 0; i < tabbtns.length; i++) {
+                tabbtns[i].classList.remove("text-purple-500", "border-purple-500");
+                tabbtns[i].classList.add("text-gray-400", "border-transparent");
+            }
+            
+            // Show the specific tab content and highlight the clicked button purple
+            document.getElementById(tabName).classList.add("active");
+            evt.currentTarget.classList.remove("text-gray-400", "border-transparent");
+            evt.currentTarget.classList.add("text-purple-500", "border-purple-500");
+        }
+    </script>
+</body>
+</html>
