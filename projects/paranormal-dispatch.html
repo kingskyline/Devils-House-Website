@@ -7,13 +7,14 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
 </head>
-<body class="antialiased">
+<body class="antialiased bg-gray-900 text-gray-200">
+    
     <div id="header-placeholder"></div>
 
     <section class="relative bg-gray-900 py-20 border-b border-gray-800">
         <div class="container mx-auto px-6 text-center">
-            <span class="badge badge-dev">🟠 In Development</span>
-            <h1 class="text-6xl font-black text-white mb-4 mt-4 tracking-tight">Paranormal <span class="text-orange-500">Dispatch</span></h1>
+            <span class="inline-block bg-orange-900 text-orange-400 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest border border-orange-500 mb-6">🟠 In Development</span>
+            <h1 class="text-6xl font-black text-white mb-4 tracking-tight">Paranormal <span class="text-orange-500">Dispatch</span></h1>
             <p class="text-xl text-gray-400">Horror. Puzzle. Survival. Extract.</p>
         </div>
     </section>
@@ -40,6 +41,22 @@
     </main>
 
     <div id="footer-placeholder"></div>
+
     <script src="../main.js" defer></script>
+    <script>
+        function openTab(evt, tabName) {
+            let i, tabcontent, tabbtns;
+            tabcontent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabcontent.length; i++) tabcontent[i].classList.remove("active");
+            tabbtns = document.getElementsByClassName("tab-btn");
+            for (i = 0; i < tabbtns.length; i++) {
+                tabbtns[i].classList.remove("text-purple-500", "border-purple-500");
+                tabbtns[i].classList.add("text-gray-400", "border-transparent");
+            }
+            document.getElementById(tabName).classList.add("active");
+            evt.currentTarget.classList.remove("text-gray-400", "border-transparent");
+            evt.currentTarget.classList.add("text-purple-500", "border-purple-500");
+        }
+    </script>
 </body>
 </html>
