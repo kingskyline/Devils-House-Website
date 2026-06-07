@@ -14,6 +14,16 @@ document.addEventListener("DOMContentLoaded", function() {
         return './'; // Root folder
     };
 
+    const loadStyles = () => {
+        const root = getRootPath();
+        const link = document.createElement('link');
+        link.rel = 'stylesheet';
+        // Cache buster for your CSS so design updates show instantly
+        link.href = root + 'style.css?v=' + new Date().getTime(); 
+        document.head.appendChild(link);
+    };
+
+
     /**
      * Fixes relative links in injected components so they always point to the right place.
      */

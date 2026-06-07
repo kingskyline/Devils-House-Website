@@ -1,0 +1,56 @@
+/* ============================================================
+   DEVILS HOUSE CREATIONS - GLOBAL STYLESHEET
+   ============================================================ */
+
+/* 1. Base Theme */
+body { 
+    font-family: 'Inter', sans-serif; 
+    background-color: #1a202c; 
+    color: #e2e8f0; 
+    -webkit-font-smoothing: antialiased;
+}
+
+/* 2. Sleek Custom Scrollbar */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #1a202c; }
+::-webkit-scrollbar-thumb { background: #4a5568; border-radius: 10px; }
+::-webkit-scrollbar-thumb:hover { background: #718096; }
+
+/* 3. Universal Project Cards (Phase 6 Polish) */
+.project-card { 
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1); 
+}
+.project-card:hover { 
+    transform: translateY(-8px); 
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 8px 10px -6px rgba(0, 0, 0, 0.1); 
+    border-color: #4a5568;
+}
+
+/* 4. Tab System Smooth Transitions */
+.tab-content { 
+    display: none; 
+    opacity: 0; 
+}
+.tab-content.active { 
+    display: block; 
+    animation: fadeUp 0.4s ease-out forwards; 
+}
+@keyframes fadeUp { 
+    from { opacity: 0; transform: translateY(10px); } 
+    to { opacity: 1; transform: translateY(0); } 
+}
+
+/* 5. Brand Identity Highlights */
+.glow-king {
+    box-shadow: 0 0 15px rgba(229, 62, 62, 0.4); /* Red Glow */
+}
+.glow-queen {
+    box-shadow: 0 0 15px rgba(49, 130, 206, 0.4); /* Blue Glow */
+}
+.section-separator {
+    height: 3px;
+    background-color: #4a5568;
+    margin: 4rem auto;
+    width: 80%;
+    border-radius: 9999px;
+}
