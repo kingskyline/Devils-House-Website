@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Devlog Alpha v0.0008 - Trucks & Automation | Devils House Creations</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #1a202c; color: #e2e8f0; }
+    </style>
+</head>
+<body>
+
+    <div id="header-placeholder"></div>
+
+    <main class="container mx-auto px-6 py-16 max-w-4xl min-h-[70vh]">
+        
+        <a href="../../projects/trucks-automation.html" class="inline-flex items-center text-purple-500 hover:text-purple-400 font-bold mb-8 transition-colors">
+            ← Back to Project Hub
+        </a>
+
+        <header class="mb-12 border-b border-gray-700 pb-8">
+            <div class="flex justify-between items-end mb-4">
+                <span class="text-gray-500 font-mono text-sm uppercase tracking-widest">Alpha v0.0008</span>
+                <span class="text-gray-500 font-mono text-sm">08/06/2026</span>
+            </div>
+            <h1 class="text-5xl font-black text-white leading-tight mb-2">The Economy Overhaul</h1>
+            <p class="text-xl text-purple-400 font-semibold">King Skyline [DHG]</p>
+        </header>
+
+        <article class="prose prose-invert prose-lg max-w-none text-gray-300">
+            
+            <div class="bg-gray-800 p-8 rounded-2xl border border-gray-700 mb-12 shadow-lg">
+                <h2 class="text-3xl font-black text-white mb-4 border-b border-gray-600 pb-2">🎮 Player Update</h2>
+                <p class="mb-6 text-gray-400 italic">This is a BIG one. We’ve officially moved from “it works” → to a real tycoon-style economy system.</p>
+                
+                <h3 class="text-xl font-bold text-green-400 mt-6 mb-2">⸻ Smarter, Scaling Economy</h3>
+                <p class="mb-2">Everything now scales properly as you grow, meaning no more easy infinite money:</p>
+                <ul class="list-disc list-inside mb-6 space-y-1 text-gray-400">
+                    <li>Trucks get more expensive the more you own.</li>
+                    <li>Upgrades ramp up FAST in cost.</li>
+                    <li>Late game numbers go into the billions!</li>
+                </ul>
+
+                <h3 class="text-xl font-bold text-green-400 mt-6 mb-2">⸻ Real Production Chains</h3>
+                <p class="mb-2">We’ve balanced the entire system so it feels rewarding:</p>
+                <ul class="list-disc list-inside mb-6 space-y-1 text-gray-400">
+                    <li><strong>Raw resources:</strong> low value (Example: Wood → £3).</li>
+                    <li><strong>Processed goods:</strong> better.</li>
+                    <li><strong>Advanced items:</strong> BIG profit (Example: Engine Parts → ~£70).</li>
+                </ul>
+
+                <h3 class="text-xl font-bold text-green-400 mt-6 mb-2">⸻ Smarter Upgrade System</h3>
+                <p class="mb-2">Upgrades now evolve over time, making you actually feel your factory progressing:</p>
+                <ul class="list-disc list-inside mb-6 space-y-1 text-gray-400">
+                    <li>Early = basic materials</li>
+                    <li>Mid = processed items</li>
+                    <li>Late = advanced goods</li>
+                </ul>
+
+                <h3 class="text-xl font-bold text-green-400 mt-6 mb-2">⸻ Headquarters is now IMPORTANT</h3>
+                <p class="mb-2">We added a real “company brain” building that becomes your late-game power hub:</p>
+                <ul class="list-disc list-inside mb-6 space-y-1 text-gray-400">
+                    <li>Boosts truck capacity.</li>
+                    <li>Improves global export speed.</li>
+                </ul>
+
+                <h3 class="text-xl font-bold text-green-400 mt-6 mb-2">⸻ Cleaner UI & Dev Improvements</h3>
+                <ul class="list-disc list-inside mb-6 space-y-1 text-gray-400">
+                    <li>Buildings now show clearer production data.</li>
+                    <li>Complex recipes display properly and everything updates in real-time.</li>
+                    <li>Behind the scenes: Faster icon creation tools, cleaner systems, and more stable code.</li>
+                </ul>
+
+                <h3 class="text-xl font-bold text-green-400 mt-6 mb-2">⸻ What This Means</h3>
+                <p class="mb-4">This update changes the game from <em>“place stuff and earn money”</em> into <em>“build, scale, optimise, and dominate your economy”</em>. More systems coming next as we keep pushing toward a full tycoon experience!</p>
+            </div>
+
+            <div class="bg-gray-900 p-8 rounded-2xl border border-gray-800 mb-8">
+                <h2 class="text-3xl font-black text-white mb-2">⚙️ Technical Dev Log</h2>
+                <div class="flex space-x-4 mb-6 border-b border-gray-700 pb-4">
+                    <span class="text-sm font-mono text-purple-400">Focus: Economy Architecture, System Standardisation & Scalable Progression</span>
+                </div>
+                
+                <h3 class="text-xl font-bold text-white mt-6 mb-3">⸻ 1. Centralised Economy Architecture (“Global Brain”)</h3>
+                <ul class="list-none mb-6 space-y-3 text-gray-400">
+                    <li><strong>Pricing Logic:</strong> Fully migrated into <code>UpgradeManager</code> using a universal formula: <code>BaseCost * (2.5 ^ (Level - 1))</code>.</li>
+                    <li><strong>Hardcoding Removed:</strong> Removed all hardcoded upgrade arrays across factories, trucks, and market systems.</li>
+                    <li><strong>Global Authority:</strong> <code>Headquarters.cs</code> now acts as global authority for truck capacity and export speed.</li>
+                    <li><strong>Result:</strong> Unified pricing logic, consistent scaling across all systems, and clean data flow for save/load.</li>
+                </ul>
+
+                <h3 class="text-xl font-bold text-white mt-8 mb-3">⸻ 2. Economy & Progression Rebalance</h3>
+                <ul class="list-none mb-6 space-y-3 text-gray-400">
+                    <li><strong>Exponential Pricing:</strong> Introduced exponential truck pricing: <code>250 * (1.8 ^ totalTrucksOwned)</code>.</li>
+                    <li><strong>Baseline Economy:</strong> Established with Wood (£3) scaling through a 50% tier profit chain, peaking at Engine Parts (~£70).</li>
+                    <li><strong>Phase-Based Requirements:</strong> Upgrades require raw materials (early), processed goods (mid), and manufactured items (late) to prevent exploits and ensure long-term scaling.</li>
+                </ul>
+
+                <h3 class="text-xl font-bold text-white mt-8 mb-3">⸻ 3. Factory System Standardisation</h3>
+                <ul class="list-none mb-6 space-y-3 text-gray-400">
+                    <li><strong>Shared Variables:</strong> Synced all factory scripts to shared variables (<code>baseCraftTime</code>, speed scaling, logistics speed).</li>
+                    <li><strong>Structure Unification:</strong> Unified <code>ManufacturingPlant</code> with <code>ResourceConverter</code> structure.</li>
+                    <li><strong>Conflict Resolution:</strong> Resolved compilation conflicts (<code>CS0102</code> duplicate definitions).</li>
+                </ul>
+
+                <h3 class="text-xl font-bold text-white mt-8 mb-3">⸻ 4. Data & UI Integration</h3>
+                <ul class="list-none mb-6 space-y-3 text-gray-400">
+                    <li><strong><code>DataOverlayUI</code> Upgrades:</strong> Now supports multi-input recipes and dynamically builds formatted strings via <code>StringBuilder</code> while maintaining camera-facing billboarding.</li>
+                    <li><strong>Live System Data:</strong> UI now reads directly from live system data (no duplicated logic layer).</li>
+                </ul>
+
+                <h3 class="text-xl font-bold text-white mt-8 mb-3">⸻ 5. Tooling & Workflow Improvements</h3>
+                <p class="text-gray-400 mb-2">Built custom inspector tooling: <code>IconGeneratorEditor</code> with an inline “GENERATE ICON” button. This results in a faster iteration workflow and reduced manual asset setup time.</p>
+
+                <h3 class="text-xl font-bold text-white mt-8 mb-3">⸻ 6. Structured Progression Blueprint</h3>
+                <p class="text-gray-400 mb-2">Formalised a shopping list progression system for all building tiers by defining:</p>
+                <ul class="list-none mb-6 space-y-3 text-gray-400">
+                    <li>Item pricing tiers and building base costs.</li>
+                    <li>Upgrade caps (Buildings: 20 / Trucks: 5).</li>
+                    <li>Resource-based upgrade phases.</li>
+                </ul>
+
+                <h3 class="text-xl font-bold text-white mt-8 mb-3">⸻ Summary</h3>
+                <p class="text-gray-400">This update marks the transition from a functional prototype to a mathematically structured tycoon system, with fully centralised logic, scalable economy rules, and standardised factory behaviour ready for long-term expansion.</p>
+            </div>
+
+        </article>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="../../main.js"></script>
+</body>
+</html>

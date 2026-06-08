@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Devlog Alpha v0.0006 - Trucks & Automation | Devils House Creations</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #1a202c; color: #e2e8f0; }
+    </style>
+</head>
+<body>
+
+    <div id="header-placeholder"></div>
+
+    <main class="container mx-auto px-6 py-16 max-w-4xl min-h-[70vh]">
+        
+        <a href="../../projects/trucks-automation.html" class="inline-flex items-center text-purple-500 hover:text-purple-400 font-bold mb-8 transition-colors">
+            ← Back to Project Hub
+        </a>
+
+        <header class="mb-12 border-b border-gray-700 pb-8">
+            <div class="flex justify-between items-end mb-4">
+                <span class="text-gray-500 font-mono text-sm uppercase tracking-widest">Alpha v0.0006</span>
+                <span class="text-gray-500 font-mono text-sm">08/06/2026</span>
+            </div>
+            <h1 class="text-5xl font-black text-white leading-tight mb-2">Economy Overhaul & Smart Systems</h1>
+            <p class="text-xl text-purple-400 font-semibold">King Skyline [DHG]</p>
+        </header>
+
+        <article class="prose prose-invert prose-lg max-w-none text-gray-300">
+            
+            <div class="bg-gray-800 p-8 rounded-2xl border border-gray-700 mb-12 shadow-lg">
+                <h2 class="text-3xl font-black text-white mb-4 border-b border-gray-600 pb-2">🎮 Player Update</h2>
+                <p class="mb-6 text-gray-400 italic">This is a BIG one — we’ve taken a huge step forward in how the game runs, feels, and scales.</p>
+                
+                <h3 class="text-xl font-bold text-green-400 mt-6 mb-2">⸻ Massive Performance Upgrade</h3>
+                <p class="mb-2">We completely rebuilt how the UI works:</p>
+                <ul class="list-disc list-inside mb-6 space-y-1 text-gray-400">
+                    <li>No more constant background checks.</li>
+                    <li>Systems now only update when something actually changes.</li>
+                    <li>This means smoother performance, even with huge factories.</li>
+                </ul>
+
+                <h3 class="text-xl font-bold text-green-400 mt-6 mb-2">⸻ New Building: Headquarters</h3>
+                <p class="mb-2">Upgrades are no longer “magic menus”.</p>
+                <ul class="list-disc list-inside mb-6 space-y-1 text-gray-400">
+                    <li>You now build a Headquarters.</li>
+                    <li>Click it to access global upgrades.</li>
+                    <li>Makes the game feel more grounded and realistic.</li>
+                </ul>
+
+                <h3 class="text-xl font-bold text-green-400 mt-6 mb-2">⸻ New Economy System</h3>
+                <p class="mb-2">The old system had a problem: one upgrade could break the entire game. Now:</p>
+                <ul class="list-disc list-inside mb-6 space-y-1 text-gray-400">
+                    <li>Each resource has its own value upgrades.</li>
+                    <li>You choose what to invest in.</li>
+                    <li>More strategy, more control.</li>
+                </ul>
+
+                <h3 class="text-xl font-bold text-green-400 mt-6 mb-2">⸻ Commodities Market</h3>
+                <p class="mb-2">Selling stations are now full Market Boards:</p>
+                <ul class="list-disc list-inside mb-6 space-y-1 text-gray-400">
+                    <li>Shows all resource values.</li>
+                    <li>Lets you upgrade them individually.</li>
+                    <li>Updates automatically.</li>
+                    <li>Clear, powerful, and easy to use.</li>
+                </ul>
+
+                <h3 class="text-xl font-bold text-green-400 mt-6 mb-2">⸻ Smarter Core Systems</h3>
+                <p class="mb-2">We built a “global brain” for upgrades:</p>
+                <ul class="list-disc list-inside mb-6 space-y-1 text-gray-400">
+                    <li>All upgrade logic is now centralised.</li>
+                    <li>Buildings no longer store messy data.</li>
+                    <li>Cleaner systems, fewer bugs.</li>
+                </ul>
+
+                <h3 class="text-xl font-bold text-green-400 mt-6 mb-2">⸻ Fixes & Improvements</h3>
+                <ul class="list-disc list-inside mb-6 space-y-1 text-gray-400">
+                    <li>Save system now properly reports what it’s doing.</li>
+                    <li>Market transactions are logged clearly.</li>
+                    <li>Fixed a weird random system conflict.</li>
+                </ul>
+
+                <h3 class="text-xl font-bold text-green-400 mt-6 mb-2">⸻ What This Means</h3>
+                <p class="mb-4">The game is now faster, more stable, more strategic, and easier to expand. This is a major step toward a full playable experience.</p>
+            </div>
+
+            <div class="bg-gray-900 p-8 rounded-2xl border border-gray-800 mb-8">
+                <h2 class="text-3xl font-black text-white mb-2">⚙️ Technical Dev Log</h2>
+                <div class="flex space-x-4 mb-6 border-b border-gray-700 pb-4">
+                    <span class="text-sm font-mono text-purple-400">Focus: Event-driven architecture, economy redesign, and system centralisation</span>
+                </div>
+                
+                <h3 class="text-xl font-bold text-white mt-6 mb-3">⸻ Event-Driven UI Architecture</h3>
+                <ul class="list-none mb-6 space-y-3 text-gray-400">
+                    <li><strong>Eliminated Polling:</strong> Removed all UI <code>Update()</code> polling across buildings and trucks.</li>
+                    <li><strong>Event Broadcasters:</strong> Implemented in <code>ResourceProducer</code>, <code>ResourceConverter</code>, <code>Warehouse</code>, and <code>Truck</code>.</li>
+                    <li><strong>Targeted Events:</strong> Introduced <code>OnStuckStatusChanged</code> and <code>OnStateChanged</code>.</li>
+                    <li><strong>Passive Listeners:</strong> UI components (<code>BuildingWarningUI</code>, <code>TruckWarningUI</code>) now act as passive listeners.</li>
+                    <li><strong>Result:</strong> Near-zero CPU usage for UI systems at scale, creating a fully reactive, event-driven feedback loop.</li>
+                </ul>
+
+                <h3 class="text-xl font-bold text-white mt-8 mb-3">⸻ World-Integrated UI (Headquarters System)</h3>
+                <ul class="list-none mb-6 space-y-3 text-gray-400">
+                    <li><strong>Headquarters Building:</strong> Removed global floating upgrade menu and introduced Headquarters building for centralised upgrades.</li>
+                    <li><strong>Global Upgrades:</strong> Truck capacity and export speed are now accessed via world interaction.</li>
+                    <li><strong>Result:</strong> Stronger player immersion and clearer gameplay structure.</li>
+                </ul>
+
+                <h3 class="text-xl font-bold text-white mt-8 mb-3">⸻ Economy System Overhaul</h3>
+                <ul class="list-none mb-6 space-y-3 text-gray-400">
+                    <li><strong>Scaling Systems:</strong> Removed global price multiplier system and implemented per-resource upgrade scaling.</li>
+                    <li><strong>Commodities Market:</strong> Refactored <code>SellingStation</code> into Commodities Market system. It dynamically generates upgrade UI for all resources, reads directly from save data, and features LINQ-driven dynamic UI population.</li>
+                    <li><strong>Result:</strong> Prevents late-game economy break and enables targeted player strategy.</li>
+                </ul>
+
+                <h3 class="text-xl font-bold text-white mt-8 mb-3">⸻ Global System Refactor (UpgradeManager)</h3>
+                <ul class="list-none mb-6 space-y-3 text-gray-400">
+                    <li><strong>Centralisation:</strong> Centralised upgrade logic into <code>UpgradeManager</code>. Removed local upgrade variables from buildings.</li>
+                    <li><strong>Data Querying:</strong> Buildings now query global systems for values.</li>
+                    <li><strong>Result:</strong> Clean data flow, simplified save/load structure, and reduced risk of data inconsistency.</li>
+                </ul>
+
+                <h3 class="text-xl font-bold text-white mt-8 mb-3">⸻ Debugging & Stability</h3>
+                <ul class="list-none mb-6 space-y-3 text-gray-400">
+                    <li><strong>Verbose Logging:</strong> Restored <code>SaveManager</code> logging (Version validation, Missing data handling, Load confirmation).</li>
+                    <li><strong>Transaction Logging:</strong> Added for market system tracking.</li>
+                    <li><strong>Conflict Resolution:</strong> Resolved <code>Random</code> namespace conflict.</li>
+                </ul>
+
+                <h3 class="text-xl font-bold text-white mt-8 mb-3">⸻ Summary</h3>
+                <p class="text-gray-400">This update focused on a full transition to event-driven UI systems, centralised upgrade and economy logic, resulting in improved scalability, performance, and maintainability.</p>
+            </div>
+
+        </article>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="../../main.js"></script>
+</body>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Devlog Alpha v0.0003 - Trucks & Automation | Devils House Creations</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #1a202c; color: #e2e8f0; }
+    </style>
+</head>
+<body>
+
+    <div id="header-placeholder"></div>
+
+    <main class="container mx-auto px-6 py-16 max-w-4xl min-h-[70vh]">
+        
+        <a href="../../projects/trucks-automation.html" class="inline-flex items-center text-purple-500 hover:text-purple-400 font-bold mb-8 transition-colors">
+            ← Back to Project Hub
+        </a>
+
+        <header class="mb-12 border-b border-gray-700 pb-8">
+            <div class="flex justify-between items-end mb-4">
+                <span class="text-gray-500 font-mono text-sm uppercase tracking-widest">Alpha v0.0003</span>
+                <span class="text-gray-500 font-mono text-sm">08/06/2026</span>
+            </div>
+            <h1 class="text-5xl font-black text-white leading-tight mb-2">Save System, Smarter Trucks & Stability</h1>
+            <p class="text-xl text-purple-400 font-semibold">King Skyline [DHG]</p>
+        </header>
+
+        <article class="prose prose-invert prose-lg max-w-none text-gray-300">
+            
+            <div class="bg-gray-800 p-8 rounded-2xl border border-gray-700 mb-12 shadow-lg">
+                <h2 class="text-3xl font-black text-white mb-4 border-b border-gray-600 pb-2">🎮 Player Update</h2>
+                <p class="mb-6 text-gray-400 italic">Quick update on Trucks & Automation — a lot of behind-the-scenes work has gone in this week to make the game more stable and actually feel like a real, persistent world.</p>
+                
+                <h3 class="text-xl font-bold text-green-400 mt-6 mb-2">⸻ The Game Now SAVES Everything</h3>
+                <p class="mb-2">Big milestone — the game now remembers your progress including your money, your trucks, your upgrades, and your buildings + their inventories!</p>
+                <ul class="list-disc list-inside mb-6 space-y-1 text-gray-400">
+                    <li>Press <kbd class="bg-gray-700 px-2 rounded text-white text-sm">F5</kbd> to save.</li>
+                    <li>Press <kbd class="bg-gray-700 px-2 rounded text-white text-sm">F6</kbd> to load.</li>
+                    <li>Press <kbd class="bg-gray-700 px-2 rounded text-white text-sm">F7</kbd> to wipe everything (for testing).</li>
+                    <li>No more restarting from scratch every time!</li>
+                </ul>
+
+                <h3 class="text-xl font-bold text-green-400 mt-6 mb-2">⸻ We Squashed Some WILD Bugs</h3>
+                <p class="mb-2">Adding a save system broke… a lot. Things are now much more stable.</p>
+                <ul class="list-disc list-inside mb-6 space-y-1 text-gray-400">
+                    <li>Fixed trucks spawning inside each other and launching into space.</li>
+                    <li>Fixed old saves breaking building levels.</li>
+                    <li>Fixed systems duplicating and fighting each other.</li>
+                </ul>
+
+                <h3 class="text-xl font-bold text-green-400 mt-6 mb-2">⸻ Trucks Are WAY Smarter Now</h3>
+                <p class="mb-2">Before, trucks would happily drive into nothing or get stuck forever. Now they feature much more reliable behaviour:</p>
+                <ul class="list-disc list-inside mb-6 space-y-1 text-gray-400">
+                    <li>They check the road ahead before moving.</li>
+                    <li>They stop at dead ends.</li>
+                    <li>They won’t drive the wrong way.</li>
+                </ul>
+
+                <h3 class="text-xl font-bold text-green-400 mt-6 mb-2">⸻ Stability Improvements</h3>
+                <ul class="list-disc list-inside mb-6 space-y-1 text-gray-400">
+                    <li>Cleaner systems behind the scenes.</li>
+                    <li>Better error handling.</li>
+                    <li>More future-proof setup resulting in less crashing and smoother development going forward.</li>
+                </ul>
+
+                <h3 class="text-xl font-bold text-green-400 mt-6 mb-2">⸻ What This Means</h3>
+                <p class="mb-4">The game now has a proper save/load system, more stable world systems, and smarter vehicle behaviour. This is a big step toward a fully playable experience.</p>
+            </div>
+
+            <div class="bg-gray-900 p-8 rounded-2xl border border-gray-800 mb-8">
+                <h2 class="text-3xl font-black text-white mb-2">⚙️ Technical Dev Log</h2>
+                <div class="flex space-x-4 mb-6 border-b border-gray-700 pb-4">
+                    <span class="text-sm font-mono text-purple-400">Focus: Persistence, Stability & AI Logic Updates</span>
+                </div>
+                
+                <h3 class="text-xl font-bold text-white mt-6 mb-3">⸻ Phase 6: Persistence Layer (Save System)</h3>
+                <p class="text-gray-400 mb-2">Implemented a structured JSON save/load system (no <code>PlayerPrefs</code> or <code>BinaryFormatter</code>).</p>
+                <ul class="list-none mb-6 space-y-3 text-gray-400">
+                    <li><strong>Core Features:</strong> F5 (Save), F6 (Load), F7 (Wipe). Saves player money, fleet size, and upgrade data.</li>
+                    <li><strong>World Reconstruction:</strong> <code>BuildManager</code> supports data-driven spawning to rebuild the full map automatically on load.</li>
+                    <li><strong>Deep Serialization:</strong> Captures buildings (inventory + upgrades), trucks (cargo), and producers (stock + progress).</li>
+                </ul>
+
+                <h3 class="text-xl font-bold text-white mt-8 mb-3">⸻ Phase 7: Stability & Bug Fixes</h3>
+                <p class="text-gray-400 mb-2">Resolved edge-case issues from full world rebuilds:</p>
+                <ul class="list-none mb-6 space-y-3 text-gray-400">
+                    <li><strong>Physics Overlap:</strong> Fixed trucks colliding on spawn via collider disabling.</li>
+                    <li><strong>Legacy Saves:</strong> Fixed invalid level 0 states with value clamps.</li>
+                    <li><strong>Duplicate Managers:</strong> Conflicting instances resolved via singleton enforcement.</li>
+                    <li><strong>Inspector Errors:</strong> Fixed object deletion issues with safe load and UI reset logic.</li>
+                </ul>
+
+                <h3 class="text-xl font-bold text-white mt-8 mb-3">⸻ Phase 8: Vehicle Logic Improvements</h3>
+                <ul class="list-none mb-6 space-y-3 text-gray-400">
+                    <li><strong>Forward Tile Scanning:</strong> Implemented via <code>GridManager</code>.</li>
+                    <li><strong>Dead-End Detection:</strong> Trucks now stop safely.</li>
+                    <li><strong>Direction Validation:</strong> Ensured using angle checks.</li>
+                </ul>
+
+                <h3 class="text-xl font-bold text-white mt-8 mb-3">⸻ Phase 9: Future-Proofing & Key Scripts</h3>
+                <ul class="list-none mb-6 space-y-3 text-gray-400">
+                    <li>Updated deprecated APIs to modern Unity equivalents and avoided legacy serialization systems.</li>
+                    <li>Added strict null-checks to prevent runtime crashes.</li>
+                    <li><strong><code>SaveManager.cs</code> / <code>GameSaveData.cs</code>:</strong> Handles persistence.</li>
+                    <li><strong><code>BuildManager.cs</code>:</strong> Handles world reconstruction.</li>
+                    <li><strong><code>Truck.cs</code>:</strong> Handles movement logic.</li>
+                    <li><strong><code>ConstructionInput.cs</code>:</strong> Handles input/UI stability.</li>
+                </ul>
+            </div>
+
+        </article>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="../../main.js"></script>
+</body>
+</html>

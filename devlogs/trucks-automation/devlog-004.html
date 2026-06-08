@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Devlog Alpha v0.0004 - Trucks & Automation | Devils House Creations</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #1a202c; color: #e2e8f0; }
+    </style>
+</head>
+<body>
+
+    <div id="header-placeholder"></div>
+
+    <main class="container mx-auto px-6 py-16 max-w-4xl min-h-[70vh]">
+        
+        <a href="../../projects/trucks-automation.html" class="inline-flex items-center text-purple-500 hover:text-purple-400 font-bold mb-8 transition-colors">
+            ← Back to Project Hub
+        </a>
+
+        <header class="mb-12 border-b border-gray-700 pb-8">
+            <div class="flex justify-between items-end mb-4">
+                <span class="text-gray-500 font-mono text-sm uppercase tracking-widest">Alpha v0.0004</span>
+                <span class="text-gray-500 font-mono text-sm">08/06/2026</span>
+            </div>
+            <h1 class="text-5xl font-black text-white leading-tight mb-2">Smarter Trucks, Better Flow & Clearer Feedback</h1>
+            <p class="text-xl text-purple-400 font-semibold">King Skyline [DHG]</p>
+        </header>
+
+        <article class="prose prose-invert prose-lg max-w-none text-gray-300">
+            
+            <div class="bg-gray-800 p-8 rounded-2xl border border-gray-700 mb-12 shadow-lg">
+                <h2 class="text-3xl font-black text-white mb-4 border-b border-gray-600 pb-2">🎮 Player Update</h2>
+                <p class="mb-6 text-gray-400 italic">Big progress today on Trucks & Automation — the focus was making everything smarter, smoother, and easier to understand.</p>
+                
+                <h3 class="text-xl font-bold text-green-400 mt-6 mb-2">⸻ Trucks Are WAY Smarter</h3>
+                <p class="mb-2">We tested with 100+ trucks at once, and the chaos is gone!</p>
+                <ul class="list-disc list-inside mb-6 space-y-1 text-gray-400">
+                    <li>Trucks now look ahead before moving.</li>
+                    <li>They won’t drive into missing roads or the wrong direction anymore.</li>
+                    <li>They detect each other properly and form actual traffic queues instead of clipping through each other.</li>
+                </ul>
+
+                <h3 class="text-xl font-bold text-green-400 mt-6 mb-2">⸻ Traffic Problems = Visible Now</h3>
+                <p class="mb-2">You can instantly see where your factory is struggling:</p>
+                <ul class="list-disc list-inside mb-6 space-y-1 text-gray-400">
+                    <li>Trucks that sit too long now show a ⚠️ “stuck” warning.</li>
+                    <li>Buildings that get jammed show a ⚠️ warning above them.</li>
+                </ul>
+
+                <h3 class="text-xl font-bold text-green-400 mt-6 mb-2">⸻ Logistics Fix (BIG ONE)</h3>
+                <p class="mb-2">We fixed a major issue where trucks would clog the system. No more supply chain deadlocks!</p>
+                <ul class="list-disc list-inside mb-6 space-y-1 text-gray-400">
+                    <li><strong>Before:</strong> One resource could block everything.</li>
+                    <li><strong>Now:</strong> Trucks can carry multiple resources separately.</li>
+                </ul>
+
+                <h3 class="text-xl font-bold text-green-400 mt-6 mb-2">⸻ “Matrix Mode” (Debug Vision 👁️)</h3>
+                <p class="mb-2">Hold <kbd class="bg-gray-700 px-2 rounded text-white text-sm">Left Alt</kbd> and you’ll see floating real-time data above the world. Super useful for understanding what’s going on:</p>
+                <ul class="list-disc list-inside mb-6 space-y-1 text-gray-400">
+                    <li>Truck inventories</li>
+                    <li>Building storage</li>
+                </ul>
+
+                <h3 class="text-xl font-bold text-green-400 mt-6 mb-2">⸻ Smarter Systems & Saves</h3>
+                <ul class="list-disc list-inside mb-6 space-y-1 text-gray-400">
+                    <li>Garages won’t spawn trucks if the exit is blocked.</li>
+                    <li>The game now safely handles older save files.</li>
+                    <li>Trucks keep their custom colours upon loading.</li>
+                </ul>
+
+                <h3 class="text-xl font-bold text-green-400 mt-6 mb-2">⸻ What This Means</h3>
+                <p class="mb-4">The game now handles large traffic properly, shows you problems clearly, and runs more reliably. This is a big step toward a smooth, playable experience.</p>
+            </div>
+
+            <div class="bg-gray-900 p-8 rounded-2xl border border-gray-800 mb-8">
+                <h2 class="text-3xl font-black text-white mb-2">⚙️ Technical Dev Log</h2>
+                <div class="flex space-x-4 mb-6 border-b border-gray-700 pb-4">
+                    <span class="text-sm font-mono text-purple-400">Focus: AI stability, traffic handling, logistics scalability, and player feedback systems</span>
+                </div>
+                
+                <h3 class="text-xl font-bold text-white mt-6 mb-3">⸻ AI & Traffic Systems</h3>
+                <ul class="list-none mb-6 space-y-3 text-gray-400">
+                    <li><strong>Forward Grid Scanning:</strong> Implemented to prevent invalid movement (missing roads / wrong direction).</li>
+                    <li><strong>Front Radar:</strong> Added <code>SphereCast</code>-based front radar for vehicle detection and queuing. Stress tested with 100+ trucks to validate traffic flow.</li>
+                    <li><strong>Stuck Detection:</strong> Introduced a stuck detection timer. Trucks flag as “stuck” after prolonged idle time.</li>
+                    <li><strong>Spawn Validation:</strong> Added physics-based exit checks to garages to prevent blocked vehicle spawning.</li>
+                </ul>
+
+                <h3 class="text-xl font-bold text-white mt-8 mb-3">⸻ Logistics System Upgrade</h3>
+                <ul class="list-none mb-6 space-y-3 text-gray-400">
+                    <li><strong>Slot-Based Capacity:</strong> Replaced global capacity with a slot-based capacity system.</li>
+                    <li>Supports multi-resource transport without blocking, preventing cross-resource deadlocks.</li>
+                </ul>
+
+                <h3 class="text-xl font-bold text-white mt-8 mb-3">⸻ Visual Feedback & Status Systems</h3>
+                <ul class="list-none mb-6 space-y-3 text-gray-400">
+                    <li><strong>Building Evaluation:</strong> Introduced <code>BuildingStatus</code> enum allowing buildings to self-evaluate operational state.</li>
+                    <li><strong>World-Space UI Warnings:</strong> Implemented visual indicators for blocked production and stalled trucks.</li>
+                    <li><strong>Data Overlay System:</strong> Built a toggleable (Alt key) real-time inventory display featuring camera-facing billboarding.</li>
+                </ul>
+
+                <h3 class="text-xl font-bold text-white mt-8 mb-3">⸻ Stability & Persistence</h3>
+                <ul class="list-none mb-6 space-y-3 text-gray-400">
+                    <li><strong>Save Versioning:</strong> Added <code>saveVersion</code> system to ensure backward compatibility with older save files.</li>
+                    <li><strong>Extended Serialization:</strong> Save files now successfully include truck color data and full inventory states.</li>
+                    <li><strong>Improved UI Safety:</strong> Added robust null-checks to prevent runtime crashes from missing references.</li>
+                </ul>
+            </div>
+
+        </article>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="../../main.js"></script>
+</body>
+</html>

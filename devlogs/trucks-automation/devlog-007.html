@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Devlog Alpha v0.0007 - Trucks & Automation | Devils House Creations</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #1a202c; color: #e2e8f0; }
+    </style>
+</head>
+<body>
+
+    <div id="header-placeholder"></div>
+
+    <main class="container mx-auto px-6 py-16 max-w-4xl min-h-[70vh]">
+        
+        <a href="../../projects/trucks-automation.html" class="inline-flex items-center text-purple-500 hover:text-purple-400 font-bold mb-8 transition-colors">
+            ← Back to Project Hub
+        </a>
+
+        <header class="mb-12 border-b border-gray-700 pb-8">
+            <div class="flex justify-between items-end mb-4">
+                <span class="text-gray-500 font-mono text-sm uppercase tracking-widest">Alpha v0.0007</span>
+                <span class="text-gray-500 font-mono text-sm">08/06/2026</span>
+            </div>
+            <h1 class="text-5xl font-black text-white leading-tight mb-2">Bigger Builds, Smarter Layouts</h1>
+            <p class="text-xl text-purple-400 font-semibold">King Skyline [DHG]</p>
+        </header>
+
+        <article class="prose prose-invert prose-lg max-w-none text-gray-300">
+            
+            <div class="bg-gray-800 p-8 rounded-2xl border border-gray-700 mb-12 shadow-lg">
+                <h2 class="text-3xl font-black text-white mb-4 border-b border-gray-600 pb-2">🎮 Player Update</h2>
+                <p class="mb-6 text-gray-400 italic">We’ve just made a BIG change to how building works — and it makes the whole game feel more like a real factory sim.</p>
+                
+                <h3 class="text-xl font-bold text-green-400 mt-6 mb-2">⸻ Buildings Got an Upgrade</h3>
+                <p class="mb-2">We’ve moved away from everything being tiny 1×1 tiles. Now, everything has a real sense of scale:</p>
+                <ul class="list-disc list-inside mb-6 space-y-1 text-gray-400">
+                    <li>Producers are bigger machines.</li>
+                    <li>Warehouses actually feel like warehouses.</li>
+                    <li>HQ stands out as a proper main building.</li>
+                </ul>
+
+                <h3 class="text-xl font-bold text-green-400 mt-6 mb-2">⸻ Smarter Road Connections</h3>
+                <ul class="list-disc list-inside mb-6 space-y-1 text-gray-400">
+                    <li>Bigger buildings now have dedicated connection points.</li>
+                    <li>Trucks know exactly where to go.</li>
+                    <li>No more weird interactions — everything flows cleaner.</li>
+                </ul>
+
+                <h3 class="text-xl font-bold text-green-400 mt-6 mb-2">⸻ Why This Matters</h3>
+                <p class="mb-2"><strong>Before:</strong> Everything felt the same size, making it easy to just spam buildings everywhere.</p>
+                <p class="mb-2"><strong>Now:</strong> Space matters. You actually have to plan your layout, making your factory feel much more real.</p>
+
+                <h3 class="text-xl font-bold text-green-400 mt-6 mb-2">⸻ The Big Improvement</h3>
+                <ul class="list-disc list-inside mb-6 space-y-1 text-gray-400">
+                    <li>Better readability</li>
+                    <li>More strategy</li>
+                    <li>Cleaner layouts</li>
+                </ul>
+                <p class="mb-4">It’s a small change technically, but a HUGE gameplay upgrade. More improvements coming soon as we keep scaling things up!</p>
+            </div>
+
+            <div class="bg-gray-900 p-8 rounded-2xl border border-gray-800 mb-8">
+                <h2 class="text-3xl font-black text-white mb-2">⚙️ Technical Dev Log</h2>
+                <div class="flex space-x-4 mb-6 border-b border-gray-700 pb-4">
+                    <span class="text-sm font-mono text-purple-400">Focus: Grid scaling, multi-tile architecture, and gameplay readability</span>
+                </div>
+                
+                <h3 class="text-xl font-bold text-white mt-6 mb-3">⸻ Multi-Tile Building System</h3>
+                <p class="text-gray-400 mb-2">Transitioned from 1×1-only buildings to a multi-tile footprint system with standardized building sizes:</p>
+                <ul class="list-none mb-4 space-y-3 text-gray-400">
+                    <li><strong>Producers</strong> → 2×2</li>
+                    <li><strong>Warehouses</strong> → 3×3 / 4×4</li>
+                    <li><strong>Garages</strong> → 2×2</li>
+                    <li><strong>Selling Stations</strong> → 2×2 / 3×2</li>
+                    <li><strong>Headquarters</strong> → 4×4+</li>
+                    <li><strong>Logic Tools</strong> (routers/junctions) remain 1×1</li>
+                </ul>
+                <p class="text-gray-400 mb-2"><code>GridManager</code> updated to support:</p>
+                <ul class="list-none mb-6 space-y-3 text-gray-400">
+                    <li>Multi-key occupancy</li>
+                    <li>Consistent placement validation</li>
+                    <li>Clean demolition across full footprints</li>
+                </ul>
+
+                <h3 class="text-xl font-bold text-white mt-8 mb-3">⸻ Road Connection Architecture</h3>
+                <p class="text-gray-400 mb-2">Implemented designated connection tiles for all multi-tile buildings and defined clear input/output nodes for logistics interaction. Resulting in:</p>
+                <ul class="list-none mb-6 space-y-3 text-gray-400">
+                    <li>Deterministic truck routing</li>
+                    <li>Consistent snapping behaviour</li>
+                    <li>A scalable building interaction system</li>
+                </ul>
+
+                <h3 class="text-xl font-bold text-white mt-8 mb-3">⸻ Gameplay Structure Improvements</h3>
+                <p class="text-gray-400 mb-2">Introduced an intentional scale hierarchy (small tiles = precision tools, large buildings = strategic placement). Reduced “tile spam” by enforcing larger building footprints. Resulting in:</p>
+                <ul class="list-none mb-6 space-y-3 text-gray-400">
+                    <li>Clearer layouts</li>
+                    <li>Improved player readability</li>
+                    <li>More meaningful spatial decision-making</li>
+                </ul>
+
+                <h3 class="text-xl font-bold text-white mt-8 mb-3">⸻ System Impact</h3>
+                <p class="text-gray-400 mb-2">No changes to base grid scale (1 unit = 1 tile maintained). All adjustments performed at object scale level, preserving:</p>
+                <ul class="list-none mb-6 space-y-3 text-gray-400">
+                    <li>Physics consistency</li>
+                    <li>Pathfinding stability</li>
+                    <li>Existing placement logic</li>
+                </ul>
+
+                <h3 class="text-xl font-bold text-white mt-8 mb-3">⸻ Summary</h3>
+                <p class="text-gray-400">This update formalises the transition from prototype-scale placement to a structured, scalable building system, improving both gameplay depth and visual clarity while maintaining core grid integrity.</p>
+            </div>
+
+        </article>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="../../main.js"></script>
+</body>
+</html>

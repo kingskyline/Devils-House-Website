@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Devlog Alpha v0.0005.5 - Trucks & Automation | Devils House Creations</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #1a202c; color: #e2e8f0; }
+    </style>
+</head>
+<body>
+
+    <div id="header-placeholder"></div>
+
+    <main class="container mx-auto px-6 py-16 max-w-4xl min-h-[70vh]">
+        
+        <a href="../../projects/trucks-automation.html" class="inline-flex items-center text-purple-500 hover:text-purple-400 font-bold mb-8 transition-colors">
+            ← Back to Project Hub
+        </a>
+
+        <header class="mb-12 border-b border-gray-700 pb-8">
+            <div class="flex justify-between items-end mb-4">
+                <span class="text-gray-500 font-mono text-sm uppercase tracking-widest">Alpha v0.0005.5</span>
+                <span class="text-gray-500 font-mono text-sm">08/06/2026</span>
+            </div>
+            <h1 class="text-5xl font-black text-white leading-tight mb-2">System Refactor & Performance Upgrade</h1>
+            <p class="text-xl text-purple-400 font-semibold">King Skyline [DHG]</p>
+        </header>
+
+        <article class="prose prose-invert prose-lg max-w-none text-gray-300">
+            
+            <div class="bg-gray-800 p-8 rounded-2xl border border-gray-700 mb-12 shadow-lg">
+                <h2 class="text-3xl font-black text-white mb-4 border-b border-gray-600 pb-2">🎮 Player Update</h2>
+                <p class="mb-6 text-gray-400 italic">This update was all about making the game smarter behind the scenes — less flashy, but a HUGE improvement for how everything runs.</p>
+                
+                <h3 class="text-xl font-bold text-green-400 mt-6 mb-2">⸻ Smarter Systems (Big Change)</h3>
+                <p class="mb-2">We’ve completely reworked how the UI and game systems interact:</p>
+                <ul class="list-disc list-inside mb-6 space-y-1 text-gray-400">
+                    <li>UI no longer controls the game.</li>
+                    <li>Buildings now make their own decisions.</li>
+                    <li>UI just displays info and sends your input.</li>
+                    <li>This makes everything more stable and easier to expand.</li>
+                </ul>
+
+                <h3 class="text-xl font-bold text-green-400 mt-6 mb-2">⸻ Performance Boost</h3>
+                <ul class="list-disc list-inside mb-6 space-y-1 text-gray-400">
+                    <li><strong>Before:</strong> Buttons were checking your money every frame (60x a second).</li>
+                    <li><strong>Now:</strong> They only update when something actually changes.</li>
+                    <li><strong>Result:</strong> Smoother performance, especially as the game grows.</li>
+                </ul>
+
+                <h3 class="text-xl font-bold text-green-400 mt-6 mb-2">⸻ Cleaner UI System</h3>
+                <ul class="list-disc list-inside mb-6 space-y-1 text-gray-400">
+                    <li>All building menus now follow the same structure.</li>
+                    <li>Less bugs, less duplication, easier to maintain.</li>
+                    <li>This sets up the game for future features without breaking things.</li>
+                </ul>
+
+                <h3 class="text-xl font-bold text-green-400 mt-6 mb-2">⸻ Better Interaction & Fixes</h3>
+                <ul class="list-disc list-inside mb-6 space-y-1 text-gray-400">
+                    <li>Clicking buildings now consistently opens the correct UI.</li>
+                    <li>Everything feels more reliable and predictable.</li>
+                    <li>Restored behind-the-scenes logging so we can track economy activity properly.</li>
+                    <li>Improved overall system stability.</li>
+                </ul>
+
+                <h3 class="text-xl font-bold text-green-400 mt-6 mb-2">⸻ What This Means</h3>
+                <p class="mb-4">The game is now more stable, more efficient, and much easier to expand. This is a big groundwork update for future features.</p>
+            </div>
+
+            <div class="bg-gray-900 p-8 rounded-2xl border border-gray-800 mb-8">
+                <h2 class="text-3xl font-black text-white mb-2">⚙️ Technical Dev Log</h2>
+                <div class="flex space-x-4 mb-6 border-b border-gray-700 pb-4">
+                    <span class="text-sm font-mono text-purple-400">Focus: UI decoupling, event-driven optimisation, and architectural cleanup</span>
+                </div>
+                
+                <h3 class="text-xl font-bold text-white mt-6 mb-3">⸻ MVC-Inspired Refactor</h3>
+                <ul class="list-none mb-6 space-y-3 text-gray-400">
+                    <li><strong>Separation of Concerns:</strong> Refactored UI architecture to follow Model-View separation principles and removed all game logic from the UI layer.</li>
+                    <li><strong>Relocated Logic:</strong> Core systems (<code>ResourceProducer</code>, <code>ResourceConverter</code>, <code>Warehouse</code>, <code>SellingStation</code>) now handle logic.</li>
+                    <li><strong>Read/Input Layer:</strong> UI now acts purely as a read + input layer. It queries state via methods (e.g. affordability checks) and sends actions back to systems.</li>
+                </ul>
+
+                <h3 class="text-xl font-bold text-white mt-8 mb-3">⸻ Event-Driven Optimisation</h3>
+                <ul class="list-none mb-6 space-y-3 text-gray-400">
+                    <li><strong>Eliminated Polling:</strong> Removed <code>Update()</code> polling in UI components.</li>
+                    <li><strong>Observer Pattern:</strong> Implemented using C# Action events.</li>
+                    <li><strong>Global Broadcasts:</strong> Added <code>OnMoneyChanged</code> (EconomyManager) and <code>OnGlobalStockChanged</code> (Warehouse).</li>
+                    <li><strong>Performance Gains:</strong> UI now refreshes only when required, reducing CPU usage and improving scalability with large UI counts.</li>
+                </ul>
+
+                <h3 class="text-xl font-bold text-white mt-8 mb-3">⸻ UI Architecture Standardisation</h3>
+                <ul class="list-none mb-6 space-y-3 text-gray-400">
+                    <li><strong>Abstract Base Class:</strong> Introduced <code>BaseInspectorUI</code> abstract class to centralise binding and refresh logic.</li>
+                    <li><strong>Shared Structure:</strong> Removed duplicated inspector code. All inspector panels now inherit from a shared structure for consistent behaviour and easier maintenance.</li>
+                </ul>
+
+                <h3 class="text-xl font-bold text-white mt-8 mb-3">⸻ Input Integration & Debugging</h3>
+                <ul class="list-none mb-6 space-y-3 text-gray-400">
+                    <li><strong>Unified Workflow:</strong> Updated <code>ConstructionInput</code> to use a unified <code>.Bind()</code> workflow, ensuring all interactable buildings correctly route to their inspector UI.</li>
+                    <li><strong>Logging Restored:</strong> Restored production and transaction logging to maintain visibility of economy systems without UI dependency.</li>
+                </ul>
+
+                <h3 class="text-xl font-bold text-white mt-8 mb-3">⸻ Summary</h3>
+                <p class="text-gray-400">This update focused on creating a clean separation between UI and game logic, implementing event-driven performance improvements, and establishing a standardised, maintainable UI architecture.</p>
+            </div>
+
+        </article>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="../../main.js"></script>
+</body>
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Devlog Alpha v0.0005 - Trucks & Automation | Devils House Creations</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #1a202c; color: #e2e8f0; }
+    </style>
+</head>
+<body>
+
+    <div id="header-placeholder"></div>
+
+    <main class="container mx-auto px-6 py-16 max-w-4xl min-h-[70vh]">
+        
+        <a href="../../projects/trucks-automation.html" class="inline-flex items-center text-purple-500 hover:text-purple-400 font-bold mb-8 transition-colors">
+            ← Back to Project Hub
+        </a>
+
+        <header class="mb-12 border-b border-gray-700 pb-8">
+            <div class="flex justify-between items-end mb-4">
+                <span class="text-gray-500 font-mono text-sm uppercase tracking-widest">Alpha v0.0005</span>
+                <span class="text-gray-500 font-mono text-sm">08/06/2026</span>
+            </div>
+            <h1 class="text-5xl font-black text-white leading-tight mb-2">UI Overhaul & Market System</h1>
+            <p class="text-xl text-purple-400 font-semibold">King Skyline [DHG]</p>
+        </header>
+
+        <article class="prose prose-invert prose-lg max-w-none text-gray-300">
+            
+            <div class="bg-gray-800 p-8 rounded-2xl border border-gray-700 mb-12 shadow-lg">
+                <h2 class="text-3xl font-black text-white mb-4 border-b border-gray-600 pb-2">🎮 Player Update</h2>
+                <p class="mb-6 text-gray-400 italic">This week was all about making the game feel cleaner, smarter, and way easier to use.</p>
+                
+                <h3 class="text-xl font-bold text-green-400 mt-6 mb-2">⸻ Massive UI Upgrade</h3>
+                <p class="mb-2">We completely rebuilt the upgrade menus:</p>
+                <ul class="list-disc list-inside mb-6 space-y-1 text-gray-400">
+                    <li>No more messy buttons or overlapping text.</li>
+                    <li>Clean layout that automatically adjusts itself.</li>
+                    <li>Smooth scrolling for larger upgrade lists.</li>
+                    <li>Adding new buildings/upgrades is now way easier (and looks much better).</li>
+                </ul>
+
+                <h3 class="text-xl font-bold text-green-400 mt-6 mb-2">⸻ New Market System</h3>
+                <p class="mb-2">Selling stations got a BIG upgrade:</p>
+                <ul class="list-disc list-inside mb-6 space-y-1 text-gray-400">
+                    <li>Each one can now be upgraded individually.</li>
+                    <li>New Market Board shows all item prices clearly.</li>
+                    <li>Everything is sorted automatically so it’s easy to read.</li>
+                    <li>You can now actually see how much everything is worth at a glance.</li>
+                </ul>
+
+                <h3 class="text-xl font-bold text-green-400 mt-6 mb-2">⸻ Smarter UI Behaviour</h3>
+                <ul class="list-disc list-inside mb-6 space-y-1 text-gray-400">
+                    <li>Upgrade buttons now light up instantly when you can afford them.</li>
+                    <li>No more guessing or reopening menus.</li>
+                    <li>Feels much more responsive.</li>
+                </ul>
+
+                <h3 class="text-xl font-bold text-green-400 mt-6 mb-2">⸻ Better Controls</h3>
+                <ul class="list-disc list-inside mb-6 space-y-1 text-gray-400">
+                    <li>Clicking buildings is more reliable.</li>
+                    <li><kbd class="bg-gray-700 px-2 rounded text-white text-sm">ESC</kbd> now cleanly closes all menus.</li>
+                    <li>No more getting stuck in UI.</li>
+                </ul>
+
+                <h3 class="text-xl font-bold text-green-400 mt-6 mb-2">⸻ Save System Improvements</h3>
+                <ul class="list-disc list-inside mb-6 space-y-1 text-gray-400">
+                    <li>New upgrades are now fully saved.</li>
+                    <li>Older saves still work without breaking.</li>
+                    <li>Your progress is safe even as the game evolves.</li>
+                </ul>
+
+                <h3 class="text-xl font-bold text-green-400 mt-6 mb-2">⸻ What This Means</h3>
+                <p class="mb-4">The game now looks cleaner and more professional, handles upgrades and the economy better, and feels much smoother to interact with. A big step toward a proper playable experience.</p>
+            </div>
+
+            <div class="bg-gray-900 p-8 rounded-2xl border border-gray-800 mb-8">
+                <h2 class="text-3xl font-black text-white mb-2">⚙️ Technical Dev Log</h2>
+                <div class="flex space-x-4 mb-6 border-b border-gray-700 pb-4">
+                    <span class="text-sm font-mono text-purple-400">Focus: UI scalability, dynamic data-driven systems, and economy expansion</span>
+                </div>
+                
+                <h3 class="text-xl font-bold text-white mt-6 mb-3">⸻ Dynamic UI Architecture</h3>
+                <ul class="list-none mb-6 space-y-3 text-gray-400">
+                    <li><strong>Data-Driven Prefabs:</strong> Replaced hardcoded upgrade UI with a data-driven prefab system.</li>
+                    <li><strong>Layout Automation:</strong> Implemented reusable <code>UpgradeRowUI</code> using Unity Layout Groups. UI now generates rows based on upgrade lists at runtime.</li>
+                    <li><strong>Text Structuring:</strong> Added Rich Text hierarchy for improved readability and structure, plus dynamic scrolling panels.</li>
+                    <li><strong>Real-Time Validation:</strong> Implemented real-time affordability checks. Buttons use <code>System.Func&lt;bool&gt;</code> for continuous validation.</li>
+                </ul>
+
+                <h3 class="text-xl font-bold text-white mt-8 mb-3">⸻ Economy & Market Systems</h3>
+                <ul class="list-none mb-6 space-y-3 text-gray-400">
+                    <li><strong>Instance-Based Upgrades:</strong> Refactored Selling Station into an instance-based upgrade system. Added local variables (<code>logisticsLevel</code>, <code>multiplierLevel</code>).</li>
+                    <li><strong>Market Board UI:</strong> Built Market Board UI to display all item values using dynamic prefab rows.</li>
+                    <li><strong>LINQ Sorting:</strong> Implemented alphabetical sorting (<code>LINQ OrderBy</code>) applied to Warehouse + Market UI for clarity.</li>
+                </ul>
+
+                <h3 class="text-xl font-bold text-white mt-8 mb-3">⸻ Input & Interaction</h3>
+                <ul class="list-none mb-6 space-y-3 text-gray-400">
+                    <li><strong>Raycasting:</strong> Updated raycast handling for new building layers.</li>
+                    <li><strong>Panel Management:</strong> Expanded ESC key system to support cleanly closing all UI panels.</li>
+                </ul>
+
+                <h3 class="text-xl font-bold text-white mt-8 mb-3">⸻ Save System Expansion</h3>
+                <ul class="list-none mb-6 space-y-3 text-gray-400">
+                    <li><strong>State Migration:</strong> Removed deprecated global variables from save data.</li>
+                    <li><strong>Extended <code>BuildingSaveData</code>:</strong> Now tracks <code>yieldLevel</code>, <code>storageLevel</code>, <code>loadSpeedLevel</code>, <code>logisticsLevel</code>, and <code>multiplierLevel</code>.</li>
+                    <li><strong>Backward Compatibility:</strong> Added safeguards using fallback values to support older save versions without breaking.</li>
+                </ul>
+
+                <h3 class="text-xl font-bold text-white mt-8 mb-3">⸻ Summary</h3>
+                <p class="text-gray-400">This update focused on building scalable, reusable UI systems, expanding economy interactions, and maintaining stability with evolving save data structures.</p>
+            </div>
+
+        </article>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="../../main.js"></script>
+</body>
+</html>
