@@ -1,0 +1,24 @@
+{
+  "phases": [
+    {
+      "id": "1",
+      "title": "Phase 1 — Core Gameplay Loop & Entity AI",
+      "status": "In Progress",
+      "goal": "Establish the fundamental mechanics of investigating, surviving, and extracting.",
+      "desc": "Implementing the primary dispatch call system, basic puzzle generation, and the first iteration of the stalker AI."
+    },
+    {
+      "id": "2",
+      "title": "Phase 2 — Audio & Atmosphere",
+      "status": "Planned",
+      "goal": "Build the tension through spatial audio and dynamic lighting.",
+      "desc": "Integrating FMOD/Wwise for dynamic soundscapes, proximity voice chat, and reactive environment lighting."
+    }
+  ],
+  "history": [
+    {
+      "title": "Pre-Production Phase",
+      "desc": "Established core game design document, mood boards, and primary gameplay loops. Selected engine and set up source control."
+    }
+  ]
+}

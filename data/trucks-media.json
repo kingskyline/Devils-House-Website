@@ -1,0 +1,114 @@
+[
+  {
+    "title": "UI System Previews",
+    "version": "Coming Soon",
+    "src": "../images/MoreUISystemSoon.png",
+    "alt": "UI System Previews Coming Soon",
+    "lightbox": false
+  },
+  {
+    "title": "Factory Layouts",
+    "version": "Coming Soon",
+    "src": "../images/MoreFactorySoon.png",
+    "alt": "Factory Layouts Coming Soon",
+    "lightbox": false
+  },
+  {
+    "title": "Analytics Dashboard",
+    "version": "Alpha v0.0009",
+    "src": "../images/Trucks_And_Automation/Alpha v0.0009/Overview_4_Alpha v0.0009.webp",
+    "alt": "The overhauled pause menu that doubles as a company dashboard, displaying real-time factory analytics like playtime, active trucks, and road efficiency.",
+    "lightbox": true
+  },
+  {
+    "title": "Global Settings Menu",
+    "version": "Alpha v0.0009",
+    "src": "../images/Trucks_And_Automation/Alpha v0.0009/Overview_3_Alpha v0.0009.webp",
+    "alt": "The new comprehensive settings framework, giving players full control over gameplay mechanics like auto-saving, notifications, and vehicle fuel consumption.",
+    "lightbox": true
+  },
+  {
+    "title": "Factory Research System",
+    "version": "Alpha v0.0009",
+    "src": "../images/Trucks_And_Automation/Alpha v0.0009/Overview_2_Alpha v0.0009.webp",
+    "alt": "A first look at the new Research menu, allowing players to invest their capital into permanent factory upgrades like faster loading docks.",
+    "lightbox": true
+  },
+  {
+    "title": "Industrial HUD & Build Menu",
+    "version": "Alpha v0.0009",
+    "src": "../images/Trucks_And_Automation/Alpha v0.0009/Overview_1_Alpha v0.0009.webp",
+    "alt": "The fully redesigned in-game HUD featuring real-time economy tracking, calendar time controls, and the clean new tabbed build inventory.",
+    "lightbox": true
+  },
+  {
+    "title": "Advanced Truck Logistics",
+    "version": "Alpha v0.0008",
+    "src": "../images/Trucks_And_Automation/Alpha v0.0008/Overview_2_Alpha v0.0008.webp",
+    "alt": "A close-up of a high-capacity container truck navigating past upgraded factory buildings in the late-game economy.",
+    "lightbox": true
+  },
+  {
+    "title": "Multi-Tile Factory Layout",
+    "version": "Alpha v0.0008",
+    "src": "../images/Trucks_And_Automation/Alpha v0.0008/Overview_1_Alpha v0.0008.webp",
+    "alt": "A massive leap in visual scale! Showing off the transition to large multi-tile buildings, streetlights, and a sprawling industrial layout.",
+    "lightbox": true
+  },
+  {
+    "title": "Visual Feedback System",
+    "version": "Alpha v0.0004",
+    "src": "../images/Trucks_And_Automation/Alpha v0.0004/Overview_1_Alpha v0.0004.webp",
+    "alt": "Testing traffic flow and highlighting the new world-space warning icons that instantly show you when a building is jammed or a truck is stuck.",
+    "lightbox": true
+  },
+  {
+    "title": "Multi-Resource Storage",
+    "version": "Alpha v0.0002",
+    "src": "../images/Trucks_And_Automation/Alpha v0.0002/Overview_3_Alpha v0.0002.webp",
+    "alt": "The new data-driven Warehouse UI displaying capacity tracking for multiple resource types like Wood and Stone.",
+    "lightbox": true
+  },
+  {
+    "title": "Expanded Build Menu",
+    "version": "Alpha v0.0002",
+    "src": "../images/Trucks_And_Automation/Alpha v0.0002/Overview_2_Alpha v0.0002.webp",
+    "alt": "The updated inventory UI featuring the newly added advanced road types, including curves, junctions, and merges.",
+    "lightbox": true
+  },
+  {
+    "title": "Smart Junction Logic",
+    "version": "Alpha v0.0002",
+    "src": "../images/Trucks_And_Automation/Alpha v0.0002/Overview_1_Alpha v0.0002.webp",
+    "alt": "Showcasing the new rule-based routing system that lets you direct specific trucks at intersections to optimize traffic flow.",
+    "lightbox": true
+  },
+  {
+    "title": "Backend Production Logs",
+    "version": "Alpha v0.0001",
+    "src": "../images/Trucks_And_Automation/Alpha v0.0001/Overview_4_Alpha v0.0001.webp",
+    "alt": "A behind-the-scenes look at the developer console tracking the very first automated wood production and warehouse deliveries.",
+    "lightbox": true
+  },
+  {
+    "title": "Prototype Logistics Engine",
+    "version": "Alpha v0.0001",
+    "src": "../images/Trucks_And_Automation/Alpha v0.0001/Overview_3_Alpha v0.0001.webp",
+    "alt": "A look at the first automated truck successfully navigating the simple 1x1 road network.",
+    "lightbox": true
+  },
+  {
+    "title": "Garage Dashboard",
+    "version": "Alpha v0.0001",
+    "src": "../images/Trucks_And_Automation/Alpha v0.0001/Overview_2_Alpha v0.0001.webp",
+    "alt": "The foundational prototype of the game, showcasing the very first build menus and the early grid-based placement system.",
+    "lightbox": true
+  },
+  {
+    "title": "Early UI & Grid System",
+    "version": "Alpha v0.0001",
+    "src": "../images/Trucks_And_Automation/Alpha v0.0001/Overview_1_Alpha v0.0001.webp",
+    "alt": "The original vehicle management interface, allowing players to purchase their first trucks and track fleet size.",
+    "lightbox": true
+  }
+]

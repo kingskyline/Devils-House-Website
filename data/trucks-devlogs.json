@@ -1,0 +1,79 @@
+[
+  {
+    "id": "009",
+    "title": "Log #009: UI & Systems Overhaul Update",
+    "date": "04/06/2026 - 18:06PM",
+    "desc": "A massive foundational update introducing a fully featured settings system, a responsive industrial HUD, dynamic time controls, an analytics dashboard, and seamless async loading screens.",
+    "url": "../devlogs/trucks-automation/devlog-009.html"
+  },
+  {
+    "id": "008.5",
+    "title": "Log #008.5: Developer Tooling & Multi-Map Architecture",
+    "date": "03/06/2026 - 14:41PM",
+    "desc": "Massive core engine refactoring to support multi-map architecture, advanced developer tooling, and a fully persistent profile-based save system.",
+    "url": "../devlogs/trucks-automation/devlog-008-5.html"
+  },
+  {
+    "id": "008",
+    "title": "Log #008: The Economy Overhaul",
+    "date": "03/05/2026 - 18:35PM",
+    "desc": "Transitioned to a full tycoon economy with exponential scaling, complex production chains, centralized pricing logic, and the new Headquarters progression hub.",
+    "url": "../devlogs/trucks-automation/devlog-008.html"
+  },
+  {
+    "id": "007",
+    "title": "Log #007: Bigger Builds, Smarter Layouts",
+    "date": "03/05/2026 - 00:24AM",
+    "desc": "Multi-tile architecture completely overhauls base-building, bringing real scale, designated road connections, and deeper layout strategy to the factory floor.",
+    "url": "../devlogs/trucks-automation/devlog-007.html"
+  },
+  {
+    "id": "006",
+    "title": "Log #006: Economy Overhaul & Smart Systems",
+    "date": "28/04/2026 - 20:00PM",
+    "desc": "Massive performance upgrades with a fully event-driven architecture, the introduction of the Headquarters building, and a robust new per-resource Commodities Market.",
+    "url": "../devlogs/trucks-automation/devlog-006.html"
+  },
+  {
+    "id": "005.5",
+    "title": "Log #005.5: System Refactor & Performance Upgrade",
+    "date": "28/04/2026 - 13:47PM",
+    "desc": "Major MVC-inspired refactoring to completely decouple the UI from core game logic, plus event-driven optimisations to massively boost performance.",
+    "url": "../devlogs/trucks-automation/devlog-005-5.html"
+  },
+  {
+    "id": "005",
+    "title": "Log #005: UI Overhaul & Market System",
+    "date": "27/04/2026 - 20:59PM",
+    "desc": "Massive UI upgrades with dynamic data-driven systems, a new scalable Market Board, and extended save system compatibility.",
+    "url": "../devlogs/trucks-automation/devlog-005.html"
+  },
+  {
+    "id": "004",
+    "title": "Log #004: Smarter Trucks, Better Flow & Clearer Feedback",
+    "date": "22/04/2026 - 20:59PM",
+    "desc": "Major AI upgrades for traffic queuing, multi-resource logistics fixes, and new visual feedback systems including the \"Matrix Mode\" data overlay.",
+    "url": "../devlogs/trucks-automation/devlog-004.html"
+  },
+  {
+    "id": "003",
+    "title": "Log #003: Save System, Smarter Trucks & Stability",
+    "date": "22/04/2026 - 03:39AM",
+    "desc": "The game now SAVES everything! Huge stability upgrades, smarter truck AI, and the implementation of a structured JSON persistence layer.",
+    "url": "../devlogs/trucks-automation/devlog-003.html"
+  },
+  {
+    "id": "002",
+    "title": "Log #002: Logistics & Logic Progress",
+    "date": "17/04/2026 - 22:22PM",
+    "desc": "Advanced road systems, smart junctions, global fleet economy, and fully data-driven truck inventories are now live in Alpha v0.0002.",
+    "url": "../devlogs/trucks-automation/devlog-002.html"
+  },
+  {
+    "id": "001",
+    "title": "Log #001: Automation & Efficiency",
+    "date": "06/04/2026 - 09:42 AM",
+    "desc": "The Woodcutter Sawmill is live! Implementing smart logistics, auto-loading trucks, and the new multidimensional grid architecture...",
+    "url": "../devlogs/trucks-automation/devlog-001.html"
+  }
+]

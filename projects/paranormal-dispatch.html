@@ -6,6 +6,12 @@
     <title>Paranormal Dispatch | Devils House</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #1a202c; color: #e2e8f0; }
+        .tab-content { display: none; }
+        .tab-content.active { display: block; animation: fadeIn 0.3s ease-in-out; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
+    </style>
 </head>
 <body class="antialiased bg-gray-900 text-gray-200">
     
@@ -13,36 +19,100 @@
 
     <section class="relative bg-gray-900 py-20 border-b border-gray-800">
         <div class="container mx-auto px-6 text-center">
-            <span class="inline-block bg-orange-900 text-orange-400 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest border border-orange-500 mb-6">🟠 In Development</span>
+            <span class="inline-block bg-orange-900 text-orange-400 text-xs font-bold px-4 py-1 rounded-full uppercase tracking-widest border border-orange-500 mb-6">🟠 In Development</span>
             <h1 class="text-6xl font-black text-white mb-4 tracking-tight">Paranormal <span class="text-orange-500">Dispatch</span></h1>
-            <p class="text-xl text-gray-400">Horror. Puzzle. Survival. Extract.</p>
+            <p class="text-2xl text-gray-400 max-w-2xl mx-auto">Horror. Puzzle. Survival. Extract.</p>
         </div>
     </section>
 
     <nav class="bg-gray-900 sticky top-0 z-10 border-b border-gray-700 shadow-md">
         <div class="container mx-auto px-6">
             <div class="flex justify-center space-x-2 sm:space-x-8 overflow-x-auto">
-                <button class="tab-btn text-purple-500 border-purple-500 hover:text-white font-bold py-4 px-4 border-b-4 transition-colors" onclick="openTab(event, 'overview')">Overview</button>
-                <button class="tab-btn text-gray-400 border-transparent hover:text-white font-bold py-4 px-4 border-b-4 transition-colors" onclick="openTab(event, 'devlogs')">Devlogs</button>
-                <button class="tab-btn text-gray-400 border-transparent hover:text-white font-bold py-4 px-4 border-b-4 transition-colors" onclick="openTab(event, 'media')">Media</button>
-                <button class="tab-btn text-gray-400 border-transparent hover:text-white font-bold py-4 px-4 border-b-4 transition-colors" onclick="openTab(event, 'roadmap')">Roadmap</button>
+                <button class="tab-btn text-purple-500 border-purple-500 hover:text-white font-bold py-4 px-4 border-b-4 transition-colors whitespace-nowrap" onclick="openTab(event, 'overview')">Overview</button>
+                <button class="tab-btn text-gray-400 border-transparent hover:text-white font-bold py-4 px-4 border-b-4 transition-colors whitespace-nowrap" onclick="openTab(event, 'devlogs')">Devlogs</button>
+                <button class="tab-btn text-gray-400 border-transparent hover:text-white font-bold py-4 px-4 border-b-4 transition-colors whitespace-nowrap" onclick="openTab(event, 'media')">Media</button>
+                <button class="tab-btn text-gray-400 border-transparent hover:text-white font-bold py-4 px-4 border-b-4 transition-colors whitespace-nowrap" onclick="openTab(event, 'roadmap')">Roadmap</button>
             </div>
         </div>
     </nav>
 
     <main class="container mx-auto px-6 py-12 min-h-[50vh]">
-        <div id="overview" class="tab-content active max-w-4xl mx-auto">
-            <h2 class="text-3xl font-bold text-white mb-6 border-b border-gray-700 pb-2">Core Vision</h2>
-            <p class="text-gray-300 leading-relaxed">A spine-chilling horror experience where you manage the calls, investigate haunted locations, solve puzzles, and survive the entities long enough to extract.</p>
+        
+        <div id="overview" class="tab-content active max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <div class="lg:col-span-7">
+                    <h2 class="text-4xl font-bold text-white mb-6 border-b border-gray-700 pb-3">Core Vision</h2>
+                    <p class="text-gray-300 mb-8 leading-relaxed text-lg">A spine-chilling horror experience where you manage the calls, investigate haunted locations, solve puzzles, and survive the entities long enough to extract.</p>
+                    
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div class="bg-gray-800 p-8 rounded-xl border border-gray-700 shadow-xl">
+                            <h3 class="text-xl font-bold text-orange-400 mb-4">Primary Design Goals</h3>
+                            <ul class="list-disc list-inside text-gray-400 space-y-3">
+                                <li>Tense atmospheric investigation</li>
+                                <li>Dynamic entity behavior AI</li>
+                                <li>Intricate puzzle solving</li>
+                                <li>High-stakes extraction mechanics</li>
+                            </ul>
+                        </div>
+                        <div class="bg-gray-800 p-8 rounded-xl border border-gray-700 shadow-xl">
+                            <h3 class="text-xl font-bold text-blue-400 mb-4">Current Progress</h3>
+                            <p class="text-gray-400 leading-relaxed">Currently in early Pre-Alpha. Focusing on establishing the core game loop, basic environment interaction, and the foundational stalker AI logic.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-5">
+                    <div class="bg-gray-800 rounded-2xl border border-gray-700 p-3 shadow-2xl transform transition duration-500 hover:scale-[1.02]">
+                        <div class="aspect-video overflow-hidden rounded-xl bg-gray-900 border border-gray-800 relative group">
+                            <img src="../images/MoreFactorySoon.png" alt="Latest Progress" class="w-full h-full object-cover transition duration-500 opacity-50">
+                        </div>
+                        <div class="mt-4 mb-2 text-center">
+                            <span class="inline-block bg-orange-900/40 text-orange-400 text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-widest border border-orange-700/50 shadow-inner">First Look Coming Soon</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
         </div>
-        <div id="devlogs" class="tab-content max-w-4xl mx-auto"><p class="text-gray-400">Updates coming soon...</p></div>
-        <div id="media" class="tab-content max-w-4xl mx-auto"><p class="text-gray-400">Gallery coming soon...</p></div>
-        <div id="roadmap" class="tab-content max-w-4xl mx-auto"><p class="text-gray-400">Roadmap coming soon...</p></div>
+
+        <div id="devlogs" class="tab-content max-w-5xl mx-auto">
+            <h2 class="text-4xl font-bold text-white mb-6 border-b border-gray-700 pb-3">Development History</h2>
+            <p class="text-gray-400 mb-8 text-lg">Follow the engineering journey and architecture updates.</p>
+            <div id="devlog-injection-zone" class="space-y-6"></div>
+        </div>
+
+        <div id="media" class="tab-content max-w-7xl mx-auto">
+            <h2 class="text-4xl font-bold text-white mb-6 border-b border-gray-700 pb-3">Gallery</h2>
+            <div id="media-injection-zone" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"></div>
+        </div>
+
+        <div id="roadmap" class="tab-content max-w-5xl mx-auto">
+            <h2 class="text-4xl font-bold text-white mb-2 border-b border-gray-700 pb-3">Development Roadmap</h2>
+            <p class="text-orange-400 font-mono text-sm tracking-wide mb-8 uppercase">Current Lifecycle — Pre-Alpha</p>
+            
+            <div id="roadmap-injection-zone" class="space-y-6"></div>
+
+            <details class="mt-16 border-t border-gray-700 pt-8 group cursor-pointer">
+                <summary class="text-2xl font-black text-gray-400 mb-6 uppercase tracking-wider select-none flex items-center justify-between">
+                    <span>📦 Historical Roadmap Archive</span>
+                    <span class="text-sm font-mono text-orange-400 group-open:rotate-180 transition-transform duration-300">▼</span>
+                </summary>
+                <div id="history-injection-zone" class="space-y-4 mt-6 cursor-default"></div>
+            </details>
+        </div>
+
     </main>
+
+    <div id="image-lightbox" class="fixed inset-0 z-50 hidden bg-black bg-opacity-95 flex justify-center items-center cursor-zoom-out" onclick="closeLightbox()">
+        <button class="absolute top-6 right-6 text-gray-400 hover:text-white text-5xl font-bold focus:outline-none transition-colors">&times;</button>
+        <img id="lightbox-img" src="" alt="Fullscreen View" class="max-w-[95vw] max-h-[95vh] object-contain rounded-lg shadow-2xl transition-transform transform scale-95 duration-300">
+    </div>
 
     <div id="footer-placeholder"></div>
 
-    <script src="../main.js" defer></script>
+    <script src="../main.js"></script>
+    
     <script>
         function openTab(evt, tabName) {
             let i, tabcontent, tabbtns;
@@ -57,6 +127,94 @@
             evt.currentTarget.classList.remove("text-gray-400", "border-transparent");
             evt.currentTarget.classList.add("text-purple-500", "border-purple-500");
         }
+
+        const lightbox = document.getElementById('image-lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+
+        function openLightbox(imageSrc) {
+            lightboxImg.src = imageSrc;
+            lightbox.classList.remove('hidden');
+            lightbox.classList.add('flex'); 
+            setTimeout(() => lightboxImg.classList.replace('scale-95', 'scale-100'), 10);
+        }
+
+        function closeLightbox() {
+            lightboxImg.classList.replace('scale-100', 'scale-95');
+            setTimeout(() => {
+                lightbox.classList.add('hidden');
+                lightbox.classList.remove('flex');
+                lightboxImg.src = ''; 
+            }, 200); 
+        }
     </script>
+
+    <script>
+        // 1. Devlogs manifest
+        async function buildDevlogs() {
+            const container = document.getElementById('devlog-injection-zone');
+            try {
+                const res = await fetch('../data/paranormal-devlogs.json');
+                const data = await res.json();
+                container.innerHTML = data.map(log => `
+                    <a href="${log.url}" class="block bg-gray-800 p-6 rounded-xl border border-gray-700 hover:border-orange-500 transition-colors">
+                        <div class="flex justify-between items-center mb-2">
+                            <h3 class="text-xl font-bold text-white">${log.title}</h3>
+                            <span class="text-gray-500 text-sm font-mono">${log.date}</span>
+                        </div>
+                        <p class="text-gray-400 text-sm">${log.desc}</p>
+                    </a>
+                `).join('');
+            } catch (err) { console.error("Devlogs Error:", err); }
+        }
+
+        // 2. Gallery manifest
+        async function buildMedia() {
+            const container = document.getElementById('media-injection-zone');
+            try {
+                const res = await fetch('../data/paranormal-media.json');
+                const data = await res.json();
+                container.innerHTML = data.map(item => `
+                    <div class="bg-gray-800 rounded-xl border border-gray-700 overflow-hidden shadow-lg group">
+                        <div class="aspect-video overflow-hidden">
+                            <img src="${item.src}" loading="lazy" alt="${item.alt}" 
+                                 ${item.lightbox ? `onclick="openLightbox(this.src)" class="cursor-zoom-in w-full h-full object-cover transform transition duration-500 group-hover:scale-110"` : `class="w-full h-full object-cover transform transition duration-500 opacity-50 group-hover:scale-110"`}>
+                        </div>
+                        <div class="p-4 border-t border-gray-700">
+                            <h3 class="text-white font-bold text-lg mb-1">${item.title}</h3>
+                            <span class="text-gray-500 text-sm font-mono">${item.version}</span>
+                        </div>
+                    </div>
+                `).join('');
+            } catch (err) { console.error("Media Error:", err); }
+        }
+
+        // 3. Roadmap manifest
+        async function buildRoadmap() {
+            const roadCont = document.getElementById('roadmap-injection-zone');
+            const histCont = document.getElementById('history-injection-zone');
+            try {
+                const res = await fetch('../data/paranormal-roadmap.json');
+                const data = await res.json();
+                
+                roadCont.innerHTML = data.phases.map(p => {
+                    let bStyle = "border-gray-700";
+                    let badge = `<span class="bg-gray-900 text-gray-500 border border-gray-700 text-xs font-bold px-2.5 py-0.5 rounded-full uppercase">○ Planned</span>`;
+                    if (p.status === "Complete") { bStyle = "border-green-700/40"; badge = `<span class="bg-green-900 text-green-400 border border-green-600 text-xs font-bold px-2.5 py-0.5 rounded-full uppercase">✓ Complete</span>`; }
+                    else if (p.status === "In Progress") { bStyle = "border-orange-900/40"; badge = `<span class="bg-orange-950 text-orange-400 border border-orange-600 text-xs font-bold px-2.5 py-0.5 rounded-full uppercase animate-pulse">⚡ In Progress</span>`; }
+                    return `<div class="bg-gray-800 p-6 rounded-xl border ${bStyle} relative shadow-md"><div class="flex justify-between items-start mb-2"><h3 class="text-xl font-bold text-white">${p.title}</h3>${badge}</div><p class="text-gray-400 text-sm font-semibold mb-2">Goal: ${p.goal}</p><p class="text-gray-400 text-xs leading-relaxed">${p.desc}</p></div>`;
+                }).join('');
+
+                histCont.innerHTML = data.history.map(h => `<div class="bg-gray-900/50 p-5 rounded-xl border border-gray-800"><div class="flex justify-between items-center mb-1"><h4 class="text-lg font-bold text-gray-300">${h.title}</h4><span class="text-xs font-mono text-green-500 font-bold uppercase">Archived & Complete</span></div><p class="text-xs text-gray-400 leading-relaxed">${h.desc}</p></div>`).join('');
+            } catch (err) { console.error("Roadmap Error:", err); }
+        }
+
+        // Fire all engines simultaneously when the DOM frame is ready
+        document.addEventListener('DOMContentLoaded', () => {
+            buildDevlogs();
+            buildMedia();
+            buildRoadmap();
+        });
+    </script>
+
 </body>
 </html>

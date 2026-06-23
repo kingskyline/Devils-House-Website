@@ -1,0 +1,138 @@
+{
+  "phases": [
+    {
+      "id": "1",
+      "title": "Phase 1 — Boot System, Singleton Armor & Load Order Lock",
+      "status": "Complete",
+      "goal": "Make the entire game impossible to break on startup.",
+      "desc": "Fixes resource initialization timing, duplicate manager conflicts, random null references, and unsafe scene transitions. Enforces a strict initialization contract across BootManager, SceneBootManager, and safe lifecycle standards (Awake → Setup / Start → Link / Init → Explicit Activation)."
+    },
+    {
+      "id": "2",
+      "title": "Phase 2 — Central Game Database + Data Layer Separation",
+      "status": "Complete",
+      "goal": "Remove ALL direct Resources.LoadAll usage from gameplay/UI systems.",
+      "desc": "Introduces GameDatabaseManager as the single source of truth for items, buildings, maps, and fleet metrics. Separates static configuration data (ScriptableObjects) from runtime active instances and serialized save structs."
+    },
+    {
+      "id": "3",
+      "title": "Phase 3 — Event System (Remove Update Polling)",
+      "status": "Complete",
+      "goal": "Kill all unnecessary Update() UI refresh logic.",
+      "desc": "Deploys a lightweight centralized GameEventBus to broadcast state actions globally, removing per-frame component query loops across layout panels."
+    },
+    {
+      "id": "4",
+      "title": "Phase 4 — UI State Machine + Input Routing System",
+      "status": "Complete",
+      "goal": "Replace ALL panel toggle chaos with one controlled state framework.",
+      "desc": "Implements an authoritative state enum architecture alongside an interactive central Escape handler layer to manage overlapping panels smoothly."
+    },
+    {
+      "id": "5",
+      "title": "Phase 5 — UI Modularisation (Remove God Controllers)",
+      "status": "In Progress",
+      "goal": "Split UI_MenuController + MasterMenuController into real isolated sub-systems.",
+      "desc": "Breaks down large generic scripts into structured controller arrays across individual HUD, menu wrappers, and dedicated logic data adapters."
+    },
+    {
+      "id": "6",
+      "title": "Phase 6 — UI Pooling + Performance Layer",
+      "status": "Planned",
+      "goal": "Eliminate UI lag spikes and runtime garbage collection hitches.",
+      "desc": "Features a dedicated UIObjectPool layout to switch expensive engine mutations over to safe, structured data-rebinding streams instead of direct instantiate/destroy logic loops."
+    },
+    {
+      "id": "7",
+      "title": "Phase 7 — Save/Load Pipeline Overhaul",
+      "status": "Planned",
+      "goal": "Make save/load operations completely deterministic and staged.",
+      "desc": "Builds sequenced persistence stages to securely parse global profiles, local catalogs, world instances, and active simulation tracking metrics into secure buffer arrays without partial world corruption risks."
+    },
+    {
+      "id": "8",
+      "title": "Phase 8 — Inspector System Standardisation",
+      "status": "Planned",
+      "goal": "Unify all inspector UIs into a single lifecycle + event-driven pattern.",
+      "desc": "Cleans up hybrid structural methods across Warehouse, Converter, and ManufacturingPlant panels by enforcing strict bind-driven cycles that completely remove old Update-based refresh functions."
+    },
+    {
+      "id": "9",
+      "title": "Phase 9 — Inspector UI Component Breakdown",
+      "status": "Planned",
+      "goal": "Break inspectors into reusable UI components instead of monolithic controllers.",
+      "desc": "Transforms monolithic interfaces into lightweight modular shells referencing separate individual components for upgrade tabs, inventory bars, and production progress graphics."
+    },
+    {
+      "id": "10",
+      "title": "Phase 10 — UI Refresh Optimisation",
+      "status": "Planned",
+      "goal": "Stop destroying and recreating UI elements repeatedly.",
+      "desc": "Overhauls list generators to refresh active row metrics and values dynamically inside memory pools instead of systematically calling runtime hierarchy deletion loops on panel opens."
+    },
+    {
+      "id": "11",
+      "title": "Phase 11 — Inspector Event Hub",
+      "status": "Planned",
+      "goal": "Centralise all inspector refresh triggers into one global system wrapper.",
+      "desc": "Deploys an automated InspectorEventHub layer to unify external updates (financial shifts, warehouse capacity actions) down into singular refresh request distributions."
+    },
+    {
+      "id": "12",
+      "title": "Phase 12 — UI State Cleanup for Inspectors",
+      "status": "Planned",
+      "goal": "Prevent overlapping inspectors and ghost UI states.",
+      "desc": "Establishes an authoritative InspectorStateManager to enforce singular interaction panels, guarantee clean layout unbinding routes, and safely clear old state metrics."
+    },
+    {
+      "id": "13",
+      "title": "Phase 13 — UI Safety + Performance Stability Pass",
+      "status": "Planned",
+      "goal": "Remove hidden performance risks from core inspector components.",
+      "desc": "Switches active rendering paths to event-driven triggers, introduces safe zero-capacity division overrides inside progress slider calculations, and blocks redundant layout reconstruction actions under high logistics loads."
+    },
+    {
+      "id": "14",
+      "title": "Phase 14 — UI Event System Hardening",
+      "status": "Planned",
+      "goal": "Eliminate event leakage risks and strengthen subscription lifecycle pathways.",
+      "desc": "Locks down unbind execution steps across structural warning indicators and inspector views, ensuring elements safely drop listener references to remove stale dictionary indexing bugs."
+    },
+    {
+      "id": "15",
+      "title": "Phase 15 — Menu + Save System Safety Hardening",
+      "status": "Planned",
+      "goal": "Prevent save corruption and unsafe file operations during menu transitions.",
+      "desc": "Adds explicit exception Handling strategies around manual profile deletions, wraps loading card metadata loops against corrupted JSON arrays, and unifies load selections safely."
+    },
+    {
+      "id": "16",
+      "title": "Phase 16 — Gameplay UI Economy Integration Hardening",
+      "status": "Planned",
+      "goal": "Stabilise economy-linked UI systems and prevent hidden dependency failures.",
+      "desc": "Introduces context checking parameters inside global progression instances, prepares layout paths to support upcoming data-driven scaling metrics, and caches LINQ collection lookups during market board transactions."
+    }
+  ],
+  "history": [
+    {
+      "title": "Phase Core Era (Alpha v0.0001 - v0.0004)",
+      "desc": "Established core multidimensional grid architecture supporting non-square structural footprints and automated state-based hauling loops. Deployed data-driven resource card architectures alongside rule-based vehicle direction systems and custom Matrix Mode spatial layout information layers."
+    },
+    {
+      "title": "Decoupling & MVC Refactor Era (Alpha v0.0005 - v0.0005.5)",
+      "desc": "Migrated legacy menu codebases into unified runtime data prefabs using Layout Group automations. Completed an extensive architectural refactor separating systems view structures from simulation variables, dropping raw Update loops for clean, reactive C# Action events."
+    },
+    {
+      "title": "Footprint Scaling & Centralisation Era (Alpha v0.0006 - v0.0007)",
+      "desc": "Introduced world-integrated sub-systems via the physical Headquarters world layer to manage upgrade calculations directly. Replaced global multipliers with independent resource index arrays and added complex multi-tile building maps featuring specialized vehicle I/O snap nodes."
+    },
+    {
+      "title": "Engine Core & Tooling Era (Alpha v0.0008 - v0.0008.5)",
+      "desc": "Standardized a unified tycoon cost formula [BaseCost x 2.5^(Level - 1)] and introduced complex multi-input processing recipes. Decoupled maps from gameplay logic to establish a clean multi-scene infrastructure driven by an active profile persistent state and custom developer simulation overlays."
+    },
+    {
+      "title": "UX & Environment Caching Era (Alpha v0.0009)",
+      "desc": "Replaced legacy interface blocks with a fully responsive industrial HUD layer. Implemented real-time tracking metrics, automatic multi-context settings configuration systems, calendar tracking loops, and multi-speed simulation execution switches."
+    }
+  ]
+}
