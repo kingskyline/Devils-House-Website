@@ -19,7 +19,7 @@
 
     <section class="relative bg-gray-900 py-20 border-b border-gray-800">
         <div class="container mx-auto px-6 text-center">
-            <span class="inline-block bg-blue-900 text-blue-400 text-sm font-bold px-4 py-1 rounded-full uppercase tracking-widest border border-blue-500 mb-6">🔵 Alpha v0.009</span>
+            <span class="inline-block bg-blue-900 text-blue-400 text-sm font-bold px-4 py-1 rounded-full uppercase tracking-widest border border-blue-500 mb-6">🔵 Alpha v0.010 Architecture</span>
             <h1 class="text-6xl font-black text-white mb-4 tracking-tight">Trucks & <span class="text-purple-500">Automation</span></h1>
             <p class="text-2xl text-gray-400 max-w-2xl mx-auto">A logistics + automation + tycoon-style simulation game with modular UI systems and tech-driven economy progression.</p>
         </div>
@@ -53,7 +53,7 @@
                 </div>
                 <div class="bg-gray-800 p-6 rounded-xl border border-gray-700">
                     <h3 class="text-xl font-bold text-blue-400 mb-2">Current Progress</h3>
-                    <p class="text-gray-400">Currently in <strong>Alpha v0.009 (UI & Systems Overhaul)</strong>. The core economy, multi-map architecture, and in-game HUD/Time controls are now live. The technical foundation is fully set for massive factory expansion.</p>
+                    <p class="text-gray-400">Executing the <strong>Alpha v0.010 Ultimate Architecture Roadmap</strong>. Core engine decoupling is moving at full speed—Phases 1 through 4 (Boot Lock, Central Database, Event Bus, and UI State Machine) are now 100% complete. Focus has shifted to Phase 5: UI Modularisation.</p>
                 </div>
             </div>
         </div>
@@ -383,6 +383,7 @@
             <p class="text-purple-400 font-mono text-sm tracking-wide mb-8 uppercase">Current Roadmap Lifecycle — Alpha v0.010</p>
             
             <div class="space-y-6">
+                <!-- Phase 1: Complete -->
                 <div class="bg-gray-800 p-6 rounded-xl border border-green-700/40 relative shadow-md">
                     <div class="flex justify-between items-start mb-2">
                         <h3 class="text-xl font-bold text-white">Phase 1 — Boot System, Singleton Armor & Load Order Lock</h3>
@@ -392,37 +393,41 @@
                     <p class="text-gray-400 text-xs leading-relaxed">Fixes resource initialization timing, duplicate manager conflicts, random null references, and unsafe scene transitions. Enforces a strict initialization contract across <code class="text-purple-400">BootManager</code>, <code class="text-purple-400">SceneBootManager</code>, and safe lifecycle standards (<code class="text-blue-400">Awake</code> → Setup / <code class="text-blue-400">Start</code> → Link / <code class="text-blue-400">Init</code> → Explicit Activation).</p>
                 </div>
 
-                <div class="bg-gray-800 p-6 rounded-xl border border-yellow-600/40 relative shadow-md">
+                <!-- Phase 2: Complete -->
+                <div class="bg-gray-800 p-6 rounded-xl border border-green-700/40 relative shadow-md">
                     <div class="flex justify-between items-start mb-2">
                         <h3 class="text-xl font-bold text-white">Phase 2 — Central Game Database + Data Layer Separation</h3>
-                        <span class="bg-yellow-950 text-yellow-400 border border-yellow-600 text-xs font-bold px-2.5 py-0.5 rounded-full uppercase animate-pulse">⚡ In Progress</span>
+                        <span class="bg-green-900 text-green-400 border border-green-600 text-xs font-bold px-2.5 py-0.5 rounded-full uppercase">✓ Complete</span>
                     </div>
                     <p class="text-gray-400 text-sm font-semibold mb-2">Goal: Remove ALL direct Resources.LoadAll usage from gameplay/UI systems.</p>
                     <p class="text-gray-400 text-xs leading-relaxed">Introduces <code class="text-purple-400">GameDatabaseManager</code> as the single source of truth for items, buildings, maps, and fleet metrics. Separates static configuration data (ScriptableObjects) from runtime active instances and serialized save structs.</p>
                 </div>
 
-                <div class="bg-gray-800 p-6 rounded-xl border border-gray-700 relative shadow-md">
+                <!-- Phase 3: Complete -->
+                <div class="bg-gray-800 p-6 rounded-xl border border-green-700/40 relative shadow-md">
                     <div class="flex justify-between items-start mb-2">
                         <h3 class="text-xl font-bold text-white">Phase 3 — Event System (Remove Update Polling)</h3>
-                        <span class="bg-gray-900 text-gray-500 border border-gray-700 text-xs font-bold px-2.5 py-0.5 rounded-full uppercase">○ Planned</span>
+                        <span class="bg-green-900 text-green-400 border border-green-600 text-xs font-bold px-2.5 py-0.5 rounded-full uppercase">✓ Complete</span>
                     </div>
                     <p class="text-gray-400 text-sm font-semibold mb-2">Goal: Kill all unnecessary Update() UI refresh logic.</p>
                     <p class="text-gray-400 text-xs leading-relaxed">Deploys a lightweight centralized <code class="text-purple-400">GameEventBus</code> to broadcast state actions globally, removing per-frame component query loops across layout panels.</p>
                 </div>
 
-                <div class="bg-gray-800 p-6 rounded-xl border border-gray-700 relative shadow-md">
+                <!-- Phase 4: Complete -->
+                <div class="bg-gray-800 p-6 rounded-xl border border-green-700/40 relative shadow-md">
                     <div class="flex justify-between items-start mb-2">
                         <h3 class="text-xl font-bold text-white">Phase 4 — UI State Machine + Input Routing System</h3>
-                        <span class="bg-gray-900 text-gray-500 border border-gray-700 text-xs font-bold px-2.5 py-0.5 rounded-full uppercase">○ Planned</span>
+                        <span class="bg-green-900 text-green-400 border border-green-600 text-xs font-bold px-2.5 py-0.5 rounded-full uppercase">✓ Complete</span>
                     </div>
                     <p class="text-gray-400 text-sm font-semibold mb-2">Goal: Replace ALL panel toggle chaos with one controlled state framework.</p>
                     <p class="text-gray-400 text-xs leading-relaxed">Implements an authoritative state enum architecture alongside an interactive central Escape handler layer to manage overlapping panels smoothly.</p>
                 </div>
 
-                <div class="bg-gray-800 p-6 rounded-xl border border-gray-700 relative shadow-md">
+                <!-- Phase 5: In Progress -->
+                <div class="bg-gray-800 p-6 rounded-xl border border-yellow-600/40 relative shadow-md">
                     <div class="flex justify-between items-start mb-2">
                         <h3 class="text-xl font-bold text-white">Phase 5 — UI Modularisation (Remove God Controllers)</h3>
-                        <span class="bg-gray-900 text-gray-500 border border-gray-700 text-xs font-bold px-2.5 py-0.5 rounded-full uppercase">○ Planned</span>
+                        <span class="bg-yellow-950 text-yellow-400 border border-yellow-600 text-xs font-bold px-2.5 py-0.5 rounded-full uppercase animate-pulse">⚡ In Progress</span>
                     </div>
                     <p class="text-gray-400 text-sm font-semibold mb-2">Goal: Split UI_MenuController + MasterMenuController into real isolated sub-systems.</p>
                     <p class="text-gray-400 text-xs leading-relaxed">Breaks down large generic scripts into structured controller arrays across individual HUD, menu wrappers, and dedicated logic data adapters.</p>
