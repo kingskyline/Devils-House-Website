@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Devlog Alpha v0.010 - Trucks & Automation | Devils House Creations</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #1a202c; color: #e2e8f0; }
+    </style>
+</head>
+<body>
+
+    <div id="header-placeholder"></div>
+
+    <main class="container mx-auto px-6 py-16 max-w-4xl min-h-[70vh]">
+        
+        <a href="../../projects/trucks-automation.html" class="inline-flex items-center text-purple-500 hover:text-purple-400 font-bold mb-8 transition-colors">
+            ← Back to Project Hub
+        </a>
+
+        <header class="mb-12 border-b border-gray-700 pb-8">
+            <div class="flex justify-between items-end mb-4">
+                <span class="text-gray-500 font-mono text-sm uppercase tracking-widest">Alpha v0.010</span>
+                <span class="text-gray-500 font-mono text-sm">23/06/2026 - 19:12PM</span>
+            </div>
+            <h1 class="text-5xl font-black text-white leading-tight mb-2">Core Architecture & UI Overhaul</h1>
+            <p class="text-xl text-purple-400 font-semibold">King Skyline [DHC]</p>
+        </header>
+
+        <article class="prose prose-invert prose-lg max-w-none text-gray-300">
+            
+            <div class="bg-gray-800 p-8 rounded-2xl border border-gray-700 mb-12 shadow-lg">
+                <h2 class="text-3xl font-black text-white mb-4 border-b border-gray-600 pb-2">🛠️ Overview</h2>
+                <p class="mb-2 text-gray-400 italic">Over the past series of updates, the game has undergone a complete structural refactor.</p>
+                <p class="mb-0 text-gray-400">The absolute goal of this update was to eliminate "spaghetti code," destroy race conditions during scene loading, drastically improve frame performance, and create a professional, decoupled UI system capable of scaling to hundreds of in-game entities.</p>
+            </div>
+
+            <div class="bg-gray-900 p-8 rounded-2xl border border-gray-800 mb-8">
+                <h2 class="text-3xl font-black text-white mb-2">⚙️ Technical Blueprint (Phases 1-4)</h2>
+                <div class="flex space-x-4 mb-8 border-b border-gray-700 pb-4">
+                    <span class="text-sm font-mono text-purple-400">Focus: Engine Decoupling & Stability</span>
+                </div>
+                
+                <h3 class="text-2xl font-bold text-white mt-6 mb-3">🛡️ Phase 1: Boot System & Safe Load Order</h3>
+                <p class="text-red-400 font-semibold mb-2">❌ The Problem:</p>
+                <p class="text-gray-400 mb-4">Managers were initializing randomly based on Unity's unpredictable execution order, causing null reference exceptions and data wipes when the save system tried to load before the grid was ready.</p>
+                
+                <p class="text-blue-400 font-semibold mb-2">🔧 The Solution:</p>
+                <ul class="list-disc list-inside mb-4 space-y-2 text-gray-400">
+                    <li>Implemented a strict <code>SceneBootManager</code> that acts as a conductor, forcing a linear Coroutine boot sequence.</li>
+                    <li>Applied "Singleton Armor" to all managers, aggressively destroying any accidental duplicate instances.</li>
+                </ul>
+
+                <p class="text-green-400 font-bold mb-8">✔ Result: The game now boots flawlessly every time. The Data layer loads first, Simulation defaults load second, the Save system injects state third, and the UI wakes up last.</p>
+
+                <h3 class="text-2xl font-bold text-white mt-8 mb-3">🗄️ Phase 2: Central Game Database & Data Layer</h3>
+                <p class="text-red-400 font-semibold mb-2">❌ The Problem:</p>
+                <p class="text-gray-400 mb-4">Scripts across the game (UI, Economy, Research, Build Menus) were independently querying the hard drive (<code>Resources.LoadAll</code>) to find assets, causing massive redundancy and hard-coupling visual data to simulation logic.</p>
+                
+                <p class="text-blue-400 font-semibold mb-2">🔧 The Solution:</p>
+                <ul class="list-disc list-inside mb-4 space-y-2 text-gray-400">
+                    <li>Created <code>GameDatabaseManager</code>, the single source of truth for all ScriptableObjects.</li>
+                    <li>It wakes up first, caches all Maps, Buildings, Trucks, Techs, and Resources into memory lists, and serves them to the rest of the game.</li>
+                </ul>
+
+                <p class="text-green-400 font-bold mb-8">✔ Result: Eliminated all scattered hard-drive loading. Menus and simulation managers now instantly pull references directly from the centralized RAM cache.</p>
+
+                <h3 class="text-2xl font-bold text-white mt-8 mb-3">📡 Phase 3: Event System & Update Polling Removal</h3>
+                <p class="text-red-400 font-semibold mb-2">❌ The Problem:</p>
+                <p class="text-gray-400 mb-4">UI scripts like <code>UI_MenuController</code> were running <code>Update()</code> loops up to 144 times a second, constantly querying the EconomyManager and TimeManager for data changes, wasting massive amounts of CPU overhead.</p>
+                
+                <p class="text-blue-400 font-semibold mb-2">🔧 The Solution:</p>
+                <ul class="list-disc list-inside mb-4 space-y-2 text-gray-400">
+                    <li>Built an ultra-lightweight <code>GameEventBus</code> containing static Action channels (e.g., <code>OnMoneyChanged</code>, <code>OnTimeChanged</code>).</li>
+                    <li>Stripped all UI-pushing logic out of the simulation managers. They now simply "shout" into the Event Bus when a value changes.</li>
+                </ul>
+
+                <p class="text-green-400 font-bold mb-8">✔ Result: The UI goes completely dormant to save CPU cycles, waking up for exactly 1 frame to redraw text only when a specific event fires.</p>
+
+                <h3 class="text-2xl font-bold text-white mt-8 mb-3">🎮 Phase 4: UI State Machine & Input Routing</h3>
+                <p class="text-red-400 font-semibold mb-2">❌ The Problem:</p>
+                <p class="text-gray-400 mb-4">Multiple UI panels had rogue, isolated <code>Update()</code> loops listening for the Escape key and fighting over SetActive states, leading to overlapping menus, "double-click" bugs, and the game pausing unintentionally while holding a building.</p>
+                
+                <p class="text-blue-400 font-semibold mb-2">🔧 The Solution:</p>
+                <ul class="list-disc list-inside mb-4 space-y-2 text-gray-400">
+                    <li>Constructed <code>UIStateManager</code>, a central brain governing an absolute <code>UIState</code> enum (None, Pause, Build, Stats, Settings, Research).</li>
+                    <li>Enforced a strict hierarchy for the Escape key: It drops equipped tools first, closes active popup inspectors second, backs out of full-screen menus third, and pauses the game last.</li>
+                </ul>
+
+                <p class="text-green-400 font-bold mb-8">✔ Result: Zero overlapping menus. Smooth, predictable transitions, and a totally bulletproof player input flow.</p>
+            </div>
+
+            <div class="mt-12 text-center border-t border-gray-700 pt-8">
+                <span class="inline-block bg-yellow-900/40 text-yellow-500 font-mono text-sm px-4 py-2 rounded-lg border border-yellow-700/50 animate-pulse">
+                    ⚠️ SECURE CONNECTION PAUSED... WAITING FOR PHASES 5-17...
+                </span>
+            </div>
+
+        </article>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="../../main.js"></script>
+</body>
+</html>

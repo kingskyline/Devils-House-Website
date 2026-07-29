@@ -1,0 +1,9 @@
+[
+  {
+    "id": "001",
+    "title": "Development Update #1: Foundations & Core Loop",
+    "date": "29/07/2026 - 15:23 PM",
+    "desc": "The first look at Cargo Sort! Built a modular architecture, event-driven UI, dynamic difficulty scaling, and a fully playable arcade warehouse loop.",
+    "url": "../devlogs/cargo-sort/devlog-001.html"
+  }
+]

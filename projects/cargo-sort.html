@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Paranormal Dispatch | Devils House</title>
+    <title>Cargo Sort | Devils House Creations</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
@@ -19,16 +19,16 @@
 
     <section class="relative bg-gray-900 py-20 border-b border-gray-800">
         <div class="container mx-auto px-6 text-center">
-            <span class="inline-block bg-orange-900 text-orange-400 text-xs font-bold px-4 py-1 rounded-full uppercase tracking-widest border border-orange-500 mb-6">🔴 Paused Development</span>
-            <h1 class="text-6xl font-black text-white mb-4 tracking-tight">Paranormal <span class="text-orange-500">Dispatch</span></h1>
-            <p class="text-2xl text-gray-400 max-w-2xl mx-auto">Horror. Puzzle. Survival. Extract.</p>
+            <span class="inline-block bg-cyan-900 text-cyan-400 text-xs font-bold px-4 py-1 rounded-full uppercase tracking-widest border border-cyan-500 mb-6">🔵 Alpha - Active Development</span>
+            <h1 class="text-6xl font-black text-white mb-4 tracking-tight">Cargo <span class="text-cyan-500">Sort</span></h1>
+            <p class="text-2xl text-gray-400 max-w-2xl mx-auto">A fast-paced 2D arcade logistics game. Sort the line, build your combo, and survive the shift.</p>
         </div>
     </section>
 
     <nav class="bg-gray-900 sticky top-0 z-10 border-b border-gray-700 shadow-md">
         <div class="container mx-auto px-6">
             <div class="flex justify-center space-x-2 sm:space-x-8 overflow-x-auto">
-                <button class="tab-btn text-purple-500 border-purple-500 hover:text-white font-bold py-4 px-4 border-b-4 transition-colors whitespace-nowrap" onclick="openTab(event, 'overview')">Overview</button>
+                <button class="tab-btn text-cyan-500 border-cyan-500 hover:text-white font-bold py-4 px-4 border-b-4 transition-colors whitespace-nowrap" onclick="openTab(event, 'overview')">Overview</button>
                 <button class="tab-btn text-gray-400 border-transparent hover:text-white font-bold py-4 px-4 border-b-4 transition-colors whitespace-nowrap" onclick="openTab(event, 'devlogs')">Devlogs</button>
                 <button class="tab-btn text-gray-400 border-transparent hover:text-white font-bold py-4 px-4 border-b-4 transition-colors whitespace-nowrap" onclick="openTab(event, 'media')">Media</button>
                 <button class="tab-btn text-gray-400 border-transparent hover:text-white font-bold py-4 px-4 border-b-4 transition-colors whitespace-nowrap" onclick="openTab(event, 'roadmap')">Roadmap</button>
@@ -40,24 +40,23 @@
         
         <div id="overview" class="tab-content active max-w-7xl mx-auto">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-                
                 <div class="lg:col-span-7">
                     <h2 class="text-4xl font-bold text-white mb-6 border-b border-gray-700 pb-3">Core Vision</h2>
-                    <p class="text-gray-300 mb-8 leading-relaxed text-lg">A spine-chilling horror experience where you manage the calls, investigate haunted locations, solve puzzles, and survive the entities long enough to extract.</p>
+                    <p class="text-gray-300 mb-8 leading-relaxed text-lg">A small, fast-paced 2D arcade logistics game built in Unity 6. The goal is simple: sort incoming packages into the correct loading bays before they reach the end of the conveyor belt. Easy to pick up, but increasingly frantic as each 60-second shift progresses.</p>
                     
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
                         <div class="bg-gray-800 p-8 rounded-xl border border-gray-700 shadow-xl">
-                            <h3 class="text-xl font-bold text-orange-400 mb-4">Primary Design Goals</h3>
+                            <h3 class="text-xl font-bold text-cyan-400 mb-4">Primary Design Goals</h3>
                             <ul class="list-disc list-inside text-gray-400 space-y-3">
-                                <li>Tense atmospheric investigation</li>
-                                <li>Dynamic entity behavior AI</li>
-                                <li>Intricate puzzle solving</li>
-                                <li>High-stakes extraction mechanics</li>
+                                <li>Frantic 60-second arcade loops</li>
+                                <li>Dynamic pacing and difficulty scaling</li>
+                                <li>Meta-progression and permanent upgrades</li>
+                                <li>Clean, modular, event-driven codebase</li>
                             </ul>
                         </div>
                         <div class="bg-gray-800 p-8 rounded-xl border border-gray-700 shadow-xl">
                             <h3 class="text-xl font-bold text-blue-400 mb-4">Current Progress</h3>
-                            <p class="text-gray-400 leading-relaxed">Currently in early Pre-Alpha. Focusing on establishing the core game loop, basic environment interaction, and the foundational stalker AI logic.</p>
+                            <p class="text-gray-400 leading-relaxed">The core 60-second shift loop is fully playable. The modular package system, combo tracking, and upgrade shop are all integrated and actively being polished.</p>
                         </div>
                     </div>
                 </div>
@@ -68,17 +67,15 @@
                             <img src="../images/MoreFactorySoon.png" alt="Latest Progress" class="w-full h-full object-cover transition duration-500 opacity-50">
                         </div>
                         <div class="mt-4 mb-2 text-center">
-                            <span class="inline-block bg-orange-900/40 text-orange-400 text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-widest border border-orange-700/50 shadow-inner">First Look Coming Soon</span>
+                            <span class="inline-block bg-cyan-900/40 text-cyan-400 text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-widest border border-cyan-700/50 shadow-inner">First Look Coming Soon</span>
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
 
         <div id="devlogs" class="tab-content max-w-5xl mx-auto">
             <h2 class="text-4xl font-bold text-white mb-6 border-b border-gray-700 pb-3">Development History</h2>
-            <p class="text-gray-400 mb-8 text-lg">Follow the engineering journey and architecture updates.</p>
             <div id="devlog-injection-zone" class="space-y-6"></div>
         </div>
 
@@ -89,21 +86,13 @@
 
         <div id="roadmap" class="tab-content max-w-5xl mx-auto">
             <h2 class="text-4xl font-bold text-white mb-2 border-b border-gray-700 pb-3">Development Roadmap</h2>
-            <p class="text-orange-400 font-mono text-sm tracking-wide mb-8 uppercase">Current Lifecycle — Pre-Alpha</p>
-            
+            <p class="text-cyan-400 font-mono text-sm tracking-wide mb-8 uppercase">Current Lifecycle — Pre-Alpha Phase 2</p>
             <div id="roadmap-injection-zone" class="space-y-6"></div>
-
-            <details class="mt-16 border-t border-gray-700 pt-8 group cursor-pointer">
-                <summary class="text-2xl font-black text-gray-400 mb-6 uppercase tracking-wider select-none flex items-center justify-between">
-                    <span>📦 Historical Roadmap Archive</span>
-                    <span class="text-sm font-mono text-orange-400 group-open:rotate-180 transition-transform duration-300">▼</span>
-                </summary>
-                <div id="history-injection-zone" class="space-y-4 mt-6 cursor-default"></div>
-            </details>
         </div>
 
     </main>
 
+    <!-- Lightbox Modal -->
     <div id="image-lightbox" class="fixed inset-0 z-50 hidden bg-black bg-opacity-95 flex justify-center items-center cursor-zoom-out" onclick="closeLightbox()">
         <button class="absolute top-6 right-6 text-gray-400 hover:text-white text-5xl font-bold focus:outline-none transition-colors">&times;</button>
         <img id="lightbox-img" src="" alt="Fullscreen View" class="max-w-[95vw] max-h-[95vh] object-contain rounded-lg shadow-2xl transition-transform transform scale-95 duration-300">
@@ -120,12 +109,12 @@
             for (i = 0; i < tabcontent.length; i++) tabcontent[i].classList.remove("active");
             tabbtns = document.getElementsByClassName("tab-btn");
             for (i = 0; i < tabbtns.length; i++) {
-                tabbtns[i].classList.remove("text-purple-500", "border-purple-500");
+                tabbtns[i].classList.remove("text-cyan-500", "border-cyan-500");
                 tabbtns[i].classList.add("text-gray-400", "border-transparent");
             }
             document.getElementById(tabName).classList.add("active");
             evt.currentTarget.classList.remove("text-gray-400", "border-transparent");
-            evt.currentTarget.classList.add("text-purple-500", "border-purple-500");
+            evt.currentTarget.classList.add("text-cyan-500", "border-cyan-500");
         }
 
         const lightbox = document.getElementById('image-lightbox');
@@ -149,14 +138,14 @@
     </script>
 
     <script>
-        // 1. Devlogs manifest
+        // CARGO SORT DATA FETCHERS
         async function buildDevlogs() {
             const container = document.getElementById('devlog-injection-zone');
             try {
-                const res = await fetch('../data/paranormal-devlogs.json');
+                const res = await fetch('../data/cargo-devlogs.json');
                 const data = await res.json();
                 container.innerHTML = data.map(log => `
-                    <a href="${log.url}" class="block bg-gray-800 p-6 rounded-xl border border-gray-700 hover:border-orange-500 transition-colors">
+                    <a href="${log.url}" class="block bg-gray-800 p-6 rounded-xl border border-gray-700 hover:border-cyan-500 transition-colors">
                         <div class="flex justify-between items-center mb-2">
                             <h3 class="text-xl font-bold text-white">${log.title}</h3>
                             <span class="text-gray-500 text-sm font-mono">${log.date}</span>
@@ -167,11 +156,10 @@
             } catch (err) { console.error("Devlogs Error:", err); }
         }
 
-        // 2. Gallery manifest
         async function buildMedia() {
             const container = document.getElementById('media-injection-zone');
             try {
-                const res = await fetch('../data/paranormal-media.json');
+                const res = await fetch('../data/cargo-media.json');
                 const data = await res.json();
                 container.innerHTML = data.map(item => `
                     <div class="bg-gray-800 rounded-xl border border-gray-700 overflow-hidden shadow-lg group">
@@ -188,27 +176,22 @@
             } catch (err) { console.error("Media Error:", err); }
         }
 
-        // 3. Roadmap manifest
         async function buildRoadmap() {
             const roadCont = document.getElementById('roadmap-injection-zone');
-            const histCont = document.getElementById('history-injection-zone');
             try {
-                const res = await fetch('../data/paranormal-roadmap.json');
+                const res = await fetch('../data/cargo-roadmap.json');
                 const data = await res.json();
                 
                 roadCont.innerHTML = data.phases.map(p => {
                     let bStyle = "border-gray-700";
                     let badge = `<span class="bg-gray-900 text-gray-500 border border-gray-700 text-xs font-bold px-2.5 py-0.5 rounded-full uppercase">○ Planned</span>`;
                     if (p.status === "Complete") { bStyle = "border-green-700/40"; badge = `<span class="bg-green-900 text-green-400 border border-green-600 text-xs font-bold px-2.5 py-0.5 rounded-full uppercase">✓ Complete</span>`; }
-                    else if (p.status === "In Progress") { bStyle = "border-orange-900/40"; badge = `<span class="bg-orange-950 text-orange-400 border border-orange-600 text-xs font-bold px-2.5 py-0.5 rounded-full uppercase animate-pulse">⚡ In Progress</span>`; }
+                    else if (p.status === "In Progress") { bStyle = "border-cyan-900/40"; badge = `<span class="bg-cyan-950 text-cyan-400 border border-cyan-600 text-xs font-bold px-2.5 py-0.5 rounded-full uppercase animate-pulse">⚡ In Progress</span>`; }
                     return `<div class="bg-gray-800 p-6 rounded-xl border ${bStyle} relative shadow-md"><div class="flex justify-between items-start mb-2"><h3 class="text-xl font-bold text-white">${p.title}</h3>${badge}</div><p class="text-gray-400 text-sm font-semibold mb-2">Goal: ${p.goal}</p><p class="text-gray-400 text-xs leading-relaxed">${p.desc}</p></div>`;
                 }).join('');
-
-                histCont.innerHTML = data.history.map(h => `<div class="bg-gray-900/50 p-5 rounded-xl border border-gray-800"><div class="flex justify-between items-center mb-1"><h4 class="text-lg font-bold text-gray-300">${h.title}</h4><span class="text-xs font-mono text-green-500 font-bold uppercase">Archived & Complete</span></div><p class="text-xs text-gray-400 leading-relaxed">${h.desc}</p></div>`).join('');
             } catch (err) { console.error("Roadmap Error:", err); }
         }
 
-        // Fire all engines simultaneously when the DOM frame is ready
         document.addEventListener('DOMContentLoaded', () => {
             buildDevlogs();
             buildMedia();

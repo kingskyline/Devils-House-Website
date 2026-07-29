@@ -1,0 +1,26 @@
+{
+  "phases": [
+    {
+      "id": "1",
+      "title": "Phase 1 — Core Arcade Loop",
+      "status": "Complete",
+      "goal": "Build a playable warehouse sorting loop with scoring and progression.",
+      "desc": "Implemented modular architecture, event-driven UI, dynamic difficulty, combo systems, and Meta Progression (upgrades)."
+    },
+    {
+      "id": "2",
+      "title": "Phase 2 — Content Expansion",
+      "status": "In Progress",
+      "goal": "Add variety to the warehouse shifts.",
+      "desc": "More warehouse events, additional package types, and multiple levels to test sorting skills."
+    },
+    {
+      "id": "3",
+      "title": "Phase 3 — Polish & Release Prep",
+      "status": "Planned",
+      "goal": "Prepare for Steam release.",
+      "desc": "Better visual polish, expanded sound effects, main menu improvements, and performance balancing."
+    }
+  ],
+  "history": []
+}

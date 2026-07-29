@@ -111,6 +111,13 @@
       "status": "Planned",
       "goal": "Stabilise economy-linked UI systems and prevent hidden dependency failures.",
       "desc": "Introduces context checking parameters inside global progression instances, prepares layout paths to support upcoming data-driven scaling metrics, and caches LINQ collection lookups during market board transactions."
+    },
+  {
+      "id": "17",
+      "title": "Phase 17 — Content Entitlement System (Demo + DLC Ready)",
+      "status": "Planned",
+      "goal": "Separate content ownership from gameplay systems.",
+      "desc": "Introduces EntitlementManager to control base game content, demo restrictions, DLC ownership, and future expansions. Uses Content Flags (Buildings, Trucks, Items, Research, Maps) and explicit Ownership Checks (CanUseContent, CanUnlockTech, CanSpawnBuilding) to ensure Steam Demo and DLC readiness without duplicated databases."
     }
   ],
   "history": [

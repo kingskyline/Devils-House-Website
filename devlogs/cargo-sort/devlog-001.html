@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cargo Sort Devlog #1 | Devils House Creations</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #1a202c; color: #e2e8f0; }
+    </style>
+</head>
+<body>
+
+    <div id="header-placeholder"></div>
+
+    <main class="container mx-auto px-6 py-16 max-w-4xl min-h-[70vh]">
+        
+        <a href="../../projects/cargo-sort.html" class="inline-flex items-center text-cyan-500 hover:text-cyan-400 font-bold mb-8 transition-colors">
+            ← Back to Project Hub
+        </a>
+
+        <header class="mb-12 border-b border-gray-700 pb-8">
+            <div class="flex justify-between items-end mb-4">
+                <span class="text-gray-500 font-mono text-sm uppercase tracking-widest">Pre-Alpha Development</span>
+                <span class="text-gray-500 font-mono text-sm">29/07/2026 - 15:23 PM</span>
+            </div>
+            <h1 class="text-5xl font-black text-white leading-tight mb-2">Development Update #1</h1>
+            <p class="text-xl text-cyan-400 font-semibold">King Skyline [DHC]</p>
+        </header>
+
+        <article class="prose prose-invert prose-lg max-w-none text-gray-300">
+            
+            <p class="mb-8 text-xl leading-relaxed">It's been a very productive few days, so I thought I'd share where <strong class="text-white">Cargo Sort</strong> currently stands. For anyone who hasn't seen the project before, Cargo Sort is a small, fast-paced 2D arcade logistics game built in Unity 6. The goal is simple: sort incoming packages into the correct loading bays before they reach the end of the conveyor belt.</p>
+            <p class="mb-12 text-gray-400 italic border-l-4 border-cyan-500 pl-4">It's designed to be easy to pick up but increasingly frantic as each shift progresses. The project is also serving as my first complete Unity game while I continue learning C# and building towards my much larger project, Trucks & Automation.</p>
+
+            <div class="bg-gray-800 p-8 rounded-2xl border border-gray-700 mb-8 shadow-lg">
+                <h3 class="text-2xl font-black text-white mb-4">🏗️ Building the Foundations</h3>
+                <p class="mb-4 text-gray-400">Rather than rushing straight into gameplay, I spent time building a solid foundation first. The project now has a clean modular architecture, with game logic, UI, audio and data all separated properly.</p>
+                <p class="mb-4 text-gray-400">Instead of hardcoding values throughout the project, package types are created using Unity <code>ScriptableObjects</code>, making it incredibly easy to expand the game later without rewriting systems.</p>
+                <p class="text-green-400 font-semibold">✔ Everything is event-driven too, meaning the UI only updates when something actually changes instead of constantly checking every frame.</p>
+            </div>
+
+            <div class="bg-gray-900 p-8 rounded-2xl border border-gray-800 mb-8">
+                <h3 class="text-2xl font-black text-white mb-4">📦 The Core Gameplay Is Working</h3>
+                <p class="mb-4 text-gray-400">The warehouse is now fully operational. Packages spawn automatically onto the conveyor belt and travel towards three loading bays. Each package knows exactly which lane it belongs to, and players can quickly redirect them using either the keyboard or mouse.</p>
+                <p class="text-gray-400">Correct deliveries earn money and build combo multipliers, while mistakes reduce your earnings and reset your streak. The basic gameplay loop is now fully playable from start to finish.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                <div class="bg-gray-800 p-8 rounded-2xl border border-gray-700 shadow-lg">
+                    <h3 class="text-2xl font-black text-white mb-4">🎮 A Complete Arcade Loop</h3>
+                    <p class="mb-4 text-gray-400">Cargo Sort has now evolved from a simple prototype into an actual game. Each shift lasts 60 seconds before the factory shuts down, all conveyor belts freeze, and a Shift Report appears showing:</p>
+                    <ul class="list-disc list-inside text-gray-400 space-y-1">
+                        <li>Final Score</li>
+                        <li>Money Earned</li>
+                        <li>Accuracy & Combo Performance</li>
+                    </ul>
+                </div>
+
+                <div class="bg-gray-800 p-8 rounded-2xl border border-gray-700 shadow-lg">
+                    <h3 class="text-2xl font-black text-white mb-4">⚡ Dynamic Difficulty</h3>
+                    <p class="mb-4 text-gray-400">Instead of remaining the same speed throughout an entire shift, the game now gradually becomes faster and more intense. As time passes:</p>
+                    <ul class="list-disc list-inside text-gray-400 space-y-1">
+                        <li>Conveyor speed increases</li>
+                        <li>Package movement accelerates</li>
+                        <li>Spawn rates increase</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="bg-gray-900 p-8 rounded-2xl border border-gray-800 mb-8">
+                <h3 class="text-2xl font-black text-white mb-4">🎨 Improved Readability & 💥 Game Feel</h3>
+                <p class="mb-4 text-gray-400">Sorting quickly depends on recognising packages instantly. To help with this, every package now uses a dual visual system: <strong>Cardboard colour + Unique shipping stamp</strong>. The package spawning system has also been rewritten to prevent long streaks of identical boxes.</p>
+                
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-6">
+                    <div class="bg-gray-800 p-4 rounded-xl border border-gray-700">
+                        <h4 class="text-green-400 font-bold mb-2">Correct Deliveries Trigger:</h4>
+                        <ul class="text-gray-400 text-sm space-y-1">
+                            <li>✨ Particle effects</li>
+                            <li>💰 Floating money popups</li>
+                            <li>🔥 Animated combo feedback</li>
+                            <li>🔊 Responsive sound effects</li>
+                        </ul>
+                    </div>
+                    <div class="bg-gray-800 p-4 rounded-xl border border-gray-700">
+                        <h4 class="text-red-400 font-bold mb-2">Mistakes Trigger:</h4>
+                        <ul class="text-gray-400 text-sm space-y-1">
+                            <li>📳 Camera shake</li>
+                            <li>❌ Penalty popups</li>
+                            <li>🚨 Warning sounds</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-gray-800 p-8 rounded-2xl border border-gray-700 mb-12 shadow-lg">
+                <h3 class="text-2xl font-black text-white mb-4">📈 Meta Progression & ⚙️ Under the Hood</h3>
+                <p class="mb-4 text-gray-400">Money earned during gameplay can now be spent on upgrades, including <strong>Wage Boosts</strong>, <strong>Overtime Clocks</strong>, and <strong>Insurance Policies (Combo Shields)</strong>. Every run contributes towards long-term progression.</p>
+                <p class="mb-4 text-gray-400">Behind the scenes, I've continued focusing heavily on code quality. Current highlights include:</p>
+                <ul class="list-none grid grid-cols-2 gap-2 text-cyan-400 font-mono text-sm">
+                    <li>✅ Modular architecture</li>
+                    <li>✅ Event-driven systems</li>
+                    <li>✅ Clean ScriptableObject data</li>
+                    <li>✅ Singleton protection</li>
+                    <li>✅ Zero compiler warnings/errors</li>
+                </ul>
+            </div>
+
+            <h3 class="text-3xl font-black text-white mb-6">🚚 What's Next?</h3>
+            <p class="text-gray-400 mb-4">The next major milestones include more warehouse events, additional package types, better visual polish, main menu improvements, and Steam release preparation.</p>
+            <p class="text-gray-400 mb-8">Overall, I'm really happy with how quickly the project has come together. What started as a simple learning exercise is already becoming a genuinely fun little arcade game, and every system I build is also teaching me skills that will carry over into Trucks & Automation.</p>
+            
+            <p class="text-cyan-400 font-bold text-center border-t border-gray-700 pt-8">Thanks to everyone following the development so far—there's still plenty more to come! 🚛📦</p>
+
+        </article>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="../../../main.js"></script>
+</body>
+</html>
