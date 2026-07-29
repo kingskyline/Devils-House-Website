@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cargo Sort | Devils House Creations</title>
+    <title>Cargo Routers | Devils House Creations</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
@@ -20,7 +20,7 @@
     <section class="relative bg-gray-900 py-20 border-b border-gray-800">
         <div class="container mx-auto px-6 text-center">
             <span class="inline-block bg-cyan-900 text-cyan-400 text-xs font-bold px-4 py-1 rounded-full uppercase tracking-widest border border-cyan-500 mb-6">🔵 Alpha - Active Development</span>
-            <h1 class="text-6xl font-black text-white mb-4 tracking-tight">Cargo <span class="text-cyan-500">Sort</span></h1>
+            <h1 class="text-6xl font-black text-white mb-4 tracking-tight">Cargo <span class="text-cyan-500">Routers</span></h1>
             <p class="text-2xl text-gray-400 max-w-2xl mx-auto">A fast-paced 2D arcade logistics game. Sort the line, build your combo, and survive the shift.</p>
         </div>
     </section>
@@ -38,13 +38,15 @@
 
     <main class="container mx-auto px-6 py-12 min-h-[50vh]">
         
-        <div id="overview" class="tab-content active max-w-7xl mx-auto">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            <div id="overview" class="tab-content active max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+                
+                <!-- LEFT COLUMN (Text & CTA) -->
                 <div class="lg:col-span-7">
                     <h2 class="text-4xl font-bold text-white mb-6 border-b border-gray-700 pb-3">Core Vision</h2>
                     <p class="text-gray-300 mb-8 leading-relaxed text-lg">A small, fast-paced 2D arcade logistics game built in Unity 6. The goal is simple: sort incoming packages into the correct loading bays before they reach the end of the conveyor belt. Easy to pick up, but increasingly frantic as each 60-second shift progresses.</p>
                     
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8">
                         <div class="bg-gray-800 p-8 rounded-xl border border-gray-700 shadow-xl">
                             <h3 class="text-xl font-bold text-cyan-400 mb-4">Primary Design Goals</h3>
                             <ul class="list-disc list-inside text-gray-400 space-y-3">
@@ -59,18 +61,46 @@
                             <p class="text-gray-400 leading-relaxed">The core 60-second shift loop is fully playable. The modular package system, combo tracking, and upgrade shop are all integrated and actively being polished.</p>
                         </div>
                     </div>
-                </div>
 
+                    <!-- DOWNLOAD & ACCESS CTA -->
+                    <div class="bg-gray-800 p-8 rounded-xl border border-cyan-700/50 shadow-2xl relative overflow-hidden">
+                        <div class="absolute top-0 right-0 bg-cyan-900 text-cyan-400 text-xs font-bold px-4 py-1.5 rounded-bl-lg uppercase tracking-widest">Available Now</div>
+                        <h3 class="text-2xl font-bold text-white mb-3">Play Early Access</h3>
+                        <p class="text-gray-400 mb-6">Cargo Routers is actively in development. You can purchase the current build directly below, or get automatic free access via our Patreon tiers.</p>
+                        
+                        <!-- Itch.io Embed Widget -->
+                        <div class="w-full flex justify-center mb-6 rounded-lg overflow-hidden shadow-lg border border-gray-900">
+                            <iframe frameborder="0" src="https://itch.io/embed/4841899?linkback=true&amp;border_width=5&amp;bg_color=0c0c0c&amp;fg_color=f9f9f9&amp;border_color=000000" width="560" height="175" class="max-w-full"><a href="https://kingskyline.itch.io/cargo-routers">Cargo Routers by KingSkyline</a></iframe>
+                        </div>
+
+                        <!-- Patreon Alternative -->
+                        <div class="w-full flex flex-col items-center">
+                            <div class="flex items-center w-full sm:w-3/4 mb-4">
+                                <div class="flex-grow border-t border-gray-700"></div>
+                                <span class="px-4 text-gray-500 text-xs font-bold tracking-widest uppercase">Or</span>
+                                <div class="flex-grow border-t border-gray-700"></div>
+                            </div>
+                            
+                            <a href="https://www.patreon.com/c/DevilsHouseCreations" target="_blank" rel="noopener noreferrer" class="w-full sm:w-3/4 bg-[#FF424D] hover:bg-[#ff5963] text-white font-bold py-3 px-6 rounded-lg transition duration-300 text-center flex items-center justify-center shadow-lg">
+                                🧡 Get Free Auto-Access via Patreon*
+                            </a>
+                            <p class="text-xs text-gray-500 mt-4 text-center">*Free auto-access is granted to <span class="text-gray-300 font-semibold">Insider</span>, <span class="text-gray-300 font-semibold">Testing Division</span>, and <span class="text-gray-300 font-semibold">Executive Producer</span> supporters.</p>
+                        </div>
+                    </div>
+                </div> <!-- <--- THIS MISSING TAG IS NOW FIXED -->
+
+                <!-- RIGHT COLUMN (Image) -->
                 <div class="lg:col-span-5">
                     <div class="bg-gray-800 rounded-2xl border border-gray-700 p-3 shadow-2xl transform transition duration-500 hover:scale-[1.02]">
                         <div class="aspect-video overflow-hidden rounded-xl bg-gray-900 border border-gray-800 relative group">
-                            <img src="../images/MoreFactorySoon.png" alt="Latest Progress" class="w-full h-full object-cover transition duration-500 opacity-50">
+                            <img src="../images/Cargo_Router/GameLogo.webp" alt="Cargo Routers Cover" class="w-full h-full object-cover cursor-zoom-in group-hover:scale-105 transition duration-500" onclick="openLightbox(this.src)">
                         </div>
                         <div class="mt-4 mb-2 text-center">
-                            <span class="inline-block bg-cyan-900/40 text-cyan-400 text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-widest border border-cyan-700/50 shadow-inner">First Look Coming Soon</span>
+                            <span class="inline-block bg-cyan-900/40 text-cyan-400 text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-widest border border-cyan-700/50 shadow-inner">Latest Build Showcase</span>
                         </div>
                     </div>
                 </div>
+
             </div>
         </div>
 
@@ -138,7 +168,7 @@
     </script>
 
     <script>
-        // CARGO SORT DATA FETCHERS
+        // CARGO ROUTERS DATA FETCHERS
         async function buildDevlogs() {
             const container = document.getElementById('devlog-injection-zone');
             try {
