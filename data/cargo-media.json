@@ -5,5 +5,47 @@
     "src": "../images/MoreFactorySoon.png",
     "alt": "Cargo Sort Visuals Coming Soon",
     "lightbox": false
+  },
+{
+    "title": "New Arcade Gameplay Floor",
+    "version": "Pre-Alpha v0.2",
+    "src": "../images/Cargo_Router/New_Gameplay.webp",
+    "alt": "Updated neon arcade warehouse sorting gameplay featuring the new industrial tunnel and glowing energy effects.",
+    "lightbox": true
+  },
+  {
+    "title": "New Expanded Main Menu",
+    "version": "Pre-Alpha v0.2",
+    "src": "../images/Cargo_Router/New_Main_Menu.webp",
+    "alt": "Redesigned main menu interface with expanded warehouse background graphics.",
+    "lightbox": true
+  },
+  {
+    "title": "Factory Upgrades Shop",
+    "version": "Pre-Alpha v0.1",
+    "src": "../images/Cargo_Router/Old_Factory_Upgrades.webp",
+    "alt": "Meta-progression shop interface for purchasing permanent warehouse upgrades.",
+    "lightbox": true
+  },
+  {
+    "title": "Prototype Sorting Floor",
+    "version": "Pre-Alpha v0.1",
+    "src": "../images/Cargo_Router/Old_Gameplay.webp",
+    "alt": "Original sorting floor design with early chute mechanics.",
+    "lightbox": true
+  },
+  {
+    "title": "Prototype Main Menu",
+    "version": "Pre-Alpha v0.1",
+    "src": "../images/Cargo_Router/Old_Main_Menu.webp",
+    "alt": "Original main menu layout from early prototype phase.",
+    "lightbox": true
+  },
+  {
+    "title": "Shift Summary Report",
+    "version": "Pre-Alpha v0.1",
+    "src": "../images/Cargo_Router/Old_Shift_Report.webp",
+    "alt": "Shift end screen displaying earnings, accuracy, and combo metrics.",
+    "lightbox": true
   }
 ]

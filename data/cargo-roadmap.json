@@ -1,25 +1,28 @@
 {
   "phases": [
-    {
-      "id": "1",
-      "title": "Phase 1 — Core Arcade Loop",
-      "status": "Complete",
-      "goal": "Build a playable warehouse sorting loop with scoring and progression.",
-      "desc": "Implemented modular architecture, event-driven UI, dynamic difficulty, combo systems, and Meta Progression (upgrades)."
+{
+      "title": "Phase 1: Core Foundation",
+      "goal": "Establish the 60-second arcade loop.",
+      "desc": "Built the modular package delivery system, combo tracking, and basic upgrade shop infrastructure.",
+      "status": "Complete"
     },
     {
-      "id": "2",
-      "title": "Phase 2 — Content Expansion",
-      "status": "In Progress",
-      "goal": "Add variety to the warehouse shifts.",
-      "desc": "More warehouse events, additional package types, and multiple levels to test sorting skills."
+      "title": "Phase 2: Visual Identity Overhaul",
+      "goal": "Establish a unique art style and scalable architecture.",
+      "desc": "Transitioned to a clean neon arcade aesthetic. Implemented the scalable Industrial Tunnel, tightened package routing logic, added energy VFX, and expanded the main menu UI.",
+      "status": "Complete"
     },
     {
-      "id": "3",
-      "title": "Phase 3 — Polish & Release Prep",
-      "status": "Planned",
-      "goal": "Prepare for Steam release.",
-      "desc": "Better visual polish, expanded sound effects, main menu improvements, and performance balancing."
+      "title": "Phase 3: Polish & Early Access",
+      "goal": "Finalize the build for initial public release.",
+      "desc": "Implementing final audio/ambience, polishing UI elements, and preparing the initial playable build for Itch.io.",
+      "status": "Complete"
+    },
+    {
+      "title": "Phase 4: Gameplay Expansion",
+      "goal": "Add variety, difficulty, and depth to the core sorting loop.",
+      "desc": "Actively developing more parcel varieties, random warehouse events, new levels and layouts, and additional meta-progression upgrade systems.",
+      "status": "In Progress"
     }
   ],
   "history": []

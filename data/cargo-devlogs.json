@@ -1,5 +1,12 @@
 [
   {
+    "id": "002",
+    "title": "Development Update #2: Visual Identity & Overhaul",
+    "date": "30/07/2026 - 08:35 AM",
+    "desc": "A complete visual overhaul embracing a clean, neon arcade style. Introducing the Industrial Tunnel, tighter routing logic, and a vastly expanded main menu.",
+    "url": "../devlogs/cargo-sort/devlog-002.html"
+  },
+  {
     "id": "001",
     "title": "Development Update #1: Foundations & Core Loop",
     "date": "29/07/2026 - 15:23 PM",

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cargo Routers Devlog #2 | Devils House Creations</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #1a202c; color: #e2e8f0; }
+    </style>
+</head>
+<body>
+
+    <div id="header-placeholder"></div>
+
+    <main class="container mx-auto px-6 py-16 max-w-4xl min-h-[70vh]">
+        
+        <a href="../../projects/cargo-sort.html" class="inline-flex items-center text-cyan-500 hover:text-cyan-400 font-bold mb-8 transition-colors">
+            ← Back to Project Hub
+        </a>
+
+        <header class="mb-12 border-b border-gray-700 pb-8">
+            <div class="flex justify-between items-end mb-4">
+                <span class="text-gray-500 font-mono text-sm uppercase tracking-widest">Alpha Development</span>
+                <span class="text-gray-500 font-mono text-sm">30/07/2026 - 08:35 AM</span>
+            </div>
+            <h1 class="text-5xl font-black text-white leading-tight mb-2">Development Update #2</h1>
+            <p class="text-xl text-cyan-400 font-semibold">King Skyline [DHC]</p>
+        </header>
+
+        <article class="prose prose-invert prose-lg max-w-none text-gray-300">
+            
+            <p class="mb-8 text-xl leading-relaxed">It's been another huge week of development on <strong class="text-white">Cargo Router</strong>, and this update has been all about transforming the game from an early prototype into something that finally has its own visual identity.</p>
+            <p class="mb-12 text-gray-400 italic border-l-4 border-cyan-500 pl-4">Rather than simply adding more features, I've spent this update improving the overall presentation, polishing gameplay, and laying the groundwork for future content.</p>
+
+            <!-- VISUAL OVERHAUL BLOCK -->
+            <div class="bg-gray-800 p-8 rounded-2xl border border-gray-700 mb-8 shadow-lg">
+                <h3 class="text-2xl font-black text-white mb-4">🎨 A New Visual Direction</h3>
+                <p class="mb-4 text-gray-400">One of the biggest changes this week was making the decision to completely rethink the look of the game. Originally I was trying to fake 3D depth inside a 2D game using gradient lighting and stretched sprites to create the illusion of deep loading chutes. While it worked... it never really looked right. The more I worked on it, the more it felt like I was fighting the engine instead of working with it.</p>
+                <p class="mb-6 text-gray-400">So I scrapped the entire idea. Cargo Router is now embracing a much cleaner, arcade-inspired art style that looks sharper, performs better, and is far easier to expand in the future. <span class="text-cyan-400 font-semibold">Sometimes removing a feature is the biggest improvement you can make.</span></p>
+
+                <h3 class="text-2xl font-black text-white mb-4 border-t border-gray-700 pt-6">🏭 Introducing the Industrial Tunnel</h3>
+                <p class="mb-4 text-gray-400">Instead of individual loading pits, the sorting area now features a single industrial tunnel running across the bottom of the warehouse. As parcels reach their destination they now disappear underneath the heavy metal structure before being sorted, creating a convincing illusion of depth without relying on complicated lighting tricks.</p>
+                <p class="text-green-400 font-semibold">✔ The conveyor belts have been redesigned with cleaner mechanical textures that give the entire play area a much more industrial appearance.</p>
+            </div>
+
+            <!-- NEON & VFX BLOCK -->
+            <div class="bg-gray-900 p-8 rounded-2xl border border-gray-800 mb-8">
+                <h3 class="text-2xl font-black text-white mb-4">💡 Neon Arcade Style</h3>
+                <p class="mb-4 text-gray-400">The UI already had a futuristic industrial look, so the gameplay area needed to match. The warehouse now features glowing neon lane indicators that instantly highlight where each parcel should be routed.</p>
+                <p class="mb-6 text-gray-400">Combined with the darker matte metal surfaces, the contrast makes everything much easier to read during fast-paced gameplay while giving Cargo Router its own distinctive sci-fi warehouse aesthetic.</p>
+
+                <h3 class="text-2xl font-black text-white mb-4">✨ Bringing the Warehouse to Life</h3>
+                <p class="mb-4 text-gray-400">This update also introduces one of my favourite additions so far. The sorting tubes are now filled with glowing energy effects that slowly drift upwards through the warehouse.</p>
+                <p class="text-gray-400">Using custom particle effects and additive lighting, what originally looked like simple smoke has been transformed into vibrant streams of sci-fi energy that perfectly complement the futuristic warehouse setting. It adds a huge amount of atmosphere to every shift.</p>
+            </div>
+
+            <!-- GRID BLOCK: EXPANSION & REFINEMENTS -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                <div class="bg-gray-800 p-8 rounded-2xl border border-gray-700 shadow-lg">
+                    <h3 class="text-2xl font-black text-white mb-4">⚙️ Gameplay Refinements</h3>
+                    <p class="mb-4 text-gray-400">Packages occasionally drifted slightly away from the centre of the conveyor during testing. After tracking the issue down to legacy movement code, the routing system was rebuilt around the exact positions of each loading bay.</p>
+                    <p class="text-green-400 text-sm font-bold">✔ The result is tighter movement, with every parcel travelling perfectly through the centre.</p>
+                </div>
+
+                <div class="bg-gray-800 p-8 rounded-2xl border border-gray-700 shadow-lg">
+                    <h3 class="text-2xl font-black text-white mb-4">📦 Built for Expansion</h3>
+                    <p class="mb-4 text-gray-400">The new tunnel acts as a single foundation across the bottom of the screen. Whether I decide to introduce four, five, or more parcel lanes in future updates, the system is designed to scale.</p>
+                    <p class="text-cyan-400 text-sm font-bold">Future-proofing now saves a lot of work later.</p>
+                </div>
+            </div>
+
+            <!-- MENUS & ARCHITECTURE -->
+            <div class="bg-gray-800 p-8 rounded-2xl border border-gray-700 mb-12 shadow-lg">
+                <h3 class="text-2xl font-black text-white mb-4">🖥️ A Much Bigger Main Menu</h3>
+                <p class="mb-6 text-gray-400">I've started expanding the main menu into something that feels like the front-end of a complete game. A brand-new warehouse background has been created, featuring a much larger industrial cargo facility. I've also begun work on a dedicated Roadmap panel to show upcoming features directly in-game.</p>
+
+                <h3 class="text-2xl font-black text-white mb-4 border-t border-gray-700 pt-6">🏗️ Keeping the Code Clean</h3>
+                <p class="mb-4 text-gray-400">One thing I'm really happy about is that these visual upgrades haven't required any major rewrites. Because the gameplay systems were built separately from the graphics, I was able to completely redesign the warehouse without breaking the sorting logic underneath.</p>
+                <p class="text-cyan-400 font-semibold">The delivery system, scoring, collisions, and gameplay all continued working perfectly. It's a great reminder of why building clean, modular systems early on is worth the effort.</p>
+            </div>
+
+            <!-- WHAT'S NEXT -->
+            <h3 class="text-3xl font-black text-white mb-6">🚚 What's Next?</h3>
+            <p class="text-gray-400 mb-4">With the visual direction now locked in, the focus shifts back towards expanding gameplay. Over the next few updates I'll be working on:</p>
+            
+            <ul class="list-none grid grid-cols-1 sm:grid-cols-2 gap-3 text-gray-400 mb-8">
+                <li class="bg-gray-900 p-3 rounded-lg border border-gray-800 flex items-center">📦 <span class="ml-3">More parcel varieties</span></li>
+                <li class="bg-gray-900 p-3 rounded-lg border border-gray-800 flex items-center">🚨 <span class="ml-3">New warehouse events</span></li>
+                <li class="bg-gray-900 p-3 rounded-lg border border-gray-800 flex items-center">📈 <span class="ml-3">Additional upgrade systems</span></li>
+                <li class="bg-gray-900 p-3 rounded-lg border border-gray-800 flex items-center">✨ <span class="ml-3">More visual effects</span></li>
+                <li class="bg-gray-900 p-3 rounded-lg border border-gray-800 flex items-center">🔊 <span class="ml-3">Improved audio and ambience</span></li>
+                <li class="bg-gray-900 p-3 rounded-lg border border-gray-800 flex items-center">🏭 <span class="ml-3">New levels and layouts</span></li>
+            </ul>
+
+            <p class="text-gray-400 mb-8">Cargo Router is starting to feel less like a prototype and more like the arcade game I originally imagined. Every update gets us one step closer to an early public release, and I can't wait to share more as development continues.</p>
+            
+            <p class="text-cyan-400 font-bold text-center border-t border-gray-700 pt-8">Thanks for following the journey! 🚛📦</p>
+
+        </article>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="../../../main.js"></script>
+</body>
+</html>
