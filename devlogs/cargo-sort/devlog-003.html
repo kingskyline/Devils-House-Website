@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cargo Routers Devlog #3 | Devils House Creations</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #1a202c; color: #e2e8f0; }
+    </style>
+</head>
+<body>
+
+    <div id="header-placeholder"></div>
+
+    <main class="container mx-auto px-6 py-16 max-w-4xl min-h-[70vh]">
+        
+        <a href="../../projects/cargo-sort.html" class="inline-flex items-center text-cyan-500 hover:text-cyan-400 font-bold mb-8 transition-colors">
+            ← Back to Project Hub
+        </a>
+
+        <header class="mb-12 border-b border-gray-700 pb-8">
+            <div class="flex justify-between items-end mb-4">
+                <span class="text-gray-500 font-mono text-sm uppercase tracking-widest">Alpha Development</span>
+                <span class="text-gray-500 font-mono text-sm">05/08/2026 - 23:18 PM</span>
+            </div>
+            <h1 class="text-5xl font-black text-white leading-tight mb-2">Development Update #3</h1>
+            <p class="text-xl text-cyan-400 font-semibold">King Skyline [DHC]</p>
+        </header>
+
+        <article class="prose prose-invert prose-lg max-w-none text-gray-300">
+            
+            <p class="mb-8 text-xl leading-relaxed">This has been one of the biggest updates since development began. While there aren't many flashy new gameplay mechanics this time around, almost every major system has been rebuilt behind the scenes to make <strong class="text-white">Cargo Router</strong> far more scalable, easier to maintain, and ready for future content.</p>
+            <p class="mb-12 text-gray-400 italic border-l-4 border-cyan-500 pl-4">A lot of this work won't be immediately visible to players—but it's some of the most important development I've done so far.</p>
+
+            <!-- ARCHITECTURE & PROGRESSION BLOCK -->
+            <div class="bg-gray-800 p-8 rounded-2xl border border-gray-700 mb-8 shadow-lg">
+                <h3 class="text-2xl font-black text-white mb-4">🏗️ A Completely Data-Driven Game</h3>
+                <p class="mb-4 text-gray-400">One of the biggest goals for this update was removing hard-coded systems and replacing them with a flexible, data-driven architecture. Instead of every upgrade, difficulty setting and game rule being written directly into the code, they're now controlled through dedicated data assets inside Unity.</p>
+                <p class="mb-6 text-gray-400">Want a new upgrade? No coding required. Want a completely new game mode? Create a new configuration. Want to rebalance the economy? Adjust a few values instead of rewriting scripts. <span class="text-cyan-400 font-semibold">This change gives Cargo Router a much stronger foundation as development continues.</span></p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8 border-t border-gray-700 pt-6">
+                    <div>
+                        <h4 class="text-xl font-bold text-white mb-3">🛒 The Shop Has Been Rebuilt</h4>
+                        <p class="text-gray-400 text-sm leading-relaxed">Previously, every upgrade button had to be created and maintained manually. Now the shop builds itself automatically. Every available upgrade is generated directly from its own data, meaning new upgrades can be added in just a few clicks without redesigning the interface.</p>
+                    </div>
+                    <div>
+                        <h4 class="text-xl font-bold text-white mb-3">📈 Better Progression</h4>
+                        <p class="text-gray-400 text-sm leading-relaxed">Progression is now modular. A dedicated upgrade system handles costs, levels, diminishing returns, and save data from one central location. The result is a cleaner codebase and a progression system that's much easier to expand.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- GAME MODES & DIFFICULTY -->
+            <h3 class="text-3xl font-black text-white mb-6 mt-12">🎮 Introducing Proper Game Modes</h3>
+            <p class="text-gray-400 mb-6">Cargo Router now supports multiple game modes through a completely configurable system. Rather than simply increasing package speed, each mode controls shift duration, spawn rates, multipliers, starting shields, and maximum mistakes allowed.</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+                <!-- Easy Mode -->
+                <div class="bg-gray-900 border border-green-700/50 rounded-xl p-6 shadow-lg">
+                    <h4 class="text-lg font-bold text-green-400 mb-2 flex items-center">🟢 Easy</h4>
+                    <p class="text-xs text-gray-400 mb-4 h-8">Perfect for learning the game.</p>
+                    <ul class="text-sm text-gray-400 space-y-2">
+                        <li>• Slower conveyor speeds</li>
+                        <li>• More breathing room</li>
+                        <li>• Bonus starting shields</li>
+                        <li>• Unlimited mistakes</li>
+                    </ul>
+                </div>
+                <!-- Standard Mode -->
+                <div class="bg-gray-900 border border-yellow-600/50 rounded-xl p-6 shadow-lg relative transform md:-translate-y-2">
+                    <div class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-yellow-600 text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">Recommended</div>
+                    <h4 class="text-lg font-bold text-yellow-400 mb-2 flex items-center">🟡 Standard</h4>
+                    <p class="text-xs text-gray-400 mb-4 h-8">The intended Cargo Router experience.</p>
+                    <ul class="text-sm text-gray-400 space-y-2">
+                        <li>• Balanced pacing</li>
+                        <li>• Three mistakes allowed</li>
+                        <li>• Normal rewards</li>
+                        <li>• Increasing pressure</li>
+                    </ul>
+                </div>
+                <!-- Hardcore Mode -->
+                <div class="bg-gray-900 border border-red-700/50 rounded-xl p-6 shadow-lg">
+                    <h4 class="text-lg font-bold text-red-500 mb-2 flex items-center">🔴 Hardcore</h4>
+                    <p class="text-xs text-gray-400 mb-4 h-8">Designed for chasing high scores.</p>
+                    <ul class="text-sm text-gray-400 space-y-2">
+                        <li>• Extremely fast speeds</li>
+                        <li>• Rapid spawn rates</li>
+                        <li>• One mistake ends shift</li>
+                        <li>• Massive score bonuses</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- ECONOMY & UX BLOCK -->
+            <div class="bg-gray-800 p-8 rounded-2xl border border-gray-700 mb-8 shadow-lg">
+                <h3 class="text-2xl font-black text-white mb-4">📦 Fine Tuning the Package Economy</h3>
+                <p class="mb-4 text-gray-400">Each package type has been reviewed to better fit the new difficulty system. Standard packages remain your reliable source of income. Fragile packages now feel much riskier, forcing split-second decisions when the pace increases.</p>
+                <p class="mb-6 text-gray-400">Priority packages continue to offer huge rewards—but equally painful penalties if missed. Golden packages remain the rare jackpot that can completely change the outcome of a run. Balancing these across every difficulty should make each shift feel exciting from start to finish.</p>
+
+                <h3 class="text-2xl font-black text-white mb-4 border-t border-gray-700 pt-6">🖥️ Smoother User Experience</h3>
+                <p class="text-gray-400">After completing a shift, players can now move seamlessly between the Shift Report and the Upgrade Shop without awkward transitions. The shop layout has also been redesigned so longer upgrade descriptions fit neatly inside each card while remaining easy to read.</p>
+            </div>
+
+            <!-- BUG FIXES & FUTURE -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+                <div class="bg-gray-900 p-6 rounded-2xl border border-gray-800 shadow-lg">
+                    <h3 class="text-xl font-black text-white mb-4">🐞 Bug Fixes & Stability</h3>
+                    <ul class="text-sm text-gray-400 space-y-3">
+                        <li class="flex items-start"><span class="text-green-500 mr-2">✅</span> Fixed panel hierarchy issues causing menus to close unexpectedly.</li>
+                        <li class="flex items-start"><span class="text-green-500 mr-2">✅</span> Fixed game modes resetting after replaying a shift.</li>
+                        <li class="flex items-start"><span class="text-green-500 mr-2">✅</span> Improved save handling for upgrades and progression.</li>
+                        <li class="flex items-start"><span class="text-green-500 mr-2">✅</span> Cleaned out older legacy systems that are no longer needed.</li>
+                    </ul>
+                </div>
+                <div class="bg-gray-900 p-6 rounded-2xl border border-cyan-900/50 shadow-lg">
+                    <h3 class="text-xl font-black text-white mb-4">🔧 Looking Ahead</h3>
+                    <p class="text-sm text-gray-400 mb-4">With the architecture now in a much healthier place, future updates can focus far more on creating content rather than rebuilding systems.</p>
+                    <ul class="text-sm text-gray-400 grid grid-cols-2 gap-2">
+                        <li>📦 New upgrades</li>
+                        <li>🚚 Additional game modes</li>
+                        <li>🏭 More layouts</li>
+                        <li>⚡ New package types</li>
+                        <li>🎯 Extra mechanics</li>
+                        <li>🏆 More progression</li>
+                    </ul>
+                </div>
+            </div>
+
+            <p class="text-gray-400 mb-8 leading-relaxed">The heavy lifting behind the scenes is finally paying off. Every update brings Cargo Router closer to feeling like a complete arcade experience rather than just a prototype. Building these scalable systems now means future content will be much faster to develop, easier to maintain, and far more ambitious.</p>
+            
+            <p class="text-cyan-400 font-bold text-center border-t border-gray-700 pt-8">Thanks to everyone following the development journey—I can't wait to show you what's coming next! 🚛📦</p>
+
+        </article>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="../../../main.js"></script>
+</body>
+</html>

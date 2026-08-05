@@ -1,5 +1,12 @@
 [
   {
+    "id": "003",
+    "title": "Development Update #3: Data-Driven Architecture & Game Modes",
+    "date": "05/08/2026 - 23:18 PM",
+    "desc": "A massive backend overhaul transitioning to a fully data-driven architecture. The shop has been rebuilt, progression is modular, and distinct Game Modes (Easy, Standard, Hardcore) have been introduced.",
+    "url": "../devlogs/cargo-sort/devlog-003.html"
+  },
+  {
     "id": "002",
     "title": "Development Update #2: Visual Identity & Overhaul",
     "date": "30/07/2026 - 08:35 AM",

@@ -1,12 +1,19 @@
 [
   {
-    "title": "Warehouse Sorting Floor",
-    "version": "Pre-Alpha",
-    "src": "../images/MoreFactorySoon.png",
-    "alt": "Cargo Sort Visuals Coming Soon",
-    "lightbox": false
+    "title": "Level Select Menu",
+    "version": "Alpha v0.3",
+    "src": "../images/Cargo_Router/levelselect_v0.3.webp",
+    "alt": "The new level selection interface supporting multiple game modes and difficulty tiers.",
+    "lightbox": true
   },
-{
+  {
+    "title": "Expanded Main Menu",
+    "version": "Alpha v0.3",
+    "src": "../images/Cargo_Router/MainMenu_v0.3.webp",
+    "alt": "The updated main menu for Alpha v0.3, powered by the new data-driven backend.",
+    "lightbox": true
+  },
+  {
     "title": "New Arcade Gameplay Floor",
     "version": "Pre-Alpha v0.2",
     "src": "../images/Cargo_Router/New_Gameplay.webp",
