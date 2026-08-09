@@ -15,6 +15,7 @@
 
     <div id="header-placeholder"></div>
 
+    <!-- Hero Header -->
     <section class="relative bg-gray-900 py-20 border-b border-gray-800">
         <div class="container mx-auto px-6 text-center">
             <h1 class="text-6xl font-black text-white mb-6 tracking-tight">Get In <span class="text-red-600">Touch</span></h1>
@@ -22,10 +23,11 @@
         </div>
     </section>
 
+    <!-- Main Section -->
     <main class="container mx-auto px-6 py-16 min-h-[50vh]">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 max-w-7xl mx-auto items-start">
             
-            <!-- LEFT COLUMN: Official Domain Emails & Discord (5 Cols) -->
+            <!-- LEFT COLUMN: Email Directory & Discord -->
             <div class="lg:col-span-5 space-y-6">
                 <div>
                     <h2 class="text-3xl font-bold text-white mb-3">Direct Contact Directory</h2>
@@ -34,7 +36,7 @@
                     </p>
                 </div>
 
-                <!-- EMAIL DIRECTORY GRID -->
+                <!-- EMAIL DIRECTORY CARDS -->
                 <div class="space-y-3">
                     <!-- General -->
                     <div class="bg-gray-800 p-4 rounded-xl border border-gray-700 shadow-md flex items-center gap-4 hover:border-red-500 transition-colors">
@@ -104,19 +106,21 @@
                 </div>
             </div>
 
-            <!-- RIGHT COLUMN: Intelligent Contact Form (7 Cols) -->
+            <!-- RIGHT COLUMN: Styled Form with Department Router -->
             <div class="lg:col-span-7 bg-gray-800 p-8 rounded-2xl border border-gray-700 shadow-2xl relative overflow-hidden">
-                <!-- Decorative Accent Bar -->
+                <!-- Top Accent Line -->
                 <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-red-600 via-purple-600 to-blue-600"></div>
                 
                 <h3 class="text-2xl font-bold text-white mb-2">Send a Message</h3>
-                <p class="text-gray-400 text-sm mb-6">Select your inquiry type below and our system will route your message directly to the correct team mailbox.</p>
+                <p class="text-gray-400 text-sm mb-6">Select an inquiry type below to route your message directly to the dedicated team member.</p>
                 
-                <!-- Main Form (Defaults to main Formspree endpoint) -->
-                <form id="contact-form" action="https://formspree.io/f/xoeajbrv" method="POST" class="space-y-5">
+                <!-- FormSubmit Action Target -->
+                <form id="contact-form" action="https://formsubmit.co/contact@DevilsHouse.uk" method="POST" class="space-y-5">
                     
-                    <!-- Subject Router Indicator -->
-                    <input type="hidden" id="routed-recipient" name="_to" value="contact@DevilsHouse.uk">
+                    <!-- FormSubmit Hidden Configurations -->
+                    <input type="hidden" name="_template" value="table">
+                    <input type="hidden" id="email-subject" name="_subject" value="New Inquiry - General">
+                    <input type="hidden" name="_captcha" value="false">
 
                     <!-- Name & Email -->
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
@@ -130,11 +134,11 @@
                         </div>
                     </div>
 
-                    <!-- Inquiry Dropdown (Triggers JS Email Router) -->
+                    <!-- Inquiry Dropdown -->
                     <div>
                         <label for="subject" class="block text-sm font-bold text-gray-400 mb-2">Inquiry Type</label>
                         <div class="relative">
-                            <select id="subject" name="subject" onchange="routeEmail(this.value)" required class="w-full bg-gray-900 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-red-500 focus:ring-1 focus:ring-red-500 transition-colors appearance-none cursor-pointer">
+                            <select id="subject" name="Inquiry_Type" onchange="routeDepartment(this.value)" required class="w-full bg-gray-900 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-red-500 focus:ring-1 focus:ring-red-500 transition-colors appearance-none cursor-pointer">
                                 <option value="" disabled selected hidden>Select a reason...</option>
                                 <option value="General Inquiry">General Inquiry </option>
                                 <option value="Brand Deal / Sponsorship">Brand Deal / Sponsorship </option>
@@ -170,25 +174,26 @@
 
     <script src="main.js"></script>
 
-    <!-- Email Routing Script -->
+    <!-- Department Routing Script -->
     <script>
-        function routeEmail(selectedOption) {
+        const DEPARTMENT_EMAILS = {
+            "General Inquiry": "contact@DevilsHouse.uk",
+            "Brand Deal / Sponsorship": "business@DevilsHouse.uk",
+            "Game Support / Bug Report": "support@DevilsHouse.uk",
+            "Project Collaboration": "projects@DevilsHouse.uk",
+            "Direct Developer Contact": "KingSkyline@DevilsHouse.uk"
+        };
+
+        function routeDepartment(selectedOption) {
+            const contactForm = document.getElementById('contact-form');
+            const subjectField = document.getElementById('email-subject');
             const badge = document.getElementById('routing-badge');
-            const recipientField = document.getElementById('routed-recipient');
             
-            let targetEmail = "contact@DevilsHouse.uk";
-
-            if (selectedOption.includes("Brand Deal")) {
-                targetEmail = "business@DevilsHouse.uk";
-            } else if (selectedOption.includes("Game Support")) {
-                targetEmail = "support@DevilsHouse.uk";
-            } else if (selectedOption.includes("Project Collaboration")) {
-                targetEmail = "projects@DevilsHouse.uk";
-            } else if (selectedOption.includes("Direct Developer")) {
-                targetEmail = "KingSkyline@DevilsHouse.uk";
-            }
-
-            recipientField.value = targetEmail;
+            const targetEmail = DEPARTMENT_EMAILS[selectedOption] || "contact@DevilsHouse.uk";
+            
+            contactForm.action = `https://formsubmit.co/${targetEmail}`;
+            subjectField.value = `[Website Message] ${selectedOption}`;
+            
             badge.innerHTML = `<span class="text-green-400">✓ Message will route to: <strong>${targetEmail}</strong></span>`;
         }
     </script>
