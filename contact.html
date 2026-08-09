@@ -115,13 +115,19 @@
                 <p class="text-gray-400 text-sm mb-6">Select an inquiry type below to route your message directly to the dedicated team member.</p>
                 
                 <!-- FormSubmit Action Target -->
-                <!-- FormSubmit Action Target -->
+
                 <form id="contact-form" action="https://formsubmit.co/bbe37262b69968778c62f36721aca9b6" method="POST" class="space-y-5">
                     
                     <!-- FormSubmit Hidden Configurations -->
                     <input type="hidden" name="_template" value="table">
                     <input type="hidden" id="email-subject" name="_subject" value="New Inquiry - General">
                     <input type="hidden" name="_captcha" value="false">
+                    
+                    <!-- NEW: Force redirect back to your site -->
+                    <input type="hidden" name="_next" value="https://devilshouse.uk/">
+
+                    <!-- Name & Email -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
 
                     <!-- Name & Email -->
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
