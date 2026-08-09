@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Devils House Creations</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #1a202c; color: #e2e8f0; }
+    </style>
+</head>
+<body class="antialiased bg-gray-900">
+
+    <div id="header-placeholder"></div>
+
+    <section class="relative bg-gray-900 py-20 border-b border-gray-800">
+        <div class="container mx-auto px-6 text-center">
+            <h1 class="text-6xl font-black text-white mb-6 tracking-tight">Get In <span class="text-red-600">Touch</span></h1>
+            <p class="text-xl text-gray-400 max-w-2xl mx-auto">Support, brand deals, collaborations, or just saying hi. Drop the family a message below.</p>
+        </div>
+    </section>
+
+    <main class="container mx-auto px-6 py-16 min-h-[50vh]">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 max-w-6xl mx-auto items-start">
+            
+            <!-- Left Side: Info & Community Links -->
+            <div class="space-y-8">
+                <div>
+                    <h2 class="text-3xl font-bold text-white mb-4">Contact The Syndicate</h2>
+                    <p class="text-gray-400 leading-relaxed text-lg mb-8">
+                        Whether you are a player needing support with one of our games, a creator looking to collaborate, or a brand looking for a partnership, we are always open to talking.
+                    </p>
+                </div>
+
+                <div class="bg-gray-800 p-6 rounded-xl border border-gray-700 shadow-lg">
+                    <h3 class="text-xl font-bold text-white mb-2 flex items-center gap-3">
+                        <i class="fab fa-discord text-indigo-400"></i> Join The Discord
+                    </h3>
+                    <p class="text-gray-400 mb-4">The fastest way to get community support or chat with the devs is directly in our server.</p>
+                    <a href="https://discord.gg/6wzPXYmT74" target="_blank" rel="noopener noreferrer" class="inline-block bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2 px-6 rounded-lg transition duration-300">
+                        Join Server
+                    </a>
+                </div>
+            </div>
+
+            <!-- Right Side: The Form linked to Formspree -->
+            <div class="bg-gray-800 p-8 rounded-2xl border border-gray-700 shadow-2xl relative overflow-hidden">
+                <!-- Decorative Accent Bar -->
+                <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-red-600 to-blue-600"></div>
+                
+                <h3 class="text-2xl font-bold text-white mb-6">Send a Message</h3>
+                
+                <!-- Formspree Endpoint Integration -->
+                <form action="https://formspree.io/f/xoeajbrv" method="POST" class="space-y-5">
+                    
+                    <!-- Name & Email -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                        <div>
+                            <label for="name" class="block text-sm font-bold text-gray-400 mb-2">Your Name</label>
+                            <input type="text" id="name" name="name" placeholder="e.g., King Skyline" required class="w-full bg-gray-900 border border-gray-700 rounded-lg px-4 py-3 text-white placeholder-gray-600 focus:outline-none focus:border-red-500 focus:ring-1 focus:ring-red-500 transition-colors">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-bold text-gray-400 mb-2">Email Address</label>
+                            <input type="email" id="email" name="email" placeholder="e.g., contact@example.com" required class="w-full bg-gray-900 border border-gray-700 rounded-lg px-4 py-3 text-white placeholder-gray-600 focus:outline-none focus:border-red-500 focus:ring-1 focus:ring-red-500 transition-colors">
+                        </div>
+                    </div>
+
+                    <!-- Inquiry Dropdown -->
+                    <div>
+                        <label for="subject" class="block text-sm font-bold text-gray-400 mb-2">Inquiry Type</label>
+                        <div class="relative">
+                            <select id="subject" name="subject" required class="w-full bg-gray-900 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-red-500 focus:ring-1 focus:ring-red-500 transition-colors appearance-none cursor-pointer">
+                                <option value="" disabled selected hidden>Select a reason...</option>
+                                <option value="General Inquiry">General Inquiry</option>
+                                <option value="Game Support">Game Support / Bug Report</option>
+                                <option value="Brand Deal">Brand Deal / Sponsorship</option>
+                                <option value="Collaboration">Content Collaboration</option>
+                            </select>
+                            <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-gray-500">
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Message -->
+                    <div>
+                        <label for="message" class="block text-sm font-bold text-gray-400 mb-2">Message</label>
+                        <textarea id="message" name="message" rows="5" placeholder="How can we help you today?" required class="w-full bg-gray-900 border border-gray-700 rounded-lg px-4 py-3 text-white placeholder-gray-600 focus:outline-none focus:border-red-500 focus:ring-1 focus:ring-red-500 transition-colors resize-none"></textarea>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button type="submit" class="w-full bg-red-700 hover:bg-red-600 text-white font-black text-lg py-4 rounded-lg shadow-lg transform transition duration-300 hover:-translate-y-1">
+                        Send Message
+                    </button>
+
+                </form>
+            </div>
+
+        </div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="main.js"></script>
+</body>
+</html>

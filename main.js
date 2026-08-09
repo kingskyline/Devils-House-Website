@@ -95,6 +95,10 @@ document.addEventListener("DOMContentLoaded", function() {
             document.getElementById('nav-team')?.classList.add('text-blue-500', 'font-bold');
         } else if (currentPage === "sponsors.html") {
             document.getElementById('nav-sponsors')?.classList.add('text-green-500', 'font-bold');
+        } else if (currentPage === "donations.html") {
+            document.getElementById('nav-donations')?.classList.add('text-yellow-500', 'font-bold');
+        } else if (currentPage === "contact.html") {
+            document.getElementById('nav-contact')?.classList.add('text-red-500', 'font-bold');
         }
     };
 
