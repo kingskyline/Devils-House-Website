@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DHG Monetisation Framework | Devils House Creations</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #1a202c; color: #e2e8f0; }
+        .tab-content { display: none; }
+        .tab-content.active { display: block; animation: fadeIn 0.3s ease-in-out; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
+        /* Markdown-style list formatting */
+        .doc-list li { margin-bottom: 0.5rem; position: relative; padding-left: 1.5rem; }
+        .doc-list li::before { content: '▹'; position: absolute; left: 0; color: #3b82f6; font-weight: bold; }
+    </style>
+</head>
+<body class="antialiased bg-gray-900 text-gray-200">
+    
+    <div id="header-placeholder"></div>
+
+    <section class="relative bg-gray-900 py-20 border-b border-gray-800 overflow-hidden">
+        <div class="absolute inset-0 bg-blue-900/10 z-0"></div>
+        <div class="container mx-auto px-6 text-center relative z-10">
+            <span class="inline-block bg-blue-900 text-blue-400 text-xs font-bold px-4 py-1 rounded-full uppercase tracking-widest border border-blue-500 mb-6 shadow-[0_0_15px_rgba(59,130,246,0.5)]">🔵 Unity Asset Store - Live Now</span>
+            <h1 class="text-6xl font-black text-white mb-4 tracking-tight">DHG Monetisation <span class="text-blue-500">Framework</span></h1>
+            <p class="text-2xl text-gray-400 max-w-3xl mx-auto">A modular, offline-first DLC and entitlement management system for Unity 6. Build once, deploy across multiple storefronts.</p>
+        </div>
+    </section>
+
+    <!-- Navigation Tabs -->
+    <nav class="bg-gray-900 sticky top-0 z-20 border-b border-gray-700 shadow-md">
+        <div class="container mx-auto px-6">
+            <div class="flex justify-center space-x-2 sm:space-x-8 overflow-x-auto hide-scrollbar">
+                <button class="tab-btn text-blue-500 border-blue-500 hover:text-white font-bold py-4 px-4 border-b-4 transition-colors whitespace-nowrap" onclick="openTab(event, 'overview')">Overview</button>
+                <button class="tab-btn text-gray-400 border-transparent hover:text-white font-bold py-4 px-4 border-b-4 transition-colors whitespace-nowrap" onclick="openTab(event, 'docs')">Documentation</button>
+                <button class="tab-btn text-gray-400 border-transparent hover:text-white font-bold py-4 px-4 border-b-4 transition-colors whitespace-nowrap" onclick="openTab(event, 'security')">Security</button>
+                <button class="tab-btn text-gray-400 border-transparent hover:text-white font-bold py-4 px-4 border-b-4 transition-colors whitespace-nowrap" onclick="openTab(event, 'changelog')">Changelog</button>
+                <button class="tab-btn text-gray-400 border-transparent hover:text-white font-bold py-4 px-4 border-b-4 transition-colors whitespace-nowrap" onclick="openTab(event, 'media')">Media</button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container mx-auto px-6 py-12 min-h-[60vh]">
+        
+        <!-- 1. OVERVIEW TAB -->
+        <div id="overview" class="tab-content active max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+                
+                <!-- Left Column -->
+                <div class="lg:col-span-7 space-y-8">
+                    <div>
+                        <h2 class="text-4xl font-bold text-white mb-6 border-b border-gray-700 pb-3">The Framework</h2>
+                        <p class="text-gray-300 leading-relaxed text-lg mb-6">The DHG Monetisation Framework is designed to help you integrate downloadable content (DLC), entitlement management, and optional online services into your Unity games with minimal coding required[cite: 36].</p>
+                        <p class="text-gray-300 leading-relaxed text-lg">It is intentionally designed to be <strong>storefront-agnostic</strong>. This means your game does not need to be permanently tied to one storefront[cite: 36]. Swap between Steam, Itch.io, or your own custom backend without rewriting your game logic.</p>
+                    </div>
+                    
+                    <!-- Audit Status Block -->
+                    <div class="bg-gray-800 p-6 rounded-xl border border-green-700/50 shadow-lg">
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="text-2xl">🛡️</span>
+                            <h3 class="text-xl font-bold text-green-400">Commercial License & Audit Status</h3>
+                        </div>
+                        <ul class="text-sm text-gray-400 space-y-2 doc-list">
+                            <li><strong>Audited Version:</strong> 1.0.0[cite: 34]</li>
+                            <li><strong>Target Engine:</strong> Unity 6 (6000.5.5f1)[cite: 34]</li>
+                            <li><strong>Status:</strong> APPROVED FOR COMMERCIAL DISTRIBUTION[cite: 34]</li>
+                            <li><strong>Dependencies:</strong> Requires Unity Addressables (`com.unity.addressables`)[cite: 34].</li>
+                            <li><strong>Backends:</strong> None required. 100% offline-first local operation[cite: 34].</li>
+                        </ul>
+                    </div>
+
+                    <!-- Unity Asset Store CTA -->
+                    <div class="bg-gradient-to-r from-blue-900 to-gray-900 p-8 rounded-2xl border border-blue-600 shadow-2xl relative overflow-hidden transform transition duration-300 hover:scale-[1.02]">
+                        <div class="absolute top-0 right-0 bg-red-600 text-white text-xs font-black px-4 py-1.5 rounded-bl-lg uppercase tracking-widest animate-pulse">🔥 50% Off Launch Sale</div>
+                        <h3 class="text-3xl font-black text-white mb-3">Available Now on Unity</h3>
+                        <p class="text-blue-200 mb-8">Grab the complete framework today. Includes full source code, the DHG Dashboard, and sample provider templates.</p>
+                        <a href="https://assetstore.unity.com/packages/slug/399416" target="_blank" rel="noopener noreferrer" class="inline-block w-full text-center bg-blue-600 hover:bg-blue-500 text-white text-xl font-black py-4 px-8 rounded-xl shadow-lg transition duration-300">
+                            View on Asset Store
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right Column (Video & Cover) -->
+                <div class="lg:col-span-5 space-y-6">
+                    <div class="bg-gray-800 rounded-2xl border border-gray-700 p-3 shadow-2xl">
+                        <img src="../images/DHG_Framework/DHG_DLC_LOGO.webp" alt="DHG Framework Logo" class="w-full h-auto rounded-xl shadow-inner cursor-zoom-in" onclick="openLightbox(this.src)">
+                    </div>
+
+                    <div class="bg-gray-800 rounded-2xl border border-gray-700 p-3 shadow-2xl">
+                        <h4 class="text-sm font-bold text-gray-400 mb-3 uppercase tracking-wider text-center">Video Showcase</h4>
+                        <div class="aspect-video overflow-hidden rounded-xl bg-black border border-gray-900">
+                            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/XhumIeNY9FA" title="DHG Framework Showcase" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- 2. DOCUMENTATION TAB -->
+        <div id="docs" class="tab-content max-w-7xl mx-auto py-6">
+            <!-- The Javascript will fetch dhg-manual.html and inject it right here! -->
+            <div id="manual-injection-zone" class="text-center py-32">
+                <div class="inline-block animate-spin rounded-full h-12 w-12 border-t-4 border-b-4 border-blue-500 mb-4"></div>
+                <p class="text-gray-400 font-mono animate-pulse">Loading Official Manual...</p>
+            </div>
+        </div>
+
+        <!-- 3. SECURITY TAB -->
+        <div id="security" class="tab-content max-w-5xl mx-auto">
+            <h2 class="text-4xl font-bold text-white mb-8 border-b border-gray-700 pb-3">Security & Tamper Guidelines</h2>
+            
+            <div class="space-y-8">
+                <!-- Local Security -->
+                <div class="bg-gray-800 p-8 rounded-2xl border border-red-900/50 shadow-lg">
+                    <h3 class="text-2xl font-bold text-white mb-4">Local Tamper Guidelines</h3>
+                    <p class="text-gray-300 mb-4">DHG is designed to be an offline-first, highly compatible framework. Because it runs locally on the user's machine, it is subject to the standard security limitations of all client-side applications.</p>
+                    <ul class="text-gray-400 space-y-3 doc-list">
+                        <li><strong>PlayerPrefs is not secure:</strong> DHG uses PlayerPrefs as a lightweight LOCAL CACHE for DLC ownership to allow for offline play. Do not treat it as highly secure DRM.</li>
+                        <li><strong>The Cache is not the Authority:</strong> The TRUE authority on whether a player owns a DLC always comes from the Provider (Steamworks, itch.io, etc.).</li>
+                        <li><strong>Client-Side Limits:</strong> No client-side framework can provide perfect DRM. If a user is determined to pirate your DLC, they can decompile your game. DHG is built to keep honest players honest.</li>
+                    </ul>
+                </div>
+
+                <!-- Online Infrastructure -->
+                <div class="bg-gray-800 p-8 rounded-2xl border border-blue-900/50 shadow-lg">
+                    <h3 class="text-2xl font-bold text-white mb-4">Online Infrastructure & Verification</h3>
+                    <p class="text-gray-300 mb-4">If you choose to implement DHG Online Services, you are moving from an "Offline Cache" model to an "Authoritative Cloud" model[cite: 35].</p>
+                    <ul class="text-gray-400 space-y-3 doc-list">
+                        <li><strong>The Golden Rule:</strong> Never trust the client to tell you what it owns[cite: 35]. The server must take a receipt/token, communicate directly with the storefront's API, and verify it is mathematically valid[cite: 35].</li>
+                        <li><strong>Secret Protection:</strong> Never embed private keys in your Unity client[cite: 35]. Developer API keys must live securely in your server's environment variables[cite: 35].</li>
+                        <li><strong>Itch.io Architecture Flow:</strong> For itch.io, the desktop app provides a secure JWT via a hidden environment variable (`ITCHIO_API_KEY`)[cite: 33]. The Unity client sends this token to your server, your server verifies it via `https://itch.io/api/1/jwt/me`, and then checks DLC ownership using your private Developer API Key[cite: 33].</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- 4. CHANGELOG TAB -->
+        <div id="changelog" class="tab-content max-w-5xl mx-auto">
+            <h2 class="text-4xl font-bold text-white mb-2 border-b border-gray-700 pb-3">Version History</h2>
+            <p class="text-blue-400 font-mono text-sm tracking-wide mb-8 uppercase">Following Semantic Versioning standards</p>
+            
+            <div class="bg-gray-800 p-8 rounded-2xl border border-gray-700 shadow-lg">
+                <div class="flex justify-between items-end mb-6">
+                    <h3 class="text-3xl font-black text-white">Version 1.0.0</h3>
+                    <span class="text-gray-500 font-mono text-sm">2026-08-10[cite: 37]</span>
+                </div>
+                
+                <h4 class="text-xl font-bold text-green-400 mb-4">Added Features</h4>
+                <ul class="text-gray-400 space-y-3 doc-list mb-8">
+                    <li><strong>Core Architecture Engine:</strong> `DHGManager`, `DLCManager`, `EntitlementManager`, `StorageManager`, and `ProviderManager` core system loop[cite: 37].</li>
+                    <li><strong>DLC Definition Pipeline:</strong> `DLCData` ScriptableObject workflow with ID generation, versioning math, and dependency tracking[cite: 37].</li>
+                    <li><strong>Lifecycle & State Tracking:</strong> `DLCLifecycleTracker` monitoring defined, validated, built, packaged, owned, installed, loaded, active, and unloaded states[cite: 37].</li>
+                    <li><strong>Provider Abstraction:</strong> `IEntitlementProvider` interface with hardened `DevelopmentProvider` and stubs for Steamworks and itch.io[cite: 37].</li>
+                    <li><strong>Save-Game Safety:</strong> `DHGSaveValidator` auditing save-game files against current entitlements and version data before world loading[cite: 37].</li>
+                    <li><strong>Editor Tooling:</strong> `DHGDashboard` window and `DHGDLCTemplateCreator` wizard for visual workflow management[cite: 37].</li>
+                    <li><strong>Automated QA:</strong> NUnit Editor Test suite (`DHG_CoreTests`) verifying version math, lifecycle state transitions, and error logs[cite: 37].</li>
+                </ul>
+
+                <div class="bg-gray-900 p-4 rounded-lg border border-gray-800">
+                    <h4 class="text-sm font-bold text-blue-400 mb-2 uppercase">Migration Guidelines</h4>
+                    <p class="text-sm text-gray-400 mb-2"><strong>Minor Upgrades:</strong> Replace the `DHG_Framework` folder or pull the latest UPM package release, then re-run the automated NUnit tests[cite: 37].</p>
+                    <p class="text-sm text-gray-400"><strong>Major Upgrades:</strong> Check breaking change logs in the release notes and verify modified interface methods in custom providers[cite: 37].</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 5. MEDIA TAB -->
+        <div id="media" class="tab-content max-w-7xl mx-auto">
+            <h2 class="text-4xl font-bold text-white mb-6 border-b border-gray-700 pb-3">Framework Gallery</h2>
+            <div id="media-injection-zone" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"></div>
+        </div>
+
+    </main>
+
+    <!-- Lightbox Modal -->
+    <div id="image-lightbox" class="fixed inset-0 z-50 hidden bg-black bg-opacity-95 flex justify-center items-center cursor-zoom-out" onclick="closeLightbox()">
+        <button class="absolute top-6 right-6 text-gray-400 hover:text-white text-5xl font-bold focus:outline-none transition-colors">&times;</button>
+        <img id="lightbox-img" src="" alt="Fullscreen View" class="max-w-[95vw] max-h-[95vh] object-contain rounded-lg shadow-2xl transition-transform transform scale-95 duration-300">
+    </div>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="../main.js"></script>
+    
+    <!-- Tab & Lightbox Controllers -->
+    <script>
+        function openTab(evt, tabName) {
+            let i, tabcontent, tabbtns;
+            tabcontent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabcontent.length; i++) tabcontent[i].classList.remove("active");
+            tabbtns = document.getElementsByClassName("tab-btn");
+            for (i = 0; i < tabbtns.length; i++) {
+                tabbtns[i].classList.remove("text-blue-500", "border-blue-500");
+                tabbtns[i].classList.add("text-gray-400", "border-transparent");
+            }
+            document.getElementById(tabName).classList.add("active");
+            evt.currentTarget.classList.remove("text-gray-400", "border-transparent");
+            evt.currentTarget.classList.add("text-blue-500", "border-blue-500");
+        }
+
+        const lightbox = document.getElementById('image-lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+
+        function openLightbox(imageSrc) {
+            lightboxImg.src = imageSrc;
+            lightbox.classList.remove('hidden');
+            lightbox.classList.add('flex'); 
+            setTimeout(() => lightboxImg.classList.replace('scale-95', 'scale-100'), 10);
+        }
+
+        function closeLightbox() {
+            lightboxImg.classList.replace('scale-100', 'scale-95');
+            setTimeout(() => {
+                lightbox.classList.add('hidden');
+                lightbox.classList.remove('flex');
+                lightboxImg.src = ''; 
+            }, 200); 
+        }
+
+        // Fetch Media Gallery
+        async function buildMedia() {
+            const container = document.getElementById('media-injection-zone');
+            try {
+                const res = await fetch('../data/dhg-media.json');
+                const data = await res.json();
+                container.innerHTML = data.map(item => `
+                    <div class="bg-gray-800 rounded-xl border border-gray-700 overflow-hidden shadow-lg group">
+                        <div class="aspect-video overflow-hidden">
+                            <img src="${item.src}" loading="lazy" alt="${item.alt}" 
+                                 ${item.lightbox ? `onclick="openLightbox(this.src)" class="cursor-zoom-in w-full h-full object-cover transform transition duration-500 group-hover:scale-110"` : `class="w-full h-full object-cover transform transition duration-500 group-hover:scale-110"`}>
+                        </div>
+                        <div class="p-4 border-t border-gray-700">
+                            <h3 class="text-white font-bold text-lg mb-1">${item.title}</h3>
+                            <span class="text-gray-500 text-sm font-mono">${item.version}</span>
+                        </div>
+                    </div>
+                `).join('');
+            } catch (err) { console.error("Media Error:", err); }
+        }
+
+        // Fetch Full Documentation Manual
+        async function loadManual() {
+            const container = document.getElementById('manual-injection-zone');
+            try {
+                const res = await fetch('../data/dhg-manual.html');
+                const html = await res.text();
+                // Inject the entire 22-section manual into the tab!
+                container.innerHTML = html;
+                container.classList.remove('text-center', 'py-32');
+            } catch (err) {
+                console.error("Documentation Error:", err);
+                container.innerHTML = '<p class="text-red-500 text-center py-10">Failed to load the manual. Please verify the data folder path.</p>';
+            }
+        }
+
+        // Fire both scripts when the page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            buildMedia();
+            loadManual();
+        });
+    </script>
+</body>
+</html>

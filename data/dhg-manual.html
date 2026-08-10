@@ -1,0 +1,267 @@
+<!-- THE FULL DHG MANUAL (Injected dynamically into the tab) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+            
+    <!-- STICKY SIDEBAR TABLE OF CONTENTS (3 Cols) -->
+    <aside class="lg:col-span-3 bg-gray-800 p-6 rounded-2xl border border-gray-700 sticky top-24 max-h-[75vh] overflow-y-auto custom-scrollbar">
+        <h3 class="text-xs font-mono uppercase text-gray-400 font-bold tracking-widest mb-4 border-b border-gray-700 pb-2">Table of Contents</h3>
+        <nav class="space-y-2 text-sm text-gray-400">
+            <a href="#section-1" class="block hover:text-blue-400 transition-colors">1. Installing DHG</a>
+            <a href="#section-2" class="block hover:text-blue-400 transition-colors">2. Creating DLC</a>
+            <a href="#section-3" class="block hover:text-blue-400 transition-colors">3. Creating a DLC Profile</a>
+            <a href="#section-4" class="block hover:text-blue-400 transition-colors">4. Adding DLC Assets</a>
+            <a href="#section-5" class="block hover:text-blue-400 transition-colors">5. Dependencies</a>
+            <a href="#section-6" class="block hover:text-blue-400 transition-colors">6. Versioning</a>
+            <a href="#section-7" class="block hover:text-blue-400 transition-colors">7. Building DLC</a>
+            <a href="#section-8" class="block hover:text-blue-400 transition-colors">8. Loading DLC API</a>
+            <a href="#section-9" class="block hover:text-blue-400 transition-colors">9. DLC Ownership</a>
+            <a href="#section-10" class="block hover:text-blue-400 transition-colors">10. Providers</a>
+            <a href="#section-11" class="block hover:text-blue-400 transition-colors">11. Development Mode</a>
+            <a href="#section-12" class="block hover:text-blue-400 transition-colors">12. Steam Integration</a>
+            <a href="#section-13" class="block hover:text-blue-400 transition-colors">13. itch.io Integration</a>
+            <a href="#section-14" class="block hover:text-blue-400 transition-colors">14. Custom Providers</a>
+            <a href="#section-15" class="block hover:text-blue-400 transition-colors">15. Troubleshooting</a>
+            <a href="#section-16" class="block hover:text-blue-400 transition-colors">16. Security Limitations</a>
+            <a href="#section-17" class="block hover:text-blue-400 transition-colors">17. Online Services</a>
+            <a href="#section-18" class="block hover:text-blue-400 transition-colors">18. Online API Reference</a>
+            <a href="#section-19" class="block hover:text-blue-400 transition-colors">19. Core API Reference</a>
+            <a href="#section-20" class="block hover:text-blue-400 transition-colors">20. Architecture Guide</a>
+            <a href="#section-21" class="block hover:text-blue-400 transition-colors">21. Best Practices</a>
+            <a href="#section-22" class="block hover:text-blue-400 transition-colors">22. Final Notes</a>
+        </nav>
+    </aside>
+
+    <!-- DOCUMENTATION CONTENT (9 Cols) -->
+    <article class="lg:col-span-9 bg-gray-800 p-10 rounded-2xl border border-gray-700 shadow-xl space-y-16 prose prose-invert max-w-none">
+        
+        <!-- INTRO -->
+        <div>
+            <h2 class="text-4xl font-black text-white tracking-tight mb-2">Quickstart & User Manual</h2>
+            <p class="text-lg text-gray-300">Welcome to the DHG Monetisation & DLC Framework! This manual is designed to help you integrate downloadable content (DLC), entitlement management, and optional online services into your Unity games with minimal coding required.</p>
+            <div class="bg-blue-900/20 border-l-4 border-blue-500 p-4 mt-6 text-blue-200 text-sm">
+                <strong>Recommended Unity Version:</strong> Unity 6 or later.
+            </div>
+        </div>
+
+        <!-- 1 -->
+        <section id="section-1" class="scroll-mt-24">
+            <h3 class="text-2xl font-bold text-white mb-4 border-b border-gray-700 pb-2">1. Installing DHG</h3>
+            <ol class="list-decimal list-inside text-gray-400 space-y-2 mt-4">
+                <li>Open your Unity project.</li>
+                <li>Make sure the <strong>Addressables</strong> package is installed via <code>Window > Package Manager</code>.</li>
+                <li>Import the <code>DHG_Framework</code> folder into your project, or install DHG through the Unity Package Manager.</li>
+                <li>Initialize the Addressables system via <code>Window > Asset Management > Addressables > Groups</code>.</li>
+            </ol>
+        </section>
+
+        <!-- 2 -->
+        <section id="section-2" class="scroll-mt-24">
+            <h3 class="text-2xl font-bold text-white mb-4 border-b border-gray-700 pb-2">2. Creating DLC</h3>
+            <p class="text-gray-300 mb-4">In DHG, DLC is essentially a collection of game content that can be distributed separately from the base game. It can contain 3D models, prefabs, audio, textures, materials, scenes, and ScriptableObjects.</p>
+            <p class="text-gray-400 text-sm mb-2">A recommended folder structure would be:</p>
+            <pre class="bg-gray-950 p-4 rounded-lg border border-gray-800 overflow-x-auto"><code class="text-sm text-gray-300">Assets/
+└── MyGame_DLC/
+    └── SwordsPack/
+        ├── Prefabs/
+        ├── Audio/
+        ├── Textures/
+        └── SwordsPackData.asset</code></pre>
+            <p class="text-gray-400 mt-4 text-sm">Keeping each DLC in its own folder makes your project easier to manage as the amount of downloadable content grows.</p>
+        </section>
+
+        <!-- 3 -->
+        <section id="section-3" class="scroll-mt-24">
+            <h3 class="text-2xl font-bold text-white mb-4 border-b border-gray-700 pb-2">3. Creating a DLC Profile</h3>
+            <p class="text-gray-300 mb-4">A <strong>DLC Profile</strong>, also called <code>DLCData</code>, contains the information DHG needs to identify and manage a DLC package. To create one, right-click inside the Unity Project window and select <strong>Create > DHG Framework > DLC Data</strong>.</p>
+            
+            <h4 class="text-xl font-bold text-blue-400 mt-6 mb-2">DLC ID</h4>
+            <p class="text-gray-400 mb-2">Every DLC must have a unique ID (e.g., <code>com.mygame.swordspack</code>). This ID should remain consistent across your game, configuration files, and storefront integration.</p>
+            <div class="bg-yellow-900/20 border-l-4 border-yellow-500 p-4 mt-4 text-yellow-200 text-sm">
+                <strong>Important:</strong> The DHG DLC ID is your framework's internal identifier. It should be mapped to the appropriate product/DLC identifier used by your chosen storefront rather than assuming every storefront uses the same ID format.
+            </div>
+        </section>
+
+        <!-- 4 -->
+        <section id="section-4" class="scroll-mt-24">
+            <h3 class="text-2xl font-bold text-white mb-4 border-b border-gray-700 pb-2">4. Adding DLC Assets</h3>
+            <p class="text-gray-300 mb-4">DHG uses <strong>Unity Addressables</strong> to manage downloadable content. Instead of manually writing asset-loading systems, your DLC assets can be registered as Addressables.</p>
+            <ol class="list-decimal list-inside text-gray-400 space-y-2 mb-4">
+                <li>Select the DLC asset in the Project window.</li>
+                <li>In the Inspector, enable the <strong>Addressable</strong> option.</li>
+                <li>Assign an appropriate Addressable address/group if required.</li>
+            </ol>
+            <p class="text-gray-400 text-sm">Once configured, the asset can be included in your Addressables build.</p>
+        </section>
+
+        <!-- 5 -->
+        <section id="section-5" class="scroll-mt-24">
+            <h3 class="text-2xl font-bold text-white mb-4 border-b border-gray-700 pb-2">5. Setting DLC Dependencies</h3>
+            <p class="text-gray-300 mb-4">Some DLC may require other DLC to function correctly (e.g., a "Magic Swords Pack" requiring the "Base Magic Pack").</p>
+            <p class="text-gray-400 mb-4">To configure a dependency, open the relevant <code>DLCData</code> asset, locate the <strong>Dependencies</strong> section, and add the required DLC ID. The DHG Framework will check dependencies before allowing dependent content to load.</p>
+        </section>
+
+        <!-- 6 -->
+        <section id="section-6" class="scroll-mt-24">
+            <h3 class="text-2xl font-bold text-white mb-4 border-b border-gray-700 pb-2">6. DLC Versioning</h3>
+            <p class="text-gray-300 mb-4">DHG supports standard <strong>Semantic Versioning</strong> (<code>MAJOR.MINOR.PATCH</code>). Whenever you release an updated version of a DLC, update its version number in the <code>DLCData</code> profile.</p>
+            <div class="bg-yellow-900/20 border-l-4 border-yellow-500 p-4 mt-4 text-yellow-200 text-sm">
+                <strong>Important:</strong> Version checking should be treated as compatibility/version validation rather than DRM.
+            </div>
+        </section>
+
+        <!-- 7 -->
+        <section id="section-7" class="scroll-mt-24">
+            <h3 class="text-2xl font-bold text-white mb-4 border-b border-gray-700 pb-2">7. Building DLC</h3>
+            <p class="text-gray-300 mb-4">Once configured, open <code>Window > Asset Management > Addressables > Groups</code> and run the <strong>Default Build Script</strong>. Unity will process your assets and generate the required content bundles.</p>
+        </section>
+
+        <!-- 8 -->
+        <section id="section-8" class="scroll-mt-24">
+            <h3 class="text-2xl font-bold text-white mb-4 border-b border-gray-700 pb-2">8. Loading DLC</h3>
+            <p class="text-gray-300 mb-4">DHG provides a simplified API for loading DLC content.</p>
+            <pre class="bg-gray-950 p-4 rounded-lg border border-gray-800 overflow-x-auto"><code class="text-sm text-blue-300">using UnityEngine;
+using DevilsHouseCreations.DHG.Core;
+
+public class MyGameLoader : MonoBehaviour
+{
+    public void LoadMyDLC()
+    {
+        DHGManager.Instance.dlcManager.LoadDLCContentAsync(
+            "com.mygame.swordspack",
+            OnDLCLoaded
+        );
+    }
+
+    private void OnDLCLoaded(GameObject spawnedContent)
+    {
+        Debug.Log("DLC successfully spawned in the world!");
+    }
+}</code></pre>
+        </section>
+
+        <!-- 9 -->
+        <section id="section-9" class="scroll-mt-24">
+            <h3 class="text-2xl font-bold text-white mb-4 border-b border-gray-700 pb-2">9. DLC Ownership</h3>
+            <p class="text-gray-300 mb-4">DHG provides an entitlement system for checking whether the player owns a DLC. This is useful for shop interfaces, unlock buttons, and save validation.</p>
+            <pre class="bg-gray-950 p-4 rounded-lg border border-gray-800 overflow-x-auto"><code class="text-sm text-blue-300">if (DHGManager.Instance.entitlementManager.IsOwned("com.mygame.swordspack"))
+{
+    Debug.Log("The player owns this DLC!");
+}</code></pre>
+            <p class="text-gray-400 mt-4 text-sm">The actual ownership verification is handled by the currently active <strong>Provider</strong>.</p>
+        </section>
+
+        <!-- 10 -->
+        <section id="section-10" class="scroll-mt-24">
+            <h3 class="text-2xl font-bold text-white mb-4 border-b border-gray-700 pb-2">10. Providers</h3>
+            <p class="text-gray-300 mb-4">A <strong>Provider</strong> is the storefront or service responsible for telling DHG whether a player owns a DLC. Examples include Steam, itch.io, Epic Games Store, or a custom backend.</p>
+            <p class="text-gray-400">The Provider system is intentionally separated from the core DHG Framework, meaning your game does not need to be permanently tied to one storefront.</p>
+        </section>
+
+        <!-- 11 -->
+        <section id="section-11" class="scroll-mt-24">
+            <h3 class="text-2xl font-bold text-white mb-4 border-b border-gray-700 pb-2">11. Development Mode</h3>
+            <p class="text-gray-300 mb-4">When testing inside the Unity Editor, use the <strong>Development Provider</strong>. It simulates situations like offline mode, provider failures, and missing DLC without requiring real storefront purchases.</p>
+            <div class="bg-red-900/20 border-l-4 border-red-500 p-4 mt-4 text-red-200 text-sm">
+                <strong>Warning:</strong> Development Mode should only be used for testing and never enabled in a production build.
+            </div>
+        </section>
+
+        <!-- 12 -->
+        <section id="section-12" class="scroll-mt-24">
+            <h3 class="text-2xl font-bold text-white mb-4 border-b border-gray-700 pb-2">12. Steam Integration</h3>
+            <p class="text-gray-300 mb-4">Connect DHG to your preferred Steam SDK (e.g., Steamworks.NET or Facepunch). Configure the Steam Provider to map your internal DHG DLC IDs to the appropriate Steam product identifiers.</p>
+        </section>
+
+        <!-- 13 -->
+        <section id="section-13" class="scroll-mt-24">
+            <h3 class="text-2xl font-bold text-white mb-4 border-b border-gray-700 pb-2">13. itch.io Integration</h3>
+            <p class="text-gray-300 mb-4">For itch.io distribution, DHG can authenticate via environment variables or desktop launcher tokens. Do not hard-code private API keys directly into your Unity project.</p>
+        </section>
+
+        <!-- 14 -->
+        <section id="section-14" class="scroll-mt-24">
+            <h3 class="text-2xl font-bold text-white mb-4 border-b border-gray-700 pb-2">14. Custom Providers</h3>
+            <p class="text-gray-300 mb-4">If you want to support another platform (Epic, GOG, Google Play, private server), duplicate the included template <code>DHG_CustomProviderTemplate.cs</code> and implement the platform-specific logic.</p>
+        </section>
+
+        <!-- 15 -->
+        <section id="section-15" class="scroll-mt-24">
+            <h3 class="text-2xl font-bold text-white mb-4 border-b border-gray-700 pb-2">15. Troubleshooting</h3>
+            <p class="text-gray-300 mb-4">If DLC fails to load, check the Unity Console. Common errors include <code>DLC Not Owned</code>, <code>Dependency Missing</code>, or <code>Version Incompatible</code>.</p>
+            <h4 class="text-xl font-bold text-blue-400 mt-6 mb-2">Save Game Errors</h4>
+            <p class="text-gray-400 mb-4">If a save requires DLC that is no longer installed, use <code>DHGSaveValidator.ValidateSaveData()</code> before loading the world to detect incompatible content safely.</p>
+        </section>
+
+        <!-- 16 -->
+        <section id="section-16" class="scroll-mt-24">
+            <h3 class="text-2xl font-bold text-white mb-4 border-b border-gray-700 pb-2">16. Security Limitations</h3>
+            <p class="text-gray-300 mb-4">DHG provides a clean and reliable DLC system, but no client-side Unity framework can provide perfect DRM. The local ownership cache should not be treated as an impenetrable DRM system. For online games, <strong>never rely exclusively on the client to verify purchases</strong>. Your server should verify entitlements independently.</p>
+        </section>
+
+        <!-- 17 -->
+        <section id="section-17" class="scroll-mt-24">
+            <h3 class="text-2xl font-bold text-white mb-4 border-b border-gray-700 pb-2">17. DHG Online Services (Optional)</h3>
+            <p class="text-gray-300 mb-4">While DHG Core is completely offline-first, you can optionally attach the <code>DHGOnlineManager</code> to bridge to services like Azure PlayFab, UGS, or a custom Node.js server.</p>
+            <ul class="list-disc list-inside text-gray-400 space-y-2 mt-4">
+                <li><strong>Silent Login:</strong> Authenticate devices automatically.</li>
+                <li><strong>Account Linking:</strong> Link email/passwords or storefront identities to cloud profiles.</li>
+                <li><strong>Authoritative Sync:</strong> Securely cache authoritative cloud entitlements locally.</li>
+            </ul>
+        </section>
+
+        <!-- 18 -->
+        <section id="section-18" class="scroll-mt-24">
+            <h3 class="text-2xl font-bold text-white mb-4 border-b border-gray-700 pb-2">18. Online API Reference</h3>
+            <pre class="bg-gray-950 p-4 rounded-lg border border-gray-800 overflow-x-auto mb-4"><code class="text-sm text-blue-300">// Silent Device Login
+DHGManager.Instance.onlineManager.LoginSilently((success, message) => { ... });
+
+// Account Linking
+DHGManager.Instance.onlineManager.LinkEmailAccount("player@email.com", "Password!", (s,m) => { ... });
+
+// Cloud Sync
+DHGManager.Instance.onlineManager.SynchronizeEntitlements((success, message) => { ... });</code></pre>
+        </section>
+
+        <!-- 19 -->
+        <section id="section-19" class="scroll-mt-24">
+            <h3 class="text-2xl font-bold text-white mb-4 border-b border-gray-700 pb-2">19. API Reference</h3>
+            <ul class="space-y-4 text-gray-300">
+                <li><code>DHGManager.Instance</code> - The main framework singleton.</li>
+                <li><code>DHGManager.Instance.dlcManager.LoadDLCContentAsync(...)</code> - Loads content securely.</li>
+                <li><code>DHGManager.Instance.entitlementManager.IsOwned(...)</code> - Validates ownership status.</li>
+                <li><code>DHGErrorHandler.GetPlayerFacingMessage(state)</code> - Converts technical errors into localized player messages.</li>
+            </ul>
+        </section>
+
+        <!-- 20 -->
+        <section id="section-20" class="scroll-mt-24">
+            <h3 class="text-2xl font-bold text-white mb-4 border-b border-gray-700 pb-2">20. Recommended DHG Architecture</h3>
+            <p class="text-gray-300 mb-4">A typical setup separates the core game, DLC content, and provider logic. The framework acts as the intermediary:</p>
+            <pre class="bg-gray-950 p-4 rounded-lg border border-gray-800 overflow-x-auto"><code class="text-sm text-gray-400">Game
+  ↓
+DHG Framework
+  ├── DLC System
+  ├── Entitlement System
+  ├── Provider System (Steam/Itch)
+  └── Optional Online System
+          ↓
+     Cloud Backend</code></pre>
+        </section>
+
+        <!-- 21 -->
+        <section id="section-21" class="scroll-mt-24">
+            <h3 class="text-2xl font-bold text-white mb-4 border-b border-gray-700 pb-2">21. Best Practices</h3>
+            <ul class="list-disc list-inside text-gray-300 space-y-2">
+                <li><strong>Use Stable IDs:</strong> Never change a DLC ID after public release.</li>
+                <li><strong>Keep DLC Modular:</strong> Separate DLC content physically from base-game folders.</li>
+                <li><strong>Treat Servers as Authoritative:</strong> For competitive or online economies, trust the server, not the client.</li>
+            </ul>
+        </section>
+
+        <!-- 22 -->
+        <section id="section-22" class="scroll-mt-24">
+            <h3 class="text-2xl font-bold text-white mb-4 border-b border-gray-700 pb-2">22. Final Notes</h3>
+            <p class="text-gray-300 mb-4">The core philosophy is: <strong>Build once. Reuse across games. Keep the storefront replaceable. Keep the backend replaceable.</strong> Your game should depend on DHG's internal systems rather than being tightly coupled to a single storefront SDK.</p>
+        </section>
+
+    </article>
+</div>

@@ -1,0 +1,58 @@
+[
+  {
+    "title": "DHG Dashboard",
+    "version": "v1.0.0",
+    "src": "../images/DHG_Framework/DHGDashboard_1.webp",
+    "alt": "The central DHG Dashboard inside the Unity Editor.",
+    "lightbox": true
+  },
+  {
+    "title": "Dashboard Tools",
+    "version": "v1.0.0",
+    "src": "../images/DHG_Framework/DHGDashboard_2.webp",
+    "alt": "Additional tooling available within the DHG Dashboard.",
+    "lightbox": true
+  },
+  {
+    "title": "DLC Data Profile",
+    "version": "v1.0.0",
+    "src": "../images/DHG_Framework/DLCData_1.webp",
+    "alt": "Configuring a DLC profile with dependencies and versioning.",
+    "lightbox": true
+  },
+  {
+    "title": "DLC Addressables Setup",
+    "version": "v1.0.0",
+    "src": "../images/DHG_Framework/DLCData_2.webp",
+    "alt": "Mapping DLC assets to Unity Addressables.",
+    "lightbox": true
+  },
+  {
+    "title": "Provider Manager",
+    "version": "v1.0.0",
+    "src": "../images/DHG_Framework/Provider_Manager_1.webp",
+    "alt": "Selecting the active entitlement provider (Steam, Itch, Dev).",
+    "lightbox": true
+  },
+  {
+    "title": "Provider Configuration",
+    "version": "v1.0.0",
+    "src": "../images/DHG_Framework/Provider_Manager_2.webp",
+    "alt": "Detailed setup for the selected storefront provider.",
+    "lightbox": true
+  },
+  {
+    "title": "Console Logging",
+    "version": "v1.0.0",
+    "src": "../images/DHG_Framework/Console_1.webp",
+    "alt": "Clean, human-readable console logging provided by the framework.",
+    "lightbox": true
+  },
+  {
+    "title": "Error Handling",
+    "version": "v1.0.0",
+    "src": "../images/DHG_Framework/Console_2.webp",
+    "alt": "Automated error handling catching missing dependencies.",
+    "lightbox": true
+  }
+]
